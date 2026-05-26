@@ -6,6 +6,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 
 import config
+from tools.gsc import get_top_queries, get_rising_queries
 from tools.ga4 import get_top_pages, get_declining_pages
 
 
@@ -87,8 +88,8 @@ def _score_gsc_opportunity(row: dict) -> float:
 
 def fetch_research_signals() -> ResearchSignals:
     signals = ResearchSignals()
-    signals.gsc_configured = bool(config.GOOGLE_CREDENTIALS_FILE and config.GSC_SITE_URL)
-    signals.ga4_configured = bool(config.GOOGLE_CREDENTIALS_FILE and config.GA4_PROPERTY_ID)
+    signals.gsc_configured = bool(config.GOOGLE_GSC_CREDENTIALS_FILE and config.GSC_SITE_URL)
+    signals.ga4_configured = bool(config.GOOGLE_GA4_CREDENTIALS_FILE and config.GA4_PROPERTY_ID)
 
     if signals.gsc_configured:
         try:

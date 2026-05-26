@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Configure blogging-agent for GitHub Actions using remback secrets.
-Reuses GA4/GSC credentials from the SEO agent setup.
+Uses separate GSC + GA4 service accounts (same as SEO agent).
 """
 import json
 import os
@@ -12,24 +12,31 @@ PROJECT_ROOT = AGENT_DIR.parent.parent
 
 
 def main() -> None:
-    ga4_json = (os.environ.get("GA4_CREDENTIALS_JSON") or os.environ.get("GOOGLE_CREDENTIALS_JSON") or "").strip()
+    ga4_json = (os.environ.get("GA4_CREDENTIALS_JSON") or "").strip()
     gsc_json = (os.environ.get("GSC_CREDENTIALS_JSON") or os.environ.get("GOOGLE_CREDENTIALS_JSON") or "").strip()
 
-    if not ga4_json and not gsc_json:
-        raise SystemExit("ERROR: Set GA4_CREDENTIALS_JSON and/or GSC_CREDENTIALS_JSON (or GOOGLE_CREDENTIALS_JSON).")
+    if not gsc_json and not ga4_json:
+        raise SystemExit("ERROR: Set GSC_CREDENTIALS_JSON and/or GA4_CREDENTIALS_JSON.")
 
-    cred_path = AGENT_DIR / "google-credentials.json"
-    cred_json = ga4_json or gsc_json
-    if ga4_json and gsc_json and ga4_json != gsc_json:
-        # Prefer GA4 creds; both service accounts should have GSC+GA4 access
-        cred_json = ga4_json
+    gsc_path = AGENT_DIR / "google-credentials-gsc.json"
+    ga4_path = AGENT_DIR / "google-credentials-ga4.json"
 
-    json.loads(cred_json)
-    cred_path.write_text(cred_json)
+    if gsc_json:
+        json.loads(gsc_json)
+        gsc_path.write_text(gsc_json)
+    if ga4_json:
+        json.loads(ga4_json)
+        ga4_path.write_text(ga4_json)
+
+    # Fallback: if only one secret provided, use it for both APIs
+    if gsc_json and not ga4_json:
+        ga4_path.write_text(gsc_json)
+    elif ga4_json and not gsc_json:
+        gsc_path.write_text(ga4_json)
 
     openai_key = (os.environ.get("OPENAI_API_KEY") or "").strip()
     if not openai_key:
-        raise SystemExit("ERROR: OPENAI_API_KEY secret is empty or not set. Add it in Settings → Secrets.")
+        raise SystemExit("ERROR: OPENAI_API_KEY secret is empty or not set.")
 
     gsc_site = (os.environ.get("GSC_SITE_URL") or "sc-domain:changeimageto.com").strip()
     ga4_property = (os.environ.get("GA4_PROPERTY_ID") or "505035310").strip()
@@ -49,7 +56,8 @@ def main() -> None:
         f"CONTENT_DIR=frontend/blog",
         f"GSC_SITE_URL={gsc_site}",
         f"GA4_PROPERTY_ID={ga4_property}",
-        f"GOOGLE_CREDENTIALS_FILE={cred_path}",
+        f"GOOGLE_GSC_CREDENTIALS_FILE={gsc_path}",
+        f"GOOGLE_GA4_CREDENTIALS_FILE={ga4_path}",
         f"CORRECTION_AUTO_MODE={os.environ.get('CORRECTION_AUTO_MODE', 'true')}",
         f"MAX_ARTICLES_PER_DAY={os.environ.get('MAX_ARTICLES_PER_DAY', '1')}",
         f"MIN_QUEUE_SIZE={os.environ.get('MIN_QUEUE_SIZE', '2')}",
@@ -58,6 +66,8 @@ def main() -> None:
     print(f"Configured blogging-agent at {AGENT_DIR}")
     print(f"  GSC_SITE_URL={gsc_site}")
     print(f"  GA4_PROPERTY_ID={ga4_property}")
+    print(f"  GSC creds: {'yes' if gsc_path.exists() else 'no'}")
+    print(f"  GA4 creds: {'yes' if ga4_path.exists() else 'no'}")
 
 
 if __name__ == "__main__":

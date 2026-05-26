@@ -8,13 +8,13 @@ def _get_client():
     global _client
     if _client:
         return _client
-    if not config.GOOGLE_CREDENTIALS_FILE or not config.GSC_SITE_URL:
+    if not config.GOOGLE_GSC_CREDENTIALS_FILE or not config.GSC_SITE_URL:
         return None
     try:
         from googleapiclient.discovery import build
         from google.oauth2 import service_account
         credentials = service_account.Credentials.from_service_account_file(
-            config.GOOGLE_CREDENTIALS_FILE,
+            config.GOOGLE_GSC_CREDENTIALS_FILE,
             scopes=["https://www.googleapis.com/auth/webmasters.readonly"]
         )
         _client = build("searchconsole", "v1", credentials=credentials)

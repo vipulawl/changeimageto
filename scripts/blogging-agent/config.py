@@ -43,6 +43,8 @@ BLOG_LANGUAGE = os.getenv("BLOG_LANGUAGE", "English")
 
 # ── Google APIs (optional) ────────────────────────────────────────────────────
 GOOGLE_CREDENTIALS_FILE = os.getenv("GOOGLE_CREDENTIALS_FILE", "")
+GOOGLE_GSC_CREDENTIALS_FILE = os.getenv("GOOGLE_GSC_CREDENTIALS_FILE", "") or GOOGLE_CREDENTIALS_FILE
+GOOGLE_GA4_CREDENTIALS_FILE = os.getenv("GOOGLE_GA4_CREDENTIALS_FILE", "") or GOOGLE_CREDENTIALS_FILE
 GSC_SITE_URL = os.getenv("GSC_SITE_URL", "")
 GA4_PROPERTY_ID = os.getenv("GA4_PROPERTY_ID", "")
 

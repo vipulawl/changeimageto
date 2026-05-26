@@ -7,13 +7,13 @@ def _get_client():
     global _client
     if _client:
         return _client
-    if not config.GOOGLE_CREDENTIALS_FILE or not config.GA4_PROPERTY_ID:
+    if not config.GOOGLE_GA4_CREDENTIALS_FILE or not config.GA4_PROPERTY_ID:
         return None
     try:
         from google.analytics.data_v1beta import BetaAnalyticsDataClient
         from google.oauth2 import service_account
         credentials = service_account.Credentials.from_service_account_file(
-            config.GOOGLE_CREDENTIALS_FILE,
+            config.GOOGLE_GA4_CREDENTIALS_FILE,
             scopes=["https://www.googleapis.com/auth/analytics.readonly"]
         )
         _client = BetaAnalyticsDataClient(credentials=credentials)
