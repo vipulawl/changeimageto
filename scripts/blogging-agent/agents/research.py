@@ -7,7 +7,8 @@ from tools.ga4 import get_top_pages, get_declining_pages
 from tools.serp import analyze_serp
 from tools.competitors import get_sitemap_posts, fetch_post_summary
 from tools.keyword_discovery import discover_keywords, get_google_trends
-from storage.db import save_topic, get_active_strategy, save_competitor_posts
+from storage.db import save_topic, get_active_strategy, save_competitor_posts, get_all_topics
+from research_signals import fetch_research_signals, seed_topics_from_signals
 
 TOOLS = [
     {
@@ -140,46 +141,76 @@ Active content strategy:
 {strategy_context}
 
 Research process for this run:
-1. Check GSC (get_gsc_queries + get_gsc_rising) — find queries with impressions but low CTR or position 5-20
-2. Check GA4 (get_ga4_top_pages + get_ga4_declining) — understand what's working and what needs a refresh
-3. Check each competitor in the strategy for NEW posts (check_competitor_new_posts) — if they just published something in your content pillars, either counter it or find the angle they missed
-4. For 1-2 competitor posts that look interesting, analyze_post to understand their angle and structure
-5. For keywords NOT in GSC (i.e. topics you're not indexed for), use discover_keywords on pillar seed keywords
-6. Use get_google_trends on 1-2 pillar topics to catch rising queries
-7. Use analyze_serp to check competition level before committing to a topic
-8. Save 3-5 topics with detailed research briefs
+1. You are given PRE-FETCHED GSC + GA4 data in the user message — start from those signals
+2. Optionally check competitors for new posts (check_competitor_new_posts)
+3. Use analyze_serp to validate competition for your top picks
+4. REQUIRED: Call save_topic for at least 3 topics before finishing. Do not end without save_topic calls.
 
 Topic selection priority:
-- Competitor just posted on a pillar topic → counter with a better/different angle
-- GSC: high impressions, position 5-20, low CTR → strong signal
-- Content gap from strategy + low SERP competition → good long-term bet
-- Rising Google Trends query in your pillar → early mover advantage
-- GA4 declining page → refresh opportunity (easier than new content)
+- GSC opportunities (high impressions, position 5-20, low CTR) — highest priority
+- Rising GSC queries
+- Strategy quick wins and content gaps
+- Competitor angles only if they add a distinct keyword
 
 For each research_brief include:
 - Main angle/hook (what makes this different from what competitors already wrote)
 - 4-6 subtopics/sections
 - Target reader pain point
 - Competitive insight (who ranks, their weakness)
-- Suggested word count (800-2500)"""
+- Suggested word count (800-2500)
+
+CRITICAL: You MUST call save_topic at least 3 times. If analytics data is sparse, use strategy quick wins."""
 
 
 class ResearchAgent(BaseAgent):
-    def run_research(self) -> None:
+    def run_research(self) -> int:
+        """Run research and return number of topics added to the queue."""
+        from rich.console import Console
+        console = Console()
+
         strategy = get_active_strategy()
         strategy_context = _format_strategy(strategy)
+        queued_before = len(get_all_topics(status="queued"))
 
+        console.print("[bold]Fetching GSC + GA4 data...[/bold]")
+        signals = fetch_research_signals()
+        if signals.errors:
+            for err in signals.errors:
+                console.print(f"  [yellow]Analytics warning:[/yellow] {err}")
+        console.print(
+            f"  GSC: {len(signals.gsc_queries)} queries, "
+            f"{len(signals.gsc_opportunities)} opportunities | "
+            f"GA4: {len(signals.ga4_top_pages)} pages, "
+            f"{len(signals.ga4_top_blog_pages)} blog pages"
+        )
+
+        analytics_block = signals.summary_for_prompt()
         system = SYSTEM.format(
             niche=config.BLOG_NICHE or "general topics",
             audience=config.TARGET_AUDIENCE,
             strategy_context=strategy_context,
         )
         prompt = (
-            f"Research and find 3-5 high-potential blog topics for a '{config.BLOG_NICHE or 'general'}' blog. "
-            f"Check competitors for new posts, use keyword discovery for un-indexed topics, "
-            f"and validate competition level before saving each topic."
+            f"Research and find 3-5 high-potential blog topics for a '{config.BLOG_NICHE or 'general'}' blog.\n\n"
+            f"{analytics_block}\n\n"
+            "Use the pre-fetched GSC/GA4 data above as your primary source. "
+            "Validate with analyze_serp if needed, then call save_topic for each final topic."
         )
         self.run(prompt, system, TOOLS, max_iterations=25)
+
+        queued_after = len(get_all_topics(status="queued"))
+        added = queued_after - queued_before
+        if added < 2:
+            console.print(
+                f"[yellow]LLM saved {added} topic(s) — seeding from GSC/GA4/strategy fallback...[/yellow]"
+            )
+            seeded = seed_topics_from_signals(signals, strategy, min_topics=3)
+            queued_after = len(get_all_topics(status="queued"))
+            added = queued_after - queued_before
+            if seeded:
+                console.print(f"  [green]Fallback seeded {len(seeded)} topic(s)[/green]")
+
+        return max(added, 0)
 
     def _execute_tool(self, name: str, inputs: dict):
         if name == "web_search":

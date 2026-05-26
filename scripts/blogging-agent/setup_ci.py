@@ -31,6 +31,9 @@ def main() -> None:
     if not openai_key:
         raise SystemExit("ERROR: OPENAI_API_KEY secret is empty or not set. Add it in Settings → Secrets.")
 
+    gsc_site = (os.environ.get("GSC_SITE_URL") or "sc-domain:changeimageto.com").strip()
+    ga4_property = (os.environ.get("GA4_PROPERTY_ID") or "505035310").strip()
+
     env_lines = [
         f"PROVIDER={os.environ.get('BLOG_PROVIDER', 'openai')}",
         f"OPENAI_API_KEY={openai_key}",
@@ -44,8 +47,8 @@ def main() -> None:
         f"PUBLISHER=changeimageto",
         f"REPO_DIR={PROJECT_ROOT}",
         f"CONTENT_DIR=frontend/blog",
-        f"GSC_SITE_URL={os.environ.get('GSC_SITE_URL', 'sc-domain:changeimageto.com')}",
-        f"GA4_PROPERTY_ID={os.environ.get('GA4_PROPERTY_ID', '505035310')}",
+        f"GSC_SITE_URL={gsc_site}",
+        f"GA4_PROPERTY_ID={ga4_property}",
         f"GOOGLE_CREDENTIALS_FILE={cred_path}",
         f"CORRECTION_AUTO_MODE={os.environ.get('CORRECTION_AUTO_MODE', 'true')}",
         f"MAX_ARTICLES_PER_DAY={os.environ.get('MAX_ARTICLES_PER_DAY', '1')}",
@@ -53,6 +56,8 @@ def main() -> None:
     ]
     (AGENT_DIR / ".env").write_text("\n".join(env_lines) + "\n")
     print(f"Configured blogging-agent at {AGENT_DIR}")
+    print(f"  GSC_SITE_URL={gsc_site}")
+    print(f"  GA4_PROPERTY_ID={ga4_property}")
 
 
 if __name__ == "__main__":

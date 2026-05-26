@@ -34,12 +34,16 @@ jobs:
         env:
           GA4_CREDENTIALS_JSON: ${{ secrets.GA4_CREDENTIALS_JSON }}
           GSC_CREDENTIALS_JSON: ${{ secrets.GSC_CREDENTIALS_JSON }}
-          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
-          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID || '505035310' }}
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL || 'sc-domain:changeimageto.com' }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           BLOG_PROVIDER: ${{ vars.BLOG_PROVIDER || 'openai' }}
           BLOG_APPROVAL_MODE: auto
         run: python scripts/blogging-agent/setup_ci.py
+
+      - name: Verify GSC + GA4 connectivity
+        working-directory: scripts/blogging-agent
+        run: python verify_analytics.py
 
       - name: Seed post memory
         working-directory: scripts/blogging-agent

@@ -48,9 +48,14 @@ def _client():
 
 
 def run_research():
+    from storage.db import get_all_topics
     console.print("\n[bold blue]Research Agent[/bold blue] — finding topics...")
-    ResearchAgent(_client()).run_research()
-    console.print("[green]Done. Topics saved to queue.[/green]")
+    added = ResearchAgent(_client()).run_research()
+    queued = len(get_all_topics(status="queued"))
+    if added:
+        console.print(f"[green]Added {added} topic(s). Queue now has {queued}.[/green]")
+    else:
+        console.print(f"[yellow]No new topics added. Queue has {queued}.[/yellow]")
 
 
 def run_write(topic_id: int = None):
