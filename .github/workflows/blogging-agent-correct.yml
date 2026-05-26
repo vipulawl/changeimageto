@@ -1,0 +1,59 @@
+# Weekly self-correction for underperforming blog posts
+name: Blogging Agent — Correct
+
+on:
+  schedule:
+    - cron: "0 11 * * 1"  # Monday 11am UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: blog-correct
+  cancel-in-progress: false
+
+jobs:
+  correct:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/blogging-agent/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/blogging-agent/requirements.txt
+
+      - name: Configure credentials
+        env:
+          GA4_CREDENTIALS_JSON: ${{ secrets.GA4_CREDENTIALS_JSON }}
+          GSC_CREDENTIALS_JSON: ${{ secrets.GSC_CREDENTIALS_JSON }}
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          BLOG_PROVIDER: ${{ vars.BLOG_PROVIDER || 'openai' }}
+          BLOG_APPROVAL_MODE: auto
+          CORRECTION_AUTO_MODE: "true"
+        run: python scripts/blogging-agent/setup_ci.py
+
+      - name: Configure git
+        run: |
+          git config user.name "Blogging Agent"
+          git config user.email "bot@noreply.github.com"
+
+      - name: Run correction
+        working-directory: scripts/blogging-agent
+        run: python main.py correct
+
+      - name: Persist agent state
+        if: always()
+        run: |
+          git add -f scripts/blogging-agent/blogging_agent.db 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "chore: blogging agent correct state [skip ci]" && git push || true

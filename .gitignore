@@ -1,1 +1,9 @@
 .vercel
+.venv-mcp
+scripts/mcp-backlink-for-seo/.venv/
+scripts/seo-agent/config.local.yaml
+scripts/seo-agent/seo_agent_state.db
+scripts/seo-agent/last_run.txt
+scripts/blogging-agent/.env
+scripts/blogging-agent/google-credentials.json
+scripts/blogging-agent/.venv/

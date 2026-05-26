@@ -1,0 +1,78 @@
+# Smart scheduler — evaluates GSC signals and triggers research or write
+name: Blogging Agent — Scheduler
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"  # Every 6 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: blog-scheduler
+  cancel-in-progress: false
+
+jobs:
+  schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/blogging-agent/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/blogging-agent/requirements.txt
+
+      - name: Configure credentials
+        env:
+          GA4_CREDENTIALS_JSON: ${{ secrets.GA4_CREDENTIALS_JSON }}
+          GSC_CREDENTIALS_JSON: ${{ secrets.GSC_CREDENTIALS_JSON }}
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          BLOG_PROVIDER: ${{ vars.BLOG_PROVIDER || 'openai' }}
+          BLOG_APPROVAL_MODE: auto
+          MAX_ARTICLES_PER_DAY: ${{ vars.MAX_ARTICLES_PER_DAY || '1' }}
+          MIN_QUEUE_SIZE: ${{ vars.MIN_QUEUE_SIZE || '2' }}
+        run: python scripts/blogging-agent/setup_ci.py
+
+      - name: Configure git
+        run: |
+          git config user.name "Blogging Agent"
+          git config user.email "bot@noreply.github.com"
+
+      - name: Seed post memory
+        working-directory: scripts/blogging-agent
+        run: python seed_memory.py
+
+      - name: Evaluate schedule
+        id: sched
+        working-directory: scripts/blogging-agent
+        run: |
+          python main.py schedule --json > /tmp/schedule.json
+          cat /tmp/schedule.json
+          echo "decision=$(python -c "import json; print(json.load(open('/tmp/schedule.json')).get('decision','wait'))")" >> $GITHUB_OUTPUT
+
+      - name: Run research
+        if: steps.sched.outputs.decision == 'research'
+        working-directory: scripts/blogging-agent
+        run: python main.py research
+
+      - name: Run write
+        if: steps.sched.outputs.decision == 'publish'
+        working-directory: scripts/blogging-agent
+        run: python main.py write
+
+      - name: Persist agent state
+        if: always()
+        run: |
+          git add -f scripts/blogging-agent/blogging_agent.db 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "chore: blogging agent scheduler state [skip ci]" && git push || true
