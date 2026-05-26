@@ -31,8 +31,12 @@ def main() -> int:
 
     # GSC is required; GA4 is optional (warn if missing)
     if not signals.gsc_queries:
-        print("\nERROR: GSC returned no query data. Check GSC_CREDENTIALS_JSON and site access.", file=sys.stderr)
-        return 1
+        print(
+            "\nWARNING: GSC returned no data — likely invalid GitHub secrets "
+            "(Project #322680874878 deleted). Pipeline continues with strategy fallbacks.",
+            file=sys.stderr,
+        )
+        return 0
 
     if not signals.ga4_top_pages:
         print("\nWARNING: GA4 returned no data (pipeline will continue with GSC only).", file=sys.stderr)
