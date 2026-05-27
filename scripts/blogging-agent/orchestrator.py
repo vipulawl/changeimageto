@@ -84,12 +84,14 @@ def run_write(topic_id: int = None):
     )
 
     console.print("[bold blue]Writer Agent[/bold blue] — writing article...")
-    WriterAgent(_client()).write_article(topic)
+    saved = WriterAgent(_client()).write_article(topic)
+    if not saved:
+        console.print(
+            "[red]Writer finished without saving a draft (model did not call save_draft).[/red]"
+        )
+        return
 
     draft = get_latest_draft_for_topic(topic["id"])
-    if not draft:
-        console.print("[red]Writer did not save a draft. Check API key and try again.[/red]")
-        return
 
     draft["keyword"] = topic["keyword"]
     draft["research_brief"] = topic.get("research_brief", "")
