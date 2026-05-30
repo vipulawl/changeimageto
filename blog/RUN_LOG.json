@@ -1,0 +1,93 @@
+{
+  "_meta": {
+    "description": "Daily blogging agent run log. One entry per scheduled run. Written by the agent after every execution.",
+    "last_updated": "2026-05-30",
+    "total_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0
+  },
+  "runs": [
+    {
+      "run_id": "2026-05-30",
+      "date": "2026-05-30",
+      "started_at": "2026-05-30T07:30:00Z",
+      "completed_at": "2026-05-30T08:16:17Z",
+      "duration_minutes": 46,
+      "status": "success",
+      "action_type": "UPDATE",
+      "priority_level": "A",
+      "article_slug": "free-photoshop-alternatives",
+      "article_title": "Free Photoshop Alternatives in 2026 (Online & Desktop)",
+      "target_keyword": "free photoshop alternatives",
+      "cluster": "comparisons-alternatives",
+      "gsc_signal": { "position": 52.52, "impressions": 3255, "clicks": 1, "ctr": 0.03 },
+      "pr_url": "https://github.com/vipulawl/changeimageto/pull/4",
+      "pr_number": 4,
+      "article_size_bytes": 21612,
+      "steps": [
+        {
+          "step": 1, "name": "Load Content Log", "status": "success",
+          "tool_calls": [
+            { "tool": "bash: cat ~/changeimageto_github_token.txt", "status": "failed", "reason": "Token file not found" },
+            { "tool": "GITHUB_GET_REPOSITORY_CONTENT (Composio)", "status": "success", "result": "16 articles, 25654 bytes" }
+          ],
+          "result": "16 articles loaded",
+          "issues": ["GitHub token not found — fell back to Composio"]
+        },
+        {
+          "step": 2, "name": "Pull GSC Data", "status": "success",
+          "tool_calls": [
+            { "tool": "get_seo_snapshot", "status": "success", "result": "172 clicks, 2145 impr, pos 10.43" },
+            { "tool": "find_ranking_opportunities", "status": "success", "result": "12 opportunities" },
+            { "tool": "find_ctr_opportunities", "status": "success", "result": "2 opportunities" }
+          ],
+          "result": "GSC data loaded",
+          "issues": []
+        },
+        {
+          "step": 3, "name": "Pick Topic & Research", "status": "success",
+          "tool_calls": [
+            { "tool": "WebSearch: free photoshop alternatives 2026", "status": "success", "result": "9 results" },
+            { "tool": "WebSearch: free photoshop alternatives no download", "status": "success", "result": "10 results" }
+          ],
+          "result": "Priority A UPDATE: free-photoshop-alternatives (pos 52.52, 3255 impr)",
+          "issues": ["Live page fetch blocked by proxy — audited via web search"]
+        },
+        {
+          "step": 4, "name": "Write Article HTML", "status": "success",
+          "tool_calls": [
+            { "tool": "Write: free-photoshop-alternatives.html", "status": "success", "result": "21612 bytes" }
+          ],
+          "result": "Full rewrite: Article + FAQPage JSON-LD, 5 tool cards, comparison table, 6 FAQs, 3 internal links",
+          "issues": []
+        },
+        {
+          "step": 5, "name": "Push to GitHub & Open PR", "status": "success",
+          "tool_calls": [
+            { "tool": "bash: curl GitHub API", "status": "failed", "reason": "Proxy 403 blocked-by-allowlist" },
+            { "tool": "Composio MANAGE_CONNECTIONS (OAuth attempt 1)", "status": "failed", "reason": "Not completed by user" },
+            { "tool": "Composio MANAGE_CONNECTIONS (OAuth attempt 2)", "status": "failed", "reason": "Not completed by user" },
+            { "tool": "Composio MANAGE_CONNECTIONS (OAuth attempt 3)", "status": "success", "result": "OAuth completed" },
+            { "tool": "GITHUB_GET_REPOSITORY_CONTENT (CONTENT_LOG.json)", "status": "success", "result": "SHA: 4bdc26a" },
+            { "tool": "GITHUB_COMMIT_MULTIPLE_FILES (article)", "status": "success", "result": "commit aba20e8" },
+            { "tool": "GITHUB_COMMIT_MULTIPLE_FILES (CONTENT_LOG)", "status": "success", "result": "commit 2270e70" },
+            { "tool": "GITHUB_CREATE_A_PULL_REQUEST", "status": "success", "result": "PR #4" }
+          ],
+          "result": "PR #4 opened: https://github.com/vipulawl/changeimageto/pull/4",
+          "issues": [
+            "Bash proxy blocks GitHub API — cannot use curl for GitHub",
+            "Composio GitHub OAuth needed manual re-auth — caused ~30 min delay",
+            "Fix: save token at ~/changeimageto_github_token.txt to skip OAuth"
+          ]
+        }
+      ],
+      "summary": {
+        "total_tool_calls": 14,
+        "successful_tool_calls": 9,
+        "failed_tool_calls": 5,
+        "key_blocker": "Composio GitHub OAuth not pre-authorized",
+        "fix_recommendation": "Save GitHub personal access token at ~/changeimageto_github_token.txt"
+      }
+    }
+  ]
+}
