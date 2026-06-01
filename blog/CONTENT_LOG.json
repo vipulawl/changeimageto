@@ -1,1 +1,21 @@
-LOG_PLACEHOLDER
+{
+  "_meta": {
+    "description": "Single source of truth for changeimageto.com content strategy.",
+    "last_updated": "2026-06-01",
+    "last_strategy_review": "2026-05-29",
+    "total_articles": 16,
+    "next_strategy_review": "2026-06-05"
+  },
+  "strategy_notes": [
+    {"date": "2026-05-29", "author": "initial-setup", "note": "Bootstrap. 16 articles mapped. Urgent rewrites: free-photoshop-alternatives (pos 52, 3.4k impr) and change-image-background-color-online (pos 64, 1.5k impr)."},
+    {"date": "2026-05-31", "author": "daily-writer", "note": "Rewrote free-photoshop-alternatives: title updated to 2026, added Affinity Photo 2 (now free), expanded to 8 tools, added FAQ + JSON-LD schemas, fixed meta. CTR was 0.03%."},
+    {"date": "2026-06-01", "author": "daily-writer", "note": "Rewrote change-image-background-color-online: expanded from ~200 words to 1,200+, added color grid with 4 tool links, 7 FAQ + JSON-LD schemas, white/blue/orange/custom sections, tips. Was pos 63, 1,587 impr, 1 click, 0.06% CTR."}
+  ],
+  "articles": [
+    {"slug": "free-photoshop-alternatives", "title": "Best Free Photoshop Alternatives 2026 (No Subscription Needed)", "target_keyword": "free photoshop alternatives", "cluster": "comparisons-alternatives", "type": "pillar", "published": "2025-09-01", "last_updated": "2026-05-31", "gsc_position": 52.53, "gsc_impressions": 3483, "status": "published", "health": "updated", "notes": "Full rewrite May 2026: title updated to 2026, added Affinity Photo 2 (now free), FAQ+schema, 8 tools, fixed meta."},
+    {"slug": "how-to-blur-image-in-paint", "title": "How to Blur Image in Paint", "target_keyword": "how to blur image in paint", "cluster": "image-blur", "type": "pillar", "published": "2025-09-01", "last_updated": "2025-09-01", "gsc_position": 7.81, "gsc_impressions": 3975, "status": "published", "health": "good"},
+    {"slug": "detect-jpeg-compression-artifacts-python", "title": "Detect JPEG Compression Artifacts (Python)", "target_keyword": "detect jpeg compression artifacts python", "cluster": "image-quality", "type": "spoke", "published": "2025-09-01", "last_updated": "2025-09-01", "gsc_position": 6.03, "gsc_impressions": 86, "status": "published", "health": "good"},
+    {"slug": "change-image-background-color-online", "title": "Change Image Background Color Online Free", "target_keyword": "change image background color online", "cluster": "background-color-change", "type": "spoke", "published": "2025-09-01", "last_updated": "2026-06-01", "gsc_position": 63.13, "gsc_impressions": 1587, "status": "published", "health": "updated", "notes": "Full rewrite June 2026: expanded to 1,200+ words, 7 FAQs + JSON-LD schema, color grid with internal links to white/blue/orange/custom tool pages, tips section.", "semantic_siblings": ["change background color of image online", "replace image background color free", "change photo background color online", "background color changer online", "swap image background color"]},
+    {"slug": "how-to-blur-image-in-figma", "title": "How to Blur Image in Figma", "target_keyword": "how to blur image in figma", "cluster": "image-blur", "type": "spoke", "published": "2025-09-01", "last_updated": "2025-09-01", "gsc_position": 9.13, "gsc_impressions": 15, "status": "published", "health": "low-volume"}
+  ]
+}
