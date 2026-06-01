@@ -1,1 +1,438 @@
-{"_meta":{"total_runs":1,"successful_runs":1,"failed_runs":0,"last_updated":"2026-05-31"},"runs":[{"run_id":"2026-05-31","date":"2026-05-31","started_at":"2026-05-31T07:19:14Z","completed_at":"2026-05-31T07:42:00Z","duration_minutes":23,"status":"success","action_type":"UPDATE","priority_level":"A","article_slug":"free-photoshop-alternatives","article_title":"Best Free Photoshop Alternatives 2026 (No Subscription Needed)","target_keyword":"free photoshop alternatives","cluster":"comparisons-alternatives","gsc_signal":{"position":52.53,"impressions":3483,"clicks":1,"ctr":0.03},"pr_url":"https://github.com/vipulawl/changeimageto/pull/5","pr_number":5,"article_size_bytes":27000,"steps":[{"step":1,"name":"Load Content Log","status":"success","llm_calls":1,"token_estimates":{"input_chars":24000,"output_chars":800,"input_tokens_est":6000,"output_tokens_est":200,"total_tokens_est":6200},"tool_calls":[{"tool":"GITHUB_GET_FILE_CONTENTS","status":"success","result":"16 articles loaded"}],"result":"16 articles loaded from CONTENT_LOG.json","issues":[]},{"step":2,"name":"Pull GSC Data","status":"success","llm_calls":3,"token_estimates":{"input_chars":32000,"output_chars":1200,"input_tokens_est":8000,"output_tokens_est":300,"total_tokens_est":8300},"tool_calls":[{"tool":"get_seo_snapshot","status":"success","result":"2,189 total impressions"},{"tool":"find_ranking_opportunities","status":"success","result":"14 opportunities"},{"tool":"find_ctr_opportunities","status":"success","result":"2 CTR gaps"}],"result":"free-photoshop-alternatives confirmed: pos 52.53, 3483 impr, CTR 0.03%","issues":[]},{"step":3,"name":"Pick Topic","status":"success","llm_calls":1,"token_estimates":{"input_chars":2000,"output_chars":500,"input_tokens_est":500,"output_tokens_est":125,"total_tokens_est":625},"tool_calls":[],"result":"Priority A: UPDATE free-photoshop-alternatives. No cannibalization risk.","issues":[]},{"step":4,"name":"Research Competitors","status":"success","llm_calls":2,"token_estimates":{"input_chars":8000,"output_chars":1000,"input_tokens_est":2000,"output_tokens_est":250,"total_tokens_est":2250},"tool_calls":[{"tool":"WebSearch","status":"success","result":"Competitors cover 8-13 tools; Affinity Photo 2 now free is key gap"},{"tool":"GITHUB_GET_FILE_CONTENTS","status":"success","result":"Current article: 2024 title, 4 tools, no FAQ, no schema"}],"result":"Root causes identified: stale 2024 title, 4 tools, no FAQ, no schema, missing Affinity Photo 2","issues":[]},{"step":5,"name":"Write Article HTML","status":"success","llm_calls":3,"token_estimates":{"input_chars":4000,"output_chars":33000,"input_tokens_est":1000,"output_tokens_est":8250,"total_tokens_est":9250},"tool_calls":[{"tool":"Write file","status":"success","result":"33379 bytes"}],"result":"Rewrite complete: 8 tools, comparison table, 6-question FAQ, Article+FAQPage JSON-LD","issues":[]},{"step":6,"name":"Push to GitHub & Open PR","status":"success","llm_calls":3,"token_estimates":{"input_chars":5000,"output_chars":35000,"input_tokens_est":1250,"output_tokens_est":8750,"total_tokens_est":10000},"tool_calls":[{"tool":"mcp__github__create_branch","status":"failed","result":"403 read-only integration"},{"tool":"COMPOSIO.GITHUB_COMMIT_MULTIPLE_FILES","status":"success","result":"Branch created, 2 files committed"},{"tool":"COMPOSIO.GITHUB_CREATE_A_PULL_REQUEST","status":"success","result":"PR #5: https://github.com/vipulawl/changeimageto/pull/5"}],"result":"PR #5 opened","issues":["GitHub MCP read-only; used Composio fallback"]},{"step":7,"name":"Update Content Log","status":"success","llm_calls":1,"token_estimates":{"input_chars":2000,"output_chars":24000,"input_tokens_est":500,"output_tokens_est":6000,"total_tokens_est":6500},"tool_calls":[{"tool":"COMPOSIO.GITHUB_COMMIT_MULTIPLE_FILES","status":"success","result":"CONTENT_LOG.json updated in same commit"}],"result":"Content log updated","issues":[]}],"summary":{"total_tool_calls":10,"successful_tool_calls":9,"failed_tool_calls":1,"total_llm_calls":14,"token_summary":{"estimated_total_input":19250,"estimated_total_output":23875,"estimated_total":43125,"note":"Estimates via character count / 4."},"key_blocker":"GitHub MCP read-only (403) — Composio fallback worked","fix_recommendation":"Add GitHub PAT at /sessions/wonderful-practical-cray/mnt/outputs/changeimageto_github_token.txt"}}]}
+{
+  "_meta": {
+    "total_runs": 2,
+    "successful_runs": 2,
+    "failed_runs": 0,
+    "last_updated": "2026-06-01"
+  },
+  "runs": [
+    {
+      "run_id": "2026-05-31",
+      "date": "2026-05-31",
+      "started_at": "2026-05-31T07:19:14Z",
+      "completed_at": "2026-05-31T07:42:00Z",
+      "duration_minutes": 23,
+      "status": "success",
+      "action_type": "UPDATE",
+      "priority_level": "A",
+      "article_slug": "free-photoshop-alternatives",
+      "article_title": "Best Free Photoshop Alternatives 2026 (No Subscription Needed)",
+      "target_keyword": "free photoshop alternatives",
+      "cluster": "comparisons-alternatives",
+      "gsc_signal": {
+        "position": 52.53,
+        "impressions": 3483,
+        "clicks": 1,
+        "ctr": 0.03
+      },
+      "pr_url": "https://github.com/vipulawl/changeimageto/pull/5",
+      "pr_number": 5,
+      "article_size_bytes": 27000,
+      "steps": [
+        {
+          "step": 1,
+          "name": "Load Content Log",
+          "status": "success",
+          "llm_calls": 1,
+          "token_estimates": {
+            "input_chars": 24000,
+            "output_chars": 800,
+            "input_tokens_est": 6000,
+            "output_tokens_est": 200,
+            "total_tokens_est": 6200
+          },
+          "tool_calls": [
+            {
+              "tool": "GITHUB_GET_FILE_CONTENTS",
+              "status": "success",
+              "result": "16 articles loaded"
+            }
+          ],
+          "result": "16 articles loaded from CONTENT_LOG.json",
+          "issues": []
+        },
+        {
+          "step": 2,
+          "name": "Pull GSC Data",
+          "status": "success",
+          "llm_calls": 3,
+          "token_estimates": {
+            "input_chars": 32000,
+            "output_chars": 1200,
+            "input_tokens_est": 8000,
+            "output_tokens_est": 300,
+            "total_tokens_est": 8300
+          },
+          "tool_calls": [
+            {
+              "tool": "get_seo_snapshot",
+              "status": "success",
+              "result": "2,189 total impressions"
+            },
+            {
+              "tool": "find_ranking_opportunities",
+              "status": "success",
+              "result": "14 opportunities"
+            },
+            {
+              "tool": "find_ctr_opportunities",
+              "status": "success",
+              "result": "2 CTR gaps"
+            }
+          ],
+          "result": "free-photoshop-alternatives confirmed: pos 52.53, 3483 impr, CTR 0.03%",
+          "issues": []
+        },
+        {
+          "step": 3,
+          "name": "Pick Topic",
+          "status": "success",
+          "llm_calls": 1,
+          "token_estimates": {
+            "input_chars": 2000,
+            "output_chars": 500,
+            "input_tokens_est": 500,
+            "output_tokens_est": 125,
+            "total_tokens_est": 625
+          },
+          "tool_calls": [],
+          "result": "Priority A: UPDATE free-photoshop-alternatives. No cannibalization risk.",
+          "issues": []
+        },
+        {
+          "step": 4,
+          "name": "Research Competitors",
+          "status": "success",
+          "llm_calls": 2,
+          "token_estimates": {
+            "input_chars": 8000,
+            "output_chars": 1000,
+            "input_tokens_est": 2000,
+            "output_tokens_est": 250,
+            "total_tokens_est": 2250
+          },
+          "tool_calls": [
+            {
+              "tool": "WebSearch",
+              "status": "success",
+              "result": "Competitors cover 8-13 tools; Affinity Photo 2 now free is key gap"
+            },
+            {
+              "tool": "GITHUB_GET_FILE_CONTENTS",
+              "status": "success",
+              "result": "Current article: 2024 title, 4 tools, no FAQ, no schema"
+            }
+          ],
+          "result": "Root causes identified: stale 2024 title, 4 tools, no FAQ, no schema, missing Affinity Photo 2",
+          "issues": []
+        },
+        {
+          "step": 5,
+          "name": "Write Article HTML",
+          "status": "success",
+          "llm_calls": 3,
+          "token_estimates": {
+            "input_chars": 4000,
+            "output_chars": 33000,
+            "input_tokens_est": 1000,
+            "output_tokens_est": 8250,
+            "total_tokens_est": 9250
+          },
+          "tool_calls": [
+            {
+              "tool": "Write file",
+              "status": "success",
+              "result": "33379 bytes"
+            }
+          ],
+          "result": "Rewrite complete: 8 tools, comparison table, 6-question FAQ, Article+FAQPage JSON-LD",
+          "issues": []
+        },
+        {
+          "step": 6,
+          "name": "Push to GitHub & Open PR",
+          "status": "success",
+          "llm_calls": 3,
+          "token_estimates": {
+            "input_chars": 5000,
+            "output_chars": 35000,
+            "input_tokens_est": 1250,
+            "output_tokens_est": 8750,
+            "total_tokens_est": 10000
+          },
+          "tool_calls": [
+            {
+              "tool": "mcp__github__create_branch",
+              "status": "failed",
+              "result": "403 read-only integration"
+            },
+            {
+              "tool": "COMPOSIO.GITHUB_COMMIT_MULTIPLE_FILES",
+              "status": "success",
+              "result": "Branch created, 2 files committed"
+            },
+            {
+              "tool": "COMPOSIO.GITHUB_CREATE_A_PULL_REQUEST",
+              "status": "success",
+              "result": "PR #5: https://github.com/vipulawl/changeimageto/pull/5"
+            }
+          ],
+          "result": "PR #5 opened",
+          "issues": [
+            "GitHub MCP read-only; used Composio fallback"
+          ]
+        },
+        {
+          "step": 7,
+          "name": "Update Content Log",
+          "status": "success",
+          "llm_calls": 1,
+          "token_estimates": {
+            "input_chars": 2000,
+            "output_chars": 24000,
+            "input_tokens_est": 500,
+            "output_tokens_est": 6000,
+            "total_tokens_est": 6500
+          },
+          "tool_calls": [
+            {
+              "tool": "COMPOSIO.GITHUB_COMMIT_MULTIPLE_FILES",
+              "status": "success",
+              "result": "CONTENT_LOG.json updated in same commit"
+            }
+          ],
+          "result": "Content log updated",
+          "issues": []
+        }
+      ],
+      "summary": {
+        "total_tool_calls": 10,
+        "successful_tool_calls": 9,
+        "failed_tool_calls": 1,
+        "total_llm_calls": 14,
+        "token_summary": {
+          "estimated_total_input": 19250,
+          "estimated_total_output": 23875,
+          "estimated_total": 43125,
+          "note": "Estimates via character count / 4."
+        },
+        "key_blocker": "GitHub MCP read-only (403) \u2014 Composio fallback worked",
+        "fix_recommendation": "Add GitHub PAT at /sessions/wonderful-practical-cray/mnt/outputs/changeimageto_github_token.txt"
+      }
+    },
+    {
+      "run_id": "2026-06-01",
+      "date": "2026-06-01",
+      "started_at": "2026-06-01T07:03:09Z",
+      "completed_at": "2026-06-01T07:17:04Z",
+      "duration_minutes": 14,
+      "status": "success",
+      "action_type": "UPDATE",
+      "priority_level": "A",
+      "article_slug": "change-image-background-color-online",
+      "article_title": "Change Image Background Color Online Free",
+      "target_keyword": "change image background color online",
+      "cluster": "background-color-change",
+      "gsc_signal": {
+        "position": 63.13,
+        "impressions": 1587,
+        "clicks": 1,
+        "ctr": 0.0006
+      },
+      "pr_url": "https://github.com/vipulawl/changeimageto/pull/6",
+      "pr_number": 6,
+      "article_size_bytes": 15641,
+      "steps": [
+        {
+          "step": 1,
+          "name": "Load Content Log",
+          "status": "success",
+          "llm_calls": 1,
+          "token_estimates": {
+            "input_chars": 3800,
+            "output_chars": 800,
+            "input_tokens_est": 950,
+            "output_tokens_est": 200,
+            "total_tokens_est": 1150
+          },
+          "tool_calls": [
+            {
+              "tool": "GITHUB_GET_REPOSITORY_CONTENT",
+              "status": "success",
+              "result": "5 articles loaded"
+            }
+          ],
+          "result": "5 articles loaded; change-image-background-color-online flagged as NEXT URGENT REWRITE (pos 63.13, 1587 impr)",
+          "issues": []
+        },
+        {
+          "step": 2,
+          "name": "Pull GSC Data",
+          "status": "success",
+          "llm_calls": 2,
+          "token_estimates": {
+            "input_chars": 18000,
+            "output_chars": 400,
+            "input_tokens_est": 4500,
+            "output_tokens_est": 100,
+            "total_tokens_est": 4600
+          },
+          "tool_calls": [
+            {
+              "tool": "get_seo_snapshot",
+              "status": "success",
+              "result": "185 clicks, 2145 impr, avg pos 11.9"
+            },
+            {
+              "tool": "find_ranking_opportunities",
+              "status": "skipped",
+              "result": "Not needed \u2014 Priority A already clear"
+            },
+            {
+              "tool": "find_ctr_opportunities",
+              "status": "skipped",
+              "result": "Not needed \u2014 Priority A already clear"
+            }
+          ],
+          "result": "Confirmed: blog/change-image-background-color-online pos 63.13, 1587 impr, 1 click, 0.06% CTR",
+          "issues": []
+        },
+        {
+          "step": 3,
+          "name": "Pick Topic",
+          "status": "success",
+          "llm_calls": 1,
+          "token_estimates": {
+            "input_chars": 2000,
+            "output_chars": 600,
+            "input_tokens_est": 500,
+            "output_tokens_est": 150,
+            "total_tokens_est": 650
+          },
+          "tool_calls": [],
+          "result": "Priority A: UPDATE change-image-background-color-online. Cannibalization check passed \u2014 no existing article overlaps.",
+          "issues": []
+        },
+        {
+          "step": 4,
+          "name": "Research Competitors",
+          "status": "success",
+          "llm_calls": 2,
+          "token_estimates": {
+            "input_chars": 12000,
+            "output_chars": 800,
+            "input_tokens_est": 3000,
+            "output_tokens_est": 200,
+            "total_tokens_est": 3200
+          },
+          "tool_calls": [
+            {
+              "tool": "COMPOSIO_SEARCH_WEB (competitor landscape)",
+              "status": "success",
+              "result": "Fotor, PxBee, ImageFk, Pixelbin, WuTools identified"
+            },
+            {
+              "tool": "COMPOSIO_SEARCH_FETCH_URL_CONTENT",
+              "status": "success",
+              "result": "Existing article: ~200 words, 2 FAQs, no JSON-LD"
+            }
+          ],
+          "result": "Existing article critically thin. Gap: no color-specific sections, no FAQ schema, no internal linking to color tool pages.",
+          "issues": []
+        },
+        {
+          "step": 5,
+          "name": "Write Article HTML",
+          "status": "success",
+          "llm_calls": 3,
+          "token_estimates": {
+            "input_chars": 2000,
+            "output_chars": 60000,
+            "input_tokens_est": 500,
+            "output_tokens_est": 15000,
+            "total_tokens_est": 15500
+          },
+          "tool_calls": [
+            {
+              "tool": "mcp__workspace__bash (write article)",
+              "status": "success",
+              "result": "15641 bytes, 221 lines"
+            }
+          ],
+          "result": "Article written: 1,200+ words, 7 FAQs, FAQPage + Article JSON-LD, color grid, 5 internal tool links, 2 CTAs",
+          "issues": []
+        },
+        {
+          "step": 6,
+          "name": "Push to GitHub & Open PR",
+          "status": "success",
+          "llm_calls": 4,
+          "token_estimates": {
+            "input_chars": 5000,
+            "output_chars": 16000,
+            "input_tokens_est": 1250,
+            "output_tokens_est": 4000,
+            "total_tokens_est": 5250
+          },
+          "tool_calls": [
+            {
+              "tool": "GITHUB_COMMIT_MULTIPLE_FILES (placeholder \u2014 error)",
+              "status": "failed",
+              "result": "Pushed placeholder strings instead of file content"
+            },
+            {
+              "tool": "COMPOSIO_REMOTE_WORKBENCH (real content commit)",
+              "status": "success",
+              "result": "SHA 3fb3c3a37ec637bcaab5ba2428261df922452a5d, 15641 bytes article"
+            },
+            {
+              "tool": "GITHUB_CREATE_A_PULL_REQUEST",
+              "status": "success",
+              "result": "PR #6: https://github.com/vipulawl/changeimageto/pull/6"
+            }
+          ],
+          "result": "PR #6 opened: https://github.com/vipulawl/changeimageto/pull/6",
+          "issues": [
+            "First commit used placeholder strings \u2014 required Composio remote workbench to push real content"
+          ]
+        },
+        {
+          "step": 7,
+          "name": "Update Content Log",
+          "status": "success",
+          "llm_calls": 1,
+          "token_estimates": {
+            "input_chars": 3800,
+            "output_chars": 4200,
+            "input_tokens_est": 950,
+            "output_tokens_est": 1050,
+            "total_tokens_est": 2000
+          },
+          "tool_calls": [
+            {
+              "tool": "GITHUB_COMMIT_MULTIPLE_FILES (via workbench)",
+              "status": "success",
+              "result": "CONTENT_LOG.json updated on branch"
+            }
+          ],
+          "result": "Content log updated: last_updated 2026-06-01, health=updated, semantic_siblings added",
+          "issues": []
+        }
+      ],
+      "summary": {
+        "total_tool_calls": 11,
+        "successful_tool_calls": 8,
+        "failed_tool_calls": 3,
+        "total_llm_calls": 15,
+        "token_summary": {
+          "estimated_total_input": 11650,
+          "estimated_total_output": 20700,
+          "estimated_total": 32350,
+          "note": "Estimates via character count / 4. See Anthropic Console for exact daily totals."
+        },
+        "key_blocker": "GITHUB_COMMIT_MULTIPLE_FILES does not read file paths \u2014 content must be passed as inline strings in the tool call arguments",
+        "fix_recommendation": "Pre-load article HTML and JSON into Python variables before calling commit tool, or always use COMPOSIO_REMOTE_WORKBENCH for large file commits"
+      }
+    }
+  ]
+}
