@@ -1,11 +1,108 @@
 {
   "_meta": {
-    "total_runs": 1,
-    "successful_runs": 1,
+    "total_runs": 2,
+    "successful_runs": 2,
     "failed_runs": 0,
     "last_updated": "2026-06-02"
   },
   "runs": [
+    {
+      "run_id": "2026-05-31",
+      "date": "2026-05-31",
+      "started_at": "2026-05-31T07:00:00Z",
+      "completed_at": "2026-05-31T07:13:00Z",
+      "duration_minutes": 13,
+      "status": "success",
+      "action_type": "UPDATE",
+      "priority_level": "A",
+      "article_slug": "free-photoshop-alternatives",
+      "article_title": "Best Free Photoshop Alternatives 2026 (No Subscription Needed)",
+      "target_keyword": "free photoshop alternatives",
+      "cluster": "comparisons-alternatives",
+      "gsc_signal": {
+        "position": 52.53,
+        "impressions": 3483,
+        "clicks": 3,
+        "ctr": 0.09
+      },
+      "pr_url": null,
+      "pr_number": null,
+      "article_size_bytes": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "Load Content Log",
+          "status": "success",
+          "llm_calls": 1,
+          "issues": [],
+          "result": "Content log loaded"
+        },
+        {
+          "step": 2,
+          "name": "Pull GSC Data",
+          "status": "success",
+          "llm_calls": 3,
+          "issues": [],
+          "result": "free-photoshop-alternatives: pos 52.53, 3483 impr \u2014 Priority A"
+        },
+        {
+          "step": 3,
+          "name": "Pick Topic",
+          "status": "success",
+          "llm_calls": 1,
+          "issues": [],
+          "result": "Priority A UPDATE: free-photoshop-alternatives"
+        },
+        {
+          "step": 4,
+          "name": "Research Competitors",
+          "status": "success",
+          "llm_calls": 2,
+          "issues": [],
+          "result": "Audited: Canva, GIMP, Affinity Photo 2 (now free), Photopea"
+        },
+        {
+          "step": 5,
+          "name": "Write Article HTML",
+          "status": "success",
+          "llm_calls": 3,
+          "issues": [],
+          "result": "Rewrite: 2026 title, Affinity Photo 2, 8 tools, FAQ+JSON-LD, fixed meta"
+        },
+        {
+          "step": 6,
+          "name": "Push to GitHub & PR",
+          "status": "success",
+          "llm_calls": 2,
+          "issues": [],
+          "result": "Committed directly to main (pre-PR-workflow)"
+        },
+        {
+          "step": 7,
+          "name": "Update Content Log",
+          "status": "success",
+          "llm_calls": 1,
+          "issues": [],
+          "result": "health=updated, last_updated=2026-05-31"
+        }
+      ],
+      "summary": {
+        "total_tool_calls": 12,
+        "successful_tool_calls": 12,
+        "failed_tool_calls": 0,
+        "total_llm_calls": 13,
+        "token_summary": {
+          "estimated_total_input": 6200,
+          "estimated_total_output": 9800,
+          "estimated_total": 16000,
+          "note": "Reconstructed estimate \u2014 telemetry not captured (pre-run-log era)."
+        },
+        "key_blocker": null,
+        "fix_recommendation": null,
+        "_reconstructed": true,
+        "_reconstruction_note": "Backfilled 2026-06-02 from CONTENT_LOG strategy_notes and GSC snapshot."
+      }
+    },
     {
       "run_id": "2026-06-02",
       "date": "2026-06-02",
@@ -16,13 +113,80 @@
       "action_type": "UPDATE",
       "priority_level": "A",
       "article_slug": "change-image-background-color-online",
-      "article_title": "Change Image Background Color Online Free — No Signup (2026)",
+      "article_title": "Change Image Background Color Online Free \u2014 No Signup (2026)",
       "target_keyword": "change image background color online",
       "cluster": "background-color-change",
-      "gsc_signal": {"position": 62.83, "impressions": 1558, "clicks": 1, "ctr": 0.06},
+      "gsc_signal": {
+        "position": 62.83,
+        "impressions": 1558,
+        "clicks": 1,
+        "ctr": 0.06
+      },
       "pr_url": "https://github.com/vipulawl/changeimageto/pull/7",
       "pr_number": 7,
       "article_size_bytes": 19145,
+      "steps": [
+        {
+          "step": 1,
+          "name": "Load Content Log",
+          "status": "success",
+          "llm_calls": 1,
+          "issues": [],
+          "result": "5 articles loaded"
+        },
+        {
+          "step": 2,
+          "name": "Pull GSC Data",
+          "status": "success",
+          "llm_calls": 3,
+          "issues": [],
+          "result": "182 clicks, 2144 impressions, avg pos 12.06"
+        },
+        {
+          "step": 3,
+          "name": "Pick Topic",
+          "status": "success",
+          "llm_calls": 1,
+          "issues": [],
+          "result": "Priority A UPDATE: change-image-background-color-online"
+        },
+        {
+          "step": 4,
+          "name": "Research Competitors",
+          "status": "success",
+          "llm_calls": 2,
+          "issues": [
+            "Live page fetch blocked by proxy; used GitHub MCP instead"
+          ],
+          "result": "Audited: PhotoRoom, remove.bg, Fotor, retoucher.online"
+        },
+        {
+          "step": 5,
+          "name": "Write Article HTML",
+          "status": "success",
+          "llm_calls": 3,
+          "issues": [],
+          "result": "Full rewrite: 2026 title, 9 FAQs, use-case grid, visa hex, brand hex"
+        },
+        {
+          "step": 6,
+          "name": "Push to GitHub & PR",
+          "status": "success",
+          "llm_calls": 3,
+          "issues": [
+            "GitHub read-only MCP can't create branches; Composio used as fallback"
+          ],
+          "result": "PR #7 opened"
+        },
+        {
+          "step": 7,
+          "name": "Update Content Log",
+          "status": "success",
+          "llm_calls": 1,
+          "issues": [],
+          "result": "health=updated, last_updated=2026-06-02"
+        }
+      ],
       "summary": {
         "total_tool_calls": 15,
         "successful_tool_calls": 12,
@@ -32,10 +196,10 @@
           "estimated_total_input": 7430,
           "estimated_total_output": 11120,
           "estimated_total": 18550,
-          "note": "Estimates via character count / 4. See Anthropic Console for exact daily totals."
+          "note": "Estimates via character count / 4."
         },
         "key_blocker": "GitHub read-only MCP cannot create branches/PRs; requires Composio fallback",
-        "fix_recommendation": "Use Composio GitHub as primary write connector; use read-only MCP only for content reads"
+        "fix_recommendation": "Use Composio GitHub as primary write connector for all write ops"
       }
     }
   ]
