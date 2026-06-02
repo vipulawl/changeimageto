@@ -1,0 +1,42 @@
+{
+  "_meta": {
+    "total_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "last_updated": "2026-06-02"
+  },
+  "runs": [
+    {
+      "run_id": "2026-06-02",
+      "date": "2026-06-02",
+      "started_at": "2026-06-02T07:03:49Z",
+      "completed_at": "2026-06-02T07:12:30Z",
+      "duration_minutes": 9,
+      "status": "success",
+      "action_type": "UPDATE",
+      "priority_level": "A",
+      "article_slug": "change-image-background-color-online",
+      "article_title": "Change Image Background Color Online Free — No Signup (2026)",
+      "target_keyword": "change image background color online",
+      "cluster": "background-color-change",
+      "gsc_signal": {"position": 62.83, "impressions": 1558, "clicks": 1, "ctr": 0.06},
+      "pr_url": "https://github.com/vipulawl/changeimageto/pull/7",
+      "pr_number": 7,
+      "article_size_bytes": 19145,
+      "summary": {
+        "total_tool_calls": 15,
+        "successful_tool_calls": 12,
+        "failed_tool_calls": 3,
+        "total_llm_calls": 14,
+        "token_summary": {
+          "estimated_total_input": 7430,
+          "estimated_total_output": 11120,
+          "estimated_total": 18550,
+          "note": "Estimates via character count / 4. See Anthropic Console for exact daily totals."
+        },
+        "key_blocker": "GitHub read-only MCP cannot create branches/PRs; requires Composio fallback",
+        "fix_recommendation": "Use Composio GitHub as primary write connector; use read-only MCP only for content reads"
+      }
+    }
+  ]
+}
