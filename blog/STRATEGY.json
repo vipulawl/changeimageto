@@ -1,0 +1,412 @@
+{
+  "_meta": {
+    "last_updated": "2026-06-01",
+    "next_review": "2026-07-01",
+    "review_cycle_days": 30,
+    "strategy_version": 1,
+    "gsc_data_window_days": 28,
+    "total_clusters": 11,
+    "notes": "Initial strategy seeded from June 1 2026 GSC snapshot. image-quality is #1 \u2014 tool page at pos 9.6 with 7,748 impr. Refresh monthly via strategy-refresh task."
+  },
+  "product_summary": "changeimageto.com offers free online image tools: background removal, background color change (white, blue, orange, custom), image quality checker, blur background, resize for social media (Facebook, Instagram), Gemini watermark removal, text removal, image upscaling, compression, and format conversion. All tools are free with no signup required.",
+  "clusters": [
+    {
+      "id": "image-quality",
+      "priority_rank": 1,
+      "priority_score": 0.91,
+      "priority_reason": "Tool page at pos 9.6 with 7,748 impr (highest volume on site) \u2014 blog support builds topical authority while tool holds near page 1",
+      "tool_pages": [
+        "https://www.changeimageto.com/image-quality-checker.html"
+      ],
+      "gsc_head_position": 9.62,
+      "gsc_head_impressions": 7748,
+      "gsc_head_clicks": 170,
+      "gsc_head_ctr": 0.0219,
+      "blog_articles_count": 1,
+      "covered_spokes": [
+        "detect-jpeg-compression-artifacts-python"
+      ],
+      "missing_spokes": [
+        "how to check image resolution online free",
+        "what is a good image quality score",
+        "image quality vs file size",
+        "how to improve image quality online",
+        "image quality checker for printing",
+        "check image dpi online free",
+        "image quality tester for website",
+        "jpeg vs png quality comparison"
+      ],
+      "top_competitors": [
+        "allimagetools.com",
+        "pixlr.com",
+        "fotor.com"
+      ],
+      "competitor_gap": "Competitors cover quality checking but not quality interpretation \u2014 what does a score of 72 actually mean for your use case?",
+      "recommended_angle": "how-to"
+    },
+    {
+      "id": "social-media-resize",
+      "priority_rank": 2,
+      "priority_score": 0.78,
+      "priority_reason": "Two tool pages with combined 5,792 impr at pos 14\u201321 \u2014 both sitting just off page 1, blog content could pull them over",
+      "tool_pages": [
+        "https://www.changeimageto.com/resize-image-for-facebook.html",
+        "https://www.changeimageto.com/resize-image-for-instagram.html"
+      ],
+      "gsc_head_position": 14.51,
+      "gsc_head_impressions": 5792,
+      "gsc_head_clicks": 66,
+      "gsc_head_ctr": 0.011,
+      "blog_articles_count": 0,
+      "covered_spokes": [],
+      "missing_spokes": [
+        "facebook profile picture size 2026",
+        "instagram image size guide 2026",
+        "resize image for linkedin free",
+        "twitter image dimensions 2026",
+        "youtube thumbnail size free",
+        "resize image for etsy listing",
+        "social media image sizes cheat sheet",
+        "resize photo for passport online free"
+      ],
+      "top_competitors": [
+        "iloveimg.com",
+        "fotor.com",
+        "canva.com"
+      ],
+      "competitor_gap": "Competitors give static size tables but not an interactive tool that resizes in one click without signup",
+      "recommended_angle": "listicle"
+    },
+    {
+      "id": "gemini-watermark",
+      "priority_rank": 3,
+      "priority_score": 0.72,
+      "priority_reason": "Tool page at pos 19.2 with 1,458 impr and trending queries \u2014 early-mover opportunity in a fast-growing niche",
+      "tool_pages": [
+        "https://www.changeimageto.com/remove-gemini-watermark.html"
+      ],
+      "gsc_head_position": 19.18,
+      "gsc_head_impressions": 1458,
+      "gsc_head_clicks": 124,
+      "gsc_head_ctr": 0.085,
+      "blog_articles_count": 0,
+      "covered_spokes": [],
+      "missing_spokes": [
+        "how to remove gemini watermark free",
+        "gemini ai image watermark remover",
+        "remove google gemini logo from image",
+        "gemini watermark remover no signup",
+        "how to remove ai watermark from image online"
+      ],
+      "top_competitors": [],
+      "competitor_gap": "Almost no dedicated content exists for this query cluster \u2014 first-mover advantage available",
+      "recommended_angle": "how-to"
+    },
+    {
+      "id": "background-color-change",
+      "priority_rank": 4,
+      "priority_score": 0.69,
+      "priority_reason": "Multiple tool pages with 5,500+ combined impr but poor positions (18\u201336); blog just rewritten June 1 \u2014 let it settle before more spoke work",
+      "tool_pages": [
+        "https://www.changeimageto.com/change-image-background-to-white.html",
+        "https://www.changeimageto.com/change-image-background-to-blue.html",
+        "https://www.changeimageto.com/change-image-background-to-orange.html",
+        "https://www.changeimageto.com/change-image-background.html"
+      ],
+      "gsc_head_position": 22.53,
+      "gsc_head_impressions": 3495,
+      "gsc_head_clicks": 35,
+      "gsc_head_ctr": 0.01,
+      "blog_articles_count": 1,
+      "covered_spokes": [
+        "change-image-background-color-online"
+      ],
+      "missing_spokes": [
+        "change photo background to white for amazon",
+        "how to change background color in photoshop alternative",
+        "change background color to blue for id photo",
+        "remove white background from image online",
+        "change image background transparent online free"
+      ],
+      "top_competitors": [
+        "fotor.com",
+        "remove.bg",
+        "pixlr.com"
+      ],
+      "competitor_gap": "No competitor combines all color variants (white, blue, transparent) in one guide with internal links to dedicated tools",
+      "recommended_angle": "how-to"
+    },
+    {
+      "id": "background-removal",
+      "priority_rank": 5,
+      "priority_score": 0.61,
+      "priority_reason": "change-image-background.html at pos 36 with 3,028 impr \u2014 high volume but poor position, needs blog authority",
+      "tool_pages": [
+        "https://www.changeimageto.com/change-image-background.html"
+      ],
+      "gsc_head_position": 36.3,
+      "gsc_head_impressions": 3028,
+      "gsc_head_clicks": 17,
+      "gsc_head_ctr": 0.0056,
+      "blog_articles_count": 0,
+      "covered_spokes": [],
+      "missing_spokes": [
+        "how to change image background online free",
+        "remove background from photo without photoshop",
+        "best free background remover online",
+        "background remover for product photos",
+        "how to remove background from logo online"
+      ],
+      "top_competitors": [
+        "remove.bg",
+        "canva.com",
+        "adobe.com"
+      ],
+      "competitor_gap": "Major tools require signup; we can own the 'no signup, free, instant' angle",
+      "recommended_angle": "comparison"
+    },
+    {
+      "id": "image-blur",
+      "priority_rank": 6,
+      "priority_score": 0.58,
+      "priority_reason": "Blog pillar at pos 7.8 with 3,975 impr already performing well \u2014 spoke articles will amplify cluster authority",
+      "tool_pages": [
+        "https://www.changeimageto.com/blur-background.html"
+      ],
+      "gsc_head_position": 7.81,
+      "gsc_head_impressions": 3975,
+      "gsc_head_clicks": 42,
+      "gsc_head_ctr": 0.0106,
+      "blog_articles_count": 2,
+      "covered_spokes": [
+        "how-to-blur-image-in-paint",
+        "how-to-blur-image-in-figma"
+      ],
+      "missing_spokes": [
+        "how to blur background in photo online free",
+        "how to blur image in canva",
+        "how to blur face in photo online",
+        "blur part of image online free",
+        "how to blur background on iphone photo"
+      ],
+      "top_competitors": [
+        "fotor.com",
+        "pixlr.com"
+      ],
+      "competitor_gap": "Existing articles cover desktop tools (Paint, Figma) \u2014 mobile and online-only angles are uncovered",
+      "recommended_angle": "how-to"
+    },
+    {
+      "id": "watermark-text-removal",
+      "priority_rank": 7,
+      "priority_score": 0.52,
+      "priority_reason": "remove-text-from-image.html at pos 52.7 with 1,702 impr \u2014 significant volume stuck deep in results",
+      "tool_pages": [
+        "https://www.changeimageto.com/remove-text-from-image.html"
+      ],
+      "gsc_head_position": 52.71,
+      "gsc_head_impressions": 1702,
+      "gsc_head_clicks": 18,
+      "gsc_head_ctr": 0.0106,
+      "blog_articles_count": 0,
+      "covered_spokes": [],
+      "missing_spokes": [
+        "how to remove text from image online free",
+        "remove watermark from image free",
+        "how to remove text from photo without photoshop",
+        "erase text from image online",
+        "remove caption from image online"
+      ],
+      "top_competitors": [
+        "inpaint.com",
+        "fotor.com",
+        "pixlr.com"
+      ],
+      "competitor_gap": "Most guides require Photoshop or paid tools \u2014 free, no-signup angle is open",
+      "recommended_angle": "how-to"
+    },
+    {
+      "id": "image-upscaling",
+      "priority_rank": 8,
+      "priority_score": 0.44,
+      "priority_reason": "upscale-image.html at pos 23.7 with 132 impr \u2014 low current volume but growing category",
+      "tool_pages": [
+        "https://www.changeimageto.com/upscale-image.html"
+      ],
+      "gsc_head_position": 23.7,
+      "gsc_head_impressions": 132,
+      "gsc_head_clicks": 4,
+      "gsc_head_ctr": 0.03,
+      "blog_articles_count": 0,
+      "covered_spokes": [],
+      "missing_spokes": [
+        "how to upscale image without losing quality online",
+        "ai image upscaler free online",
+        "increase image resolution online free",
+        "upscale photo for printing free",
+        "2x 4x image upscaler free"
+      ],
+      "top_competitors": [
+        "topaz.ai",
+        "bigjpg.com",
+        "iloveimg.com"
+      ],
+      "competitor_gap": "Paid tools dominate; free-with-no-signup angle is underserved",
+      "recommended_angle": "comparison"
+    },
+    {
+      "id": "image-compression",
+      "priority_rank": 9,
+      "priority_score": 0.41,
+      "priority_reason": "bulk-image-resizer.html at pos 44.7 with 2,375 impr \u2014 high volume but very poor position",
+      "tool_pages": [
+        "https://www.changeimageto.com/bulk-image-resizer.html"
+      ],
+      "gsc_head_position": 44.75,
+      "gsc_head_impressions": 2375,
+      "gsc_head_clicks": 2,
+      "gsc_head_ctr": 0.0008,
+      "blog_articles_count": 0,
+      "covered_spokes": [],
+      "missing_spokes": [
+        "how to compress image online free",
+        "reduce image file size without losing quality",
+        "compress jpg online free",
+        "bulk image compressor free",
+        "compress image for email free"
+      ],
+      "top_competitors": [
+        "tinypng.com",
+        "iloveimg.com",
+        "squoosh.app"
+      ],
+      "competitor_gap": "Established competitors but free + no-signup positioning still resonates",
+      "recommended_angle": "how-to"
+    },
+    {
+      "id": "image-enhancement",
+      "priority_rank": 10,
+      "priority_score": 0.38,
+      "priority_reason": "enhance-image.html at pos 24.2 with 214 impr \u2014 smaller cluster but growing with AI enhancement trend",
+      "tool_pages": [
+        "https://www.changeimageto.com/enhance-image.html"
+      ],
+      "gsc_head_position": 24.2,
+      "gsc_head_impressions": 214,
+      "gsc_head_clicks": 4,
+      "gsc_head_ctr": 0.0187,
+      "blog_articles_count": 0,
+      "covered_spokes": [],
+      "missing_spokes": [
+        "how to enhance image quality online free",
+        "ai photo enhancer free online",
+        "improve blurry photo online free",
+        "enhance old photos online free",
+        "photo restoration free online"
+      ],
+      "top_competitors": [
+        "fotor.com",
+        "pixlr.com",
+        "remini.com"
+      ],
+      "competitor_gap": "AI enhancement articles exist but most require app download \u2014 browser-based free tool angle is open",
+      "recommended_angle": "how-to"
+    },
+    {
+      "id": "comparisons-alternatives",
+      "priority_rank": 11,
+      "priority_score": 0.35,
+      "priority_reason": "Blog-only cluster; free-photoshop-alternatives at pos 52.5 with 3,467 impr \u2014 already rewritten May 31, let it settle",
+      "tool_pages": [],
+      "gsc_head_position": 52.53,
+      "gsc_head_impressions": 3483,
+      "gsc_head_clicks": 1,
+      "gsc_head_ctr": 0.0003,
+      "blog_articles_count": 1,
+      "covered_spokes": [
+        "free-photoshop-alternatives"
+      ],
+      "missing_spokes": [
+        "best canva alternatives free",
+        "best remove bg alternatives free",
+        "tinypng alternatives free",
+        "photopea alternatives online",
+        "best free image editing tools online"
+      ],
+      "top_competitors": [
+        "makeuseof.com",
+        "techradar.com",
+        "alternativeto.net"
+      ],
+      "competitor_gap": "Comparison articles exist everywhere but few are updated for 2026 or include changeimageto.com as a free alternative",
+      "recommended_angle": "comparison"
+    }
+  ],
+  "competitors": [
+    {
+      "domain": "fotor.com",
+      "overlap_clusters": [
+        "image-quality",
+        "background-color-change",
+        "image-blur",
+        "image-enhancement"
+      ],
+      "strength": "Polished UI, strong brand, broad feature coverage",
+      "gap": "Requires signup for downloads; no free unlimited tier"
+    },
+    {
+      "domain": "iloveimg.com",
+      "overlap_clusters": [
+        "image-compression",
+        "social-media-resize",
+        "image-upscaling"
+      ],
+      "strength": "Simple, trusted, high domain authority",
+      "gap": "No AI features; basic resize/compress only"
+    },
+    {
+      "domain": "pixlr.com",
+      "overlap_clusters": [
+        "image-quality",
+        "image-blur",
+        "background-removal"
+      ],
+      "strength": "Full editor, strong SEO",
+      "gap": "Complex for simple tasks; ads; requires account for saving"
+    },
+    {
+      "domain": "allimagetools.com",
+      "overlap_clusters": [
+        "image-quality",
+        "background-removal"
+      ],
+      "strength": "Similar free-tool positioning",
+      "gap": "Weaker brand, lower quality content"
+    },
+    {
+      "domain": "remove.bg",
+      "overlap_clusters": [
+        "background-removal",
+        "background-color-change"
+      ],
+      "strength": "#1 for background removal, very strong brand",
+      "gap": "Paid after 1 preview; single-use tool only"
+    }
+  ],
+  "urgent_rewrites": [],
+  "gsc_new_opportunities": [
+    {
+      "query": "convert image to white background",
+      "impressions": 27,
+      "position": 7.37,
+      "note": "Good CTR signal \u2014 no dedicated article yet"
+    },
+    {
+      "query": "change background to white online",
+      "impressions": 25,
+      "position": 14.8,
+      "note": "Partially covered by background-color article"
+    }
+  ],
+  "strategy_notes": "June 2026: image-quality cluster is the top priority \u2014 highest volume tool page on the site sitting near page 1. Social media resize is priority 2 with zero blog coverage and 5,792 combined impressions. Gemini watermark is a fast-growing emerging cluster with near-zero competition. Background-color-change blog was just rewritten June 1 \u2014 deprioritise new spokes there until it settles (2\u20133 weeks)."
+}
