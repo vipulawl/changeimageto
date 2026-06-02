@@ -381,6 +381,42 @@
         .content-editor:focus {
             border-color: #667eea;
         }
+
+        /* ---- Run History tab styles ---- */
+        .run-card { background: white; border: 1px solid #e0e0e0; border-radius: 10px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-left: 5px solid #667eea; }
+        .run-card.status-failed { border-left-color: #dc3545; }
+        .run-card.status-partial { border-left-color: #ffc107; }
+        .run-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }
+        .run-title { font-size: 1.05rem; font-weight: 600; color: #1a1a2e; margin: 0; }
+        .run-meta { color: #666; font-size: 0.85rem; margin: 4px 0 0; }
+        .run-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+        .badge { padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+        .badge-success { background: #d4edda; color: #155724; }
+        .badge-failed { background: #f8d7da; color: #721c24; }
+        .badge-partial { background: #fff3cd; color: #856404; }
+        .badge-new { background: #d1ecf1; color: #0c5460; }
+        .badge-update { background: #e2d9f3; color: #4a235a; }
+        .badge-priority-a { background: #f8d7da; color: #721c24; }
+        .badge-priority-b { background: #fff3cd; color: #856404; }
+        .badge-priority-c { background: #d4edda; color: #155724; }
+        .run-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; margin: 12px 0; }
+        .run-kpi { background: #f8f9fb; border-radius: 6px; padding: 10px 14px; }
+        .run-kpi-label { font-size: 0.72rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+        .run-kpi-value { font-size: 1.1rem; font-weight: 700; color: #1a1a2e; margin-top: 2px; }
+        .run-issues { background: #fff8e1; border-left: 3px solid #ffc107; border-radius: 0 6px 6px 0; padding: 8px 12px; margin-top: 10px; font-size: 0.85rem; }
+        .run-issues ul { margin: 4px 0 0 16px; padding: 0; }
+        .run-pr-link { display: inline-block; margin-top: 10px; color: #667eea; font-weight: 600; text-decoration: none; font-size: 0.9rem; }
+        .run-pr-link:hover { text-decoration: underline; }
+        .run-history-meta { background: #f3f4f6; border-radius: 8px; padding: 12px 16px; margin-bottom: 20px; font-size: 0.9rem; color: #555; display: flex; gap: 24px; flex-wrap: wrap; }
+        .run-history-meta strong { color: #1a1a2e; }
+        .step-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; margin-top: 10px; }
+        .step-chip { padding: 5px 10px; border-radius: 6px; font-size: 0.78rem; display: flex; justify-content: space-between; align-items: center; }
+        .step-chip.ok { background: #d4edda; color: #155724; }
+        .step-chip.fail { background: #f8d7da; color: #721c24; }
+        .run-toggle { background: none; border: 1px solid #ddd; border-radius: 6px; padding: 4px 10px; font-size: 0.8rem; cursor: pointer; color: #555; margin-top: 10px; }
+        .run-toggle:hover { background: #f0f0f0; }
+        .run-steps-detail { display: none; margin-top: 10px; }
+        .run-steps-detail.open { display: block; }
     </style>
 
 <!-- Google AdSense - Replace ca-pub-4059286158672130 with your publisher ID from adsense.google.com -->
@@ -399,6 +435,7 @@
             <button class="admin-tab active" data-tab="drafts">Drafts & Pending</button>
             <button class="admin-tab" data-tab="published">Published Posts</button>
             <button class="admin-tab" data-tab="stats">Statistics</button>
+            <button class="admin-tab" data-tab="run-history">Run History</button>
         </div>
         
         <!-- Drafts Tab -->
@@ -442,6 +479,14 @@
         </div>
     </div>
     
+
+        <!-- Run History Tab -->
+        <div id="run-history-tab" class="tab-content">
+            <div id="run-history-container">
+                <div class="loading">Loading run history...</div>
+            </div>
+        </div>
+
     <!-- Editor Modal -->
     <div id="editor-modal" class="editor-modal">
         <div class="editor-content">
@@ -635,6 +680,8 @@
                     // Load data for active tab
                     if (tabId === 'stats') {
                         updateStats();
+                    } else if (tabId === 'run-history') {
+                        loadRunHistory();
                     }
                 });
             });
@@ -974,6 +1021,82 @@
             savePost();
         });
         
+
+        async function loadRunHistory() {
+            const container = document.getElementById('run-history-container');
+            try {
+                const res = await fetch('/blog/RUN_LOG.json?t=' + Date.now());
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                const log = await res.json();
+                renderRunHistory(log);
+            } catch (err) {
+                container.innerHTML = `<div class="empty-state"><h3>Could not load run history</h3><p>${err.message}</p><p style="font-size:0.85rem;color:#888">Make sure /blog/RUN_LOG.json is accessible.</p></div>`;
+            }
+        }
+
+        function renderRunHistory(log) {
+            const container = document.getElementById('run-history-container');
+            const runs = (log.runs || []).slice().reverse();
+            const meta = log._meta || {};
+            if (runs.length === 0) {
+                container.innerHTML = '<div class="empty-state"><h3>No runs yet</h3><p>The daily agent has not run yet.</p></div>';
+                return;
+            }
+            const metaHtml = `<div class="run-history-meta">
+                <span><strong>Total runs:</strong> ${meta.total_runs || runs.length}</span>
+                <span><strong>Successful:</strong> ${meta.successful_runs ?? '&#8212;'}</span>
+                <span><strong>Failed:</strong> ${meta.failed_runs ?? '&#8212;'}</span>
+                <span><strong>Last updated:</strong> ${meta.last_updated || '&#8212;'}</span>
+            </div>`;
+            const cardsHtml = runs.map((run, i) => {
+                const sc = run.status === 'success' ? 'status-success' : run.status === 'failed' ? 'status-failed' : 'status-partial';
+                const gsc = run.gsc_signal || {};
+                const tok = (run.summary || {}).token_summary || {};
+                const kpis = [
+                    { label: 'Duration', value: run.duration_minutes != null ? run.duration_minutes + ' min' : '&#8212;' },
+                    { label: 'GSC Position', value: gsc.position != null ? gsc.position.toFixed(1) : '&#8212;' },
+                    { label: 'Impressions', value: gsc.impressions != null ? gsc.impressions.toLocaleString() : '&#8212;' },
+                    { label: 'Clicks', value: gsc.clicks != null ? gsc.clicks : '&#8212;' },
+                    { label: 'CTR', value: gsc.ctr != null ? gsc.ctr + '%' : '&#8212;' },
+                    { label: 'LLM Calls', value: (run.summary || {}).total_llm_calls ?? '&#8212;' },
+                    { label: 'Est. Tokens', value: tok.estimated_total ? tok.estimated_total.toLocaleString() : '&#8212;' },
+                    { label: 'Article Size', value: run.article_size_bytes ? Math.round(run.article_size_bytes/1024) + ' KB' : '&#8212;' },
+                ].map(k => `<div class="run-kpi"><div class="run-kpi-label">${k.label}</div><div class="run-kpi-value">${k.value}</div></div>`).join('');
+                const steps = (run.steps || []);
+                const allIssues = steps.flatMap(s => s.issues || []);
+                const issuesHtml = allIssues.length > 0 ? `<div class="run-issues"><strong>&#9888; Issues:</strong><ul>${allIssues.map(is => `<li>${is}</li>`).join('')}</ul></div>` : '';
+                const blocker = (run.summary || {}).key_blocker;
+                const blockerHtml = blocker ? `<div class="run-issues" style="border-left-color:#dc3545;background:#fff0f0"><strong>&#128683; Blocker:</strong> ${blocker}</div>` : '';
+                const prHtml = run.pr_url ? `<a class="run-pr-link" href="${run.pr_url}" target="_blank">&#8594; View PR #${run.pr_number || ''}</a>` : '';
+                const stepsChips = steps.map(s => `<div class="step-chip ${s.status === 'success' ? 'ok' : 'fail'}"><span>${s.name}</span><span>${s.llm_calls || 0} calls</span></div>`).join('');
+                const detailId = 'steps-' + i;
+                return `<div class="run-card ${sc}">
+                    <div class="run-header">
+                        <div>
+                            <h3 class="run-title">${run.article_title || run.article_slug || '(untitled)'}</h3>
+                            <div class="run-meta">${run.date} &middot; ${run.cluster || '&#8212;'} &middot; <em>${run.target_keyword || '&#8212;'}</em></div>
+                        </div>
+                        <div class="run-badges">
+                            <span class="badge badge-${run.status}">${run.status}</span>
+                            <span class="badge badge-${(run.action_type||'').toLowerCase()}">${run.action_type || '&#8212;'}</span>
+                            ${run.priority_level ? `<span class="badge badge-priority-${(run.priority_level||'').toLowerCase()}">Priority ${run.priority_level}</span>` : ''}
+                        </div>
+                    </div>
+                    <div class="run-grid">${kpis}</div>
+                    ${issuesHtml}${blockerHtml}${prHtml}
+                    ${steps.length > 0 ? `<button class="run-toggle" onclick="toggleSteps('${detailId}', this)">&#9657; Show step details</button>
+                    <div id="${detailId}" class="run-steps-detail"><div class="step-list">${stepsChips}</div></div>` : ''}
+                </div>`;
+            }).join('');
+            container.innerHTML = metaHtml + cardsHtml;
+        }
+
+        function toggleSteps(id, btn) {
+            const el = document.getElementById(id);
+            el.classList.toggle('open');
+            btn.textContent = el.classList.contains('open') ? '&#9663; Hide step details' : '&#9657; Show step details';
+        }
+
         // Close modals when clicking outside
         window.addEventListener('click', function(e) {
             if (e.target.classList.contains('editor-modal')) {
