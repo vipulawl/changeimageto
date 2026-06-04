@@ -1,35 +1,26 @@
 {
   "_meta": {
     "description": "Single source of truth for changeimageto.com content strategy.",
-    "last_updated": "2026-06-02",
+    "last_updated": "2026-06-04",
     "last_strategy_review": "2026-05-29",
-    "total_articles": 16,
+    "total_articles": 6,
     "next_strategy_review": "2026-06-05"
   },
   "strategy_notes": [
-    {
-      "date": "2026-05-29",
-      "author": "initial-setup",
-      "note": "Bootstrap. 16 articles mapped. Urgent rewrites: free-photoshop-alternatives (pos 52, 3.4k impr) and change-image-background-color-online (pos 64, 1.5k impr)."
-    },
-    {
-      "date": "2026-05-31",
-      "author": "daily-writer",
-      "note": "Rewrote free-photoshop-alternatives: title updated to 2026, added Affinity Photo 2 (now free), expanded to 8 tools, added FAQ + JSON-LD schemas, fixed meta. CTR was 0.03%."
-    },
-    {
-      "date": "2026-06-02",
-      "author": "daily-writer",
-      "note": "Rewrote change-image-background-color-online: title with year, use-case grid, FAQ to 9, visa hex examples, brand hex section, dateModified updated. Targeting CTR improvement from 0.06% at pos 62."
-    }
+    {"date": "2026-05-29", "author": "initial-setup", "note": "Bootstrap. 16 articles mapped. Urgent rewrites: free-photoshop-alternatives (pos 52, 3.4k impr) and change-image-background-color-online (pos 64, 1.5k impr)."},
+    {"date": "2026-05-31", "author": "daily-writer", "note": "Rewrote free-photoshop-alternatives: title updated to 2026, added Affinity Photo 2 (now free), expanded to 8 tools, added FAQ + JSON-LD schemas, fixed meta. CTR was 0.03%."},
+    {"date": "2026-06-02", "author": "daily-writer", "note": "Rewrote change-image-background-color-online: title with year, use-case grid, FAQ to 9, visa hex examples, brand hex section, dateModified updated. Targeting CTR improvement from 0.06% at pos 62."},
+    {"date": "2026-06-04", "author": "daily-writer", "note": "New article: instagram-image-sizes-2026. Social-media-resize cluster first spoke. Targets tool page supporting 3018 impr at pos 20.58. Angle: 2025 grid change (3:4). No cannibalization."}
   ],
   "articles": [
     {
       "slug": "free-photoshop-alternatives",
+      "url": "https://www.changeimageto.com/blog/free-photoshop-alternatives.html",
       "title": "Best Free Photoshop Alternatives 2026 (No Subscription Needed)",
       "target_keyword": "free photoshop alternatives",
       "cluster": "comparisons-alternatives",
       "type": "pillar",
+      "semantic_siblings": ["free photoshop alternatives 2026", "photoshop free alternative", "free alternatives to photoshop", "open source photoshop"],
       "published": "2025-09-01",
       "last_updated": "2026-05-31",
       "gsc_position": 52.53,
@@ -40,10 +31,12 @@
     },
     {
       "slug": "how-to-blur-image-in-paint",
+      "url": "https://www.changeimageto.com/blog/how-to-blur-image-in-paint.html",
       "title": "How to Blur Image in Paint",
       "target_keyword": "how to blur image in paint",
       "cluster": "image-blur",
       "type": "pillar",
+      "semantic_siblings": ["blur image in paint", "blur in paint", "how to blur in paint", "paint blur tool"],
       "published": "2025-09-01",
       "last_updated": "2025-09-01",
       "gsc_position": 7.81,
@@ -53,10 +46,12 @@
     },
     {
       "slug": "detect-jpeg-compression-artifacts-python",
+      "url": "https://www.changeimageto.com/blog/detect-jpeg-compression-artifacts-python.html",
       "title": "Detect JPEG Compression Artifacts (Python)",
       "target_keyword": "detect jpeg compression artifacts python",
       "cluster": "image-quality",
       "type": "spoke",
+      "semantic_siblings": ["jpeg artifacts python", "detect compression artifacts", "jpeg quality python"],
       "published": "2025-09-01",
       "last_updated": "2025-09-01",
       "gsc_position": 6.03,
@@ -66,10 +61,12 @@
     },
     {
       "slug": "change-image-background-color-online",
+      "url": "https://www.changeimageto.com/blog/change-image-background-color-online.html",
       "title": "Change Image Background Color Online Free — No Signup (2026)",
       "target_keyword": "change image background color online",
       "cluster": "background-color-change",
       "type": "spoke",
+      "semantic_siblings": ["change background color online", "change photo background color", "image background color changer", "background color change free"],
       "published": "2025-09-01",
       "last_updated": "2026-06-02",
       "gsc_position": 62.83,
@@ -80,16 +77,39 @@
     },
     {
       "slug": "how-to-blur-image-in-figma",
+      "url": "https://www.changeimageto.com/blog/how-to-blur-image-in-figma.html",
       "title": "How to Blur Image in Figma",
       "target_keyword": "how to blur image in figma",
       "cluster": "image-blur",
       "type": "spoke",
+      "semantic_siblings": ["blur in figma", "figma blur image", "figma blur effect"],
       "published": "2025-09-01",
       "last_updated": "2025-09-01",
       "gsc_position": 9.13,
       "gsc_impressions": 15,
       "status": "published",
       "health": "low-volume"
+    },
+    {
+      "slug": "instagram-image-sizes-2026",
+      "url": "https://www.changeimageto.com/blog/instagram-image-sizes-2026.html",
+      "title": "Instagram Image Sizes 2026: Every Format & Dimension (Updated)",
+      "target_keyword": "instagram image sizes 2026",
+      "cluster": "social-media-resize",
+      "type": "spoke",
+      "semantic_siblings": [
+        "instagram post size 2026",
+        "instagram image dimensions",
+        "instagram story size",
+        "resize image for instagram",
+        "instagram photo size guide"
+      ],
+      "published": "2026-06-04",
+      "last_updated": "2026-06-04",
+      "gsc_position": null,
+      "gsc_impressions": null,
+      "status": "published",
+      "notes": "New spoke for social-media-resize cluster. Targets 3:4 grid change angle. Links to resize-image-for-instagram.html tool (pos 9.33, 178 impr) and image-quality-checker."
     }
   ]
 }
