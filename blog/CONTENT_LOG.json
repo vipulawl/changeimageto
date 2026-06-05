@@ -1,115 +1,34 @@
 {
   "_meta": {
     "description": "Single source of truth for changeimageto.com content strategy.",
-    "last_updated": "2026-06-04",
-    "last_strategy_review": "2026-05-29",
-    "total_articles": 6,
-    "next_strategy_review": "2026-06-05"
+    "last_updated": "2026-06-05",
+    "last_strategy_review": "2026-06-05",
+    "total_articles": 8,
+    "next_strategy_review": "2026-06-12"
   },
   "strategy_notes": [
     {"date": "2026-05-29", "author": "initial-setup", "note": "Bootstrap. 16 articles mapped. Urgent rewrites: free-photoshop-alternatives (pos 52, 3.4k impr) and change-image-background-color-online (pos 64, 1.5k impr)."},
-    {"date": "2026-05-31", "author": "daily-writer", "note": "Rewrote free-photoshop-alternatives: title updated to 2026, added Affinity Photo 2 (now free), expanded to 8 tools, added FAQ + JSON-LD schemas, fixed meta. CTR was 0.03%."},
-    {"date": "2026-06-02", "author": "daily-writer", "note": "Rewrote change-image-background-color-online: title with year, use-case grid, FAQ to 9, visa hex examples, brand hex section, dateModified updated. Targeting CTR improvement from 0.06% at pos 62."},
-    {"date": "2026-06-04", "author": "daily-writer", "note": "New article: instagram-image-sizes-2026. Social-media-resize cluster first spoke. Targets tool page supporting 3018 impr at pos 20.58. Angle: 2025 grid change (3:4). No cannibalization."}
+    {"date": "2026-05-31", "author": "daily-writer", "note": "Rewrote free-photoshop-alternatives: title updated to 2026, added Affinity Photo 2 (now free), expanded to 8 tools, FAQ + JSON-LD schemas, fixed meta."},
+    {"date": "2026-06-02", "author": "daily-writer", "note": "Rewrote change-image-background-color-online: title with year, use-case grid, FAQ expanded to 9, visa hex examples, brand hex section."},
+    {"date": "2026-06-04", "author": "daily-writer", "note": "New article: instagram-image-sizes-2026. Social-media-resize cluster first spoke."},
+    {"date": "2026-06-05", "author": "weekly-strategy", "note": "Week 2 review. Key: canva-vs-photopea at pos 6.2 with 2994 impr and 0% CTR — rewrote with verdict-first title, winner-by-task table, FAQ schema. capcut-vs-davinci-resolve same problem (2006 impr, pos 11.36, 0% CTR) — top daily priority next week. New gemini-watermark cluster: 500+ impr, no blog article exists. detect-jpeg-compression-artifacts-python impressions down 30% — cluster marked declining. free-photoshop-alternatives still at pos 51 — second-angle rewrite may be needed."}
+  ],
+  "clusters": [
+    {"id": "comparisons-alternatives", "name": "Comparisons & Alternatives", "priority_score": 9, "performance_signal": "mixed", "current_avg_position": 23.08, "total_impressions": 8305, "covered_spokes": ["free-photoshop-alternatives", "canva-vs-photopea", "capcut-vs-davinci-resolve"], "missing_spokes": ["photopea vs gimp", "canva free vs canva pro worth it", "capcut alternatives free 2026", "davinci resolve vs premiere pro free", "figma vs canva for beginners"], "cannibalization_risks": [{"articles": ["canva-vs-photopea", "photopea-vs-canva"], "issue": "Two articles covering same comparison.", "action": "differentiate", "recommendation": "Keep canva-vs-photopea. Rewrite photopea-vs-canva for Photoshop-user angle."}]},
+    {"id": "image-blur", "name": "How to Blur Images", "priority_score": 7, "performance_signal": "stable", "current_avg_position": 8.5, "total_impressions": 3328, "covered_spokes": ["how-to-blur-image-in-paint", "how-to-blur-image-in-figma", "how-to-blur-image-in-canva", "how-to-blur-image-in-capcut", "how-to-blur-image-in-photoshop", "how-to-blur-image-in-ppt"], "missing_spokes": ["how to blur image in css", "how to blur background on phone", "how to add blur effect to image online free"], "cannibalization_risks": []},
+    {"id": "image-quality", "name": "Image Quality & Technical", "priority_score": 5, "performance_signal": "declining", "current_avg_position": 5.92, "total_impressions": 60, "covered_spokes": ["detect-jpeg-compression-artifacts-python", "check-image-quality", "image-preprocessing-checklist-for-ai-api"], "missing_spokes": ["what is image quality DPI PPI resolution explained", "how to check image resolution before printing", "image quality for web vs print guide"], "cannibalization_risks": [], "investigation_note": "Impressions dropped 30%. Tool page image-quality-checker.html (6979 impr, 141 clicks) needs a supporting blog article."},
+    {"id": "background-color-change", "name": "Change Image Background Color", "priority_score": 7, "performance_signal": "untapped", "current_avg_position": 60.69, "total_impressions": 1333, "covered_spokes": ["change-image-background-color-online", "change-image-background-color-photoshop"], "missing_spokes": ["change white background to transparent online free", "change background color of product photo free", "how to change background color in photoshop step by step 2026"], "cannibalization_risks": []},
+    {"id": "social-media-resize", "name": "Social Media Image Sizes & Resize", "priority_score": 8, "performance_signal": "untapped", "current_avg_position": null, "total_impressions": 0, "covered_spokes": ["instagram-image-sizes-2026", "how-to-resize-an-image-in-canva", "how-to-resize-an-image-in-gimp"], "missing_spokes": ["facebook image sizes 2026", "linkedin image sizes 2026", "twitter X image sizes 2026", "tiktok video dimensions 2026", "resize image for facebook cover free"], "cannibalization_risks": [], "notes": "Tool pages strong: resize-image-for-instagram.html (3016 impr), resize-image-for-facebook.html (2922 impr, 37 clicks)."},
+    {"id": "gemini-watermark", "name": "Gemini Watermark Removal", "priority_score": 6, "performance_signal": "emerging", "current_avg_position": 19.73, "total_impressions": 1390, "covered_spokes": [], "missing_spokes": ["how to remove gemini watermark free (trending)", "gemini ai watermark remover online step by step (trending)", "remove gemini logo from image", "best gemini watermark removers 2026"], "cannibalization_risks": [], "notes": "Emerging. Tool page: 108 clicks, 1390 impr, 7.77% CTR. No blog article yet."}
   ],
   "articles": [
-    {
-      "slug": "free-photoshop-alternatives",
-      "url": "https://www.changeimageto.com/blog/free-photoshop-alternatives.html",
-      "title": "Best Free Photoshop Alternatives 2026 (No Subscription Needed)",
-      "target_keyword": "free photoshop alternatives",
-      "cluster": "comparisons-alternatives",
-      "type": "pillar",
-      "semantic_siblings": ["free photoshop alternatives 2026", "photoshop free alternative", "free alternatives to photoshop", "open source photoshop"],
-      "published": "2025-09-01",
-      "last_updated": "2026-05-31",
-      "gsc_position": 52.53,
-      "gsc_impressions": 3483,
-      "status": "published",
-      "health": "updated",
-      "notes": "Full rewrite May 2026: title updated to 2026, added Affinity Photo 2 (now free), FAQ+schema, 8 tools, fixed meta."
-    },
-    {
-      "slug": "how-to-blur-image-in-paint",
-      "url": "https://www.changeimageto.com/blog/how-to-blur-image-in-paint.html",
-      "title": "How to Blur Image in Paint",
-      "target_keyword": "how to blur image in paint",
-      "cluster": "image-blur",
-      "type": "pillar",
-      "semantic_siblings": ["blur image in paint", "blur in paint", "how to blur in paint", "paint blur tool"],
-      "published": "2025-09-01",
-      "last_updated": "2025-09-01",
-      "gsc_position": 7.81,
-      "gsc_impressions": 3975,
-      "status": "published",
-      "health": "good"
-    },
-    {
-      "slug": "detect-jpeg-compression-artifacts-python",
-      "url": "https://www.changeimageto.com/blog/detect-jpeg-compression-artifacts-python.html",
-      "title": "Detect JPEG Compression Artifacts (Python)",
-      "target_keyword": "detect jpeg compression artifacts python",
-      "cluster": "image-quality",
-      "type": "spoke",
-      "semantic_siblings": ["jpeg artifacts python", "detect compression artifacts", "jpeg quality python"],
-      "published": "2025-09-01",
-      "last_updated": "2025-09-01",
-      "gsc_position": 6.03,
-      "gsc_impressions": 86,
-      "status": "published",
-      "health": "good"
-    },
-    {
-      "slug": "change-image-background-color-online",
-      "url": "https://www.changeimageto.com/blog/change-image-background-color-online.html",
-      "title": "Change Image Background Color Online Free — No Signup (2026)",
-      "target_keyword": "change image background color online",
-      "cluster": "background-color-change",
-      "type": "spoke",
-      "semantic_siblings": ["change background color online", "change photo background color", "image background color changer", "background color change free"],
-      "published": "2025-09-01",
-      "last_updated": "2026-06-02",
-      "gsc_position": 62.83,
-      "gsc_impressions": 1558,
-      "status": "published",
-      "health": "updated",
-      "notes": "Full rewrite June 2026: stronger title with year, use-case grid, FAQ expanded to 9, visa hex examples, brand hex, transparent PNG tips, updated JSON-LD dateModified."
-    },
-    {
-      "slug": "how-to-blur-image-in-figma",
-      "url": "https://www.changeimageto.com/blog/how-to-blur-image-in-figma.html",
-      "title": "How to Blur Image in Figma",
-      "target_keyword": "how to blur image in figma",
-      "cluster": "image-blur",
-      "type": "spoke",
-      "semantic_siblings": ["blur in figma", "figma blur image", "figma blur effect"],
-      "published": "2025-09-01",
-      "last_updated": "2025-09-01",
-      "gsc_position": 9.13,
-      "gsc_impressions": 15,
-      "status": "published",
-      "health": "low-volume"
-    },
-    {
-      "slug": "instagram-image-sizes-2026",
-      "url": "https://www.changeimageto.com/blog/instagram-image-sizes-2026.html",
-      "title": "Instagram Image Sizes 2026: Every Format & Dimension (Updated)",
-      "target_keyword": "instagram image sizes 2026",
-      "cluster": "social-media-resize",
-      "type": "spoke",
-      "semantic_siblings": [
-        "instagram post size 2026",
-        "instagram image dimensions",
-        "instagram story size",
-        "resize image for instagram",
-        "instagram photo size guide"
-      ],
-      "published": "2026-06-04",
-      "last_updated": "2026-06-04",
-      "gsc_position": null,
-      "gsc_impressions": null,
-      "status": "published",
-      "notes": "New spoke for social-media-resize cluster. Targets 3:4 grid change angle. Links to resize-image-for-instagram.html tool (pos 9.33, 178 impr) and image-quality-checker."
-    }
+    {"slug": "free-photoshop-alternatives", "url": "https://www.changeimageto.com/blog/free-photoshop-alternatives.html", "title": "Best Free Photoshop Alternatives 2026 (No Subscription Needed)", "target_keyword": "free photoshop alternatives", "cluster": "comparisons-alternatives", "type": "pillar", "semantic_siblings": ["free photoshop alternatives 2026", "photoshop free alternative", "free alternatives to photoshop", "gimp alternative free"], "published": "2025-09-01", "last_updated": "2026-05-31", "gsc_position": 51.67, "gsc_impressions": 3305, "gsc_clicks": 3, "gsc_ctr": 0.09, "status": "published", "health": "critical", "notes": "Rewritten May 31 but still at pos 51 with 0.09% CTR. May need second-angle rewrite targeting 'photoshop free alternative' intent."},
+    {"slug": "how-to-blur-image-in-paint", "url": "https://www.changeimageto.com/blog/how-to-blur-image-in-paint.html", "title": "How to Blur Image in Paint", "target_keyword": "how to blur image in paint", "cluster": "image-blur", "type": "pillar", "semantic_siblings": ["blur image in paint", "blur in paint", "how to blur in paint", "how to blur in paint windows 11"], "published": "2025-09-01", "last_updated": "2025-09-01", "gsc_position": 7.74, "gsc_impressions": 3313, "gsc_clicks": 35, "gsc_ctr": 1.06, "status": "published", "health": "good", "notes": "Stable. Impressions down 16.6% — monitor."},
+    {"slug": "detect-jpeg-compression-artifacts-python", "url": "https://www.changeimageto.com/blog/detect-jpeg-compression-artifacts-python.html", "title": "Detect JPEG Compression Artifacts (Python)", "target_keyword": "detect jpeg compression artifacts python", "cluster": "image-quality", "type": "spoke", "semantic_siblings": ["jpeg artifacts python", "detect compression artifacts", "jpeg quality python"], "published": "2025-09-01", "last_updated": "2025-09-01", "gsc_position": 5.92, "gsc_impressions": 60, "gsc_clicks": 3, "gsc_ctr": 5.0, "status": "published", "health": "declining", "notes": "Impressions dropped 30% (86->60). Cluster priority reduced to 5."},
+    {"slug": "change-image-background-color-online", "url": "https://www.changeimageto.com/blog/change-image-background-color-online.html", "title": "Change Image Background Color Online Free - No Signup (2026)", "target_keyword": "change image background color online", "cluster": "background-color-change", "type": "spoke", "semantic_siblings": ["change background color online", "change photo background color", "image background color changer"], "published": "2025-09-01", "last_updated": "2026-06-02", "gsc_position": 60.69, "gsc_impressions": 1333, "gsc_clicks": 1, "gsc_ctr": 0.08, "status": "published", "health": "critical", "notes": "Second rewrite June 2. Position improved 2.14 pts. Too early to assess."},
+    {"slug": "how-to-blur-image-in-figma", "url": "https://www.changeimageto.com/blog/how-to-blur-image-in-figma.html", "title": "How to Blur Image in Figma", "target_keyword": "how to blur image in figma", "cluster": "image-blur", "type": "spoke", "semantic_siblings": ["blur in figma", "figma blur image", "figma blur effect"], "published": "2025-09-01", "last_updated": "2025-09-01", "gsc_position": 9.27, "gsc_impressions": 15, "gsc_clicks": 1, "gsc_ctr": 6.67, "status": "published", "health": "low-volume"},
+    {"slug": "instagram-image-sizes-2026", "url": "https://www.changeimageto.com/blog/instagram-image-sizes-2026.html", "title": "Instagram Image Sizes 2026: Every Format & Dimension (Updated)", "target_keyword": "instagram image sizes 2026", "cluster": "social-media-resize", "type": "spoke", "semantic_siblings": ["instagram post size 2026", "instagram image dimensions", "instagram story size", "resize image for instagram"], "published": "2026-06-04", "last_updated": "2026-06-04", "gsc_position": null, "gsc_impressions": null, "gsc_clicks": null, "gsc_ctr": null, "status": "published", "health": "new", "notes": "Published June 4 — no GSC data yet."},
+    {"slug": "canva-vs-photopea", "url": "https://www.changeimageto.com/blog/canva-vs-photopea.html", "title": "Canva vs Photopea 2026: Honest Comparison & Verdict", "target_keyword": "canva vs photopea", "cluster": "comparisons-alternatives", "type": "pillar", "semantic_siblings": ["canva vs photopea 2026", "canva or photopea", "is canva better than photopea", "photopea vs canva for beginners"], "published": "2024-11-17", "last_updated": "2026-06-05", "gsc_position": 6.2, "gsc_impressions": 2994, "gsc_clicks": 0, "gsc_ctr": 0.0, "status": "published", "health": "critical", "notes": "REWROTE June 5. 0% CTR at pos 6.2 with 2994 impr. Fixes: verdict-first title, winner-by-task table, 6-Q FAQ schema, JSON-LD, internal links."},
+    {"slug": "capcut-vs-davinci-resolve", "url": "https://www.changeimageto.com/blog/capcut-vs-davinci-resolve.html", "title": "CapCut vs DaVinci Resolve", "target_keyword": "capcut vs davinci resolve", "cluster": "comparisons-alternatives", "type": "pillar", "semantic_siblings": ["capcut vs davinci resolve 2026", "capcut or davinci resolve", "is capcut better than davinci resolve"], "published": "2025-09-01", "last_updated": "2025-09-01", "gsc_position": 11.36, "gsc_impressions": 2006, "gsc_clicks": 0, "gsc_ctr": 0.0, "status": "published", "health": "critical", "notes": "2006 impr at pos 11.36 with 0% CTR. TOP PRIORITY for daily writer next week."}
   ]
 }
