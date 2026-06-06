@@ -1,16 +1,17 @@
 {
   "_meta": {
     "description": "Single source of truth for changeimageto.com content strategy.",
-    "last_updated": "2026-06-04",
+    "last_updated": "2026-06-06",
     "last_strategy_review": "2026-05-29",
-    "total_articles": 6,
-    "next_strategy_review": "2026-06-05"
+    "total_articles": 7,
+    "next_strategy_review": "2026-06-12"
   },
   "strategy_notes": [
     {"date": "2026-05-29", "author": "initial-setup", "note": "Bootstrap. 16 articles mapped. Urgent rewrites: free-photoshop-alternatives (pos 52, 3.4k impr) and change-image-background-color-online (pos 64, 1.5k impr)."},
     {"date": "2026-05-31", "author": "daily-writer", "note": "Rewrote free-photoshop-alternatives: title updated to 2026, added Affinity Photo 2 (now free), expanded to 8 tools, added FAQ + JSON-LD schemas, fixed meta. CTR was 0.03%."},
     {"date": "2026-06-02", "author": "daily-writer", "note": "Rewrote change-image-background-color-online: title with year, use-case grid, FAQ to 9, visa hex examples, brand hex section, dateModified updated. Targeting CTR improvement from 0.06% at pos 62."},
-    {"date": "2026-06-04", "author": "daily-writer", "note": "New article: instagram-image-sizes-2026. Social-media-resize cluster first spoke. Targets tool page supporting 3018 impr at pos 20.58. Angle: 2025 grid change (3:4). No cannibalization."}
+    {"date": "2026-06-04", "author": "daily-writer", "note": "New article: instagram-image-sizes-2026. Social-media-resize cluster first spoke. Targets tool page supporting 3018 impr at pos 20.58. Angle: 2025 grid change (3:4). No cannibalization."},
+    {"date": "2026-06-06", "author": "daily-writer", "note": "New article: facebook-image-sizes-2026. Social-media-resize cluster second spoke. Targets resize-image-for-facebook tool page (2922 impr at pos 14.67, CTR 1.27%). Skipped Priority A — both qualifying articles rewritten within past 7 days. Priority C chosen: natural cluster expansion."}
   ],
   "articles": [
     {
@@ -23,11 +24,14 @@
       "semantic_siblings": ["free photoshop alternatives 2026", "photoshop free alternative", "free alternatives to photoshop", "open source photoshop"],
       "published": "2025-09-01",
       "last_updated": "2026-05-31",
-      "gsc_position": 52.53,
-      "gsc_impressions": 3483,
+      "gsc_position": 51.67,
+      "gsc_impressions": 3305,
+      "gsc_clicks": 3,
+      "gsc_ctr": 0.09,
+      "gsc_date": "2026-06-06",
       "status": "published",
       "health": "updated",
-      "notes": "Full rewrite May 2026: title updated to 2026, added Affinity Photo 2 (now free), FAQ+schema, 8 tools, fixed meta."
+      "notes": "Full rewrite May 2026. Still at pos 51 — needs time to reindex. Do not rewrite again before 2026-07-01."
     },
     {
       "slug": "how-to-blur-image-in-paint",
@@ -39,10 +43,14 @@
       "semantic_siblings": ["blur image in paint", "blur in paint", "how to blur in paint", "paint blur tool"],
       "published": "2025-09-01",
       "last_updated": "2025-09-01",
-      "gsc_position": 7.81,
-      "gsc_impressions": 3975,
+      "gsc_position": 7.74,
+      "gsc_impressions": 3313,
+      "gsc_clicks": 35,
+      "gsc_ctr": 1.06,
+      "gsc_date": "2026-06-06",
       "status": "published",
-      "health": "good"
+      "health": "good",
+      "notes": "Pos 7.74, 3313 impr. CTR 1.06% is low for pos 7-8 — meta description improvement could boost CTR to 3-5%. Priority A candidate next run (after July 1 reindex window for other articles)."
     },
     {
       "slug": "detect-jpeg-compression-artifacts-python",
@@ -54,8 +62,11 @@
       "semantic_siblings": ["jpeg artifacts python", "detect compression artifacts", "jpeg quality python"],
       "published": "2025-09-01",
       "last_updated": "2025-09-01",
-      "gsc_position": 6.03,
-      "gsc_impressions": 86,
+      "gsc_position": 5.92,
+      "gsc_impressions": 60,
+      "gsc_clicks": 3,
+      "gsc_ctr": 5.0,
+      "gsc_date": "2026-06-06",
       "status": "published",
       "health": "good"
     },
@@ -69,11 +80,14 @@
       "semantic_siblings": ["change background color online", "change photo background color", "image background color changer", "background color change free"],
       "published": "2025-09-01",
       "last_updated": "2026-06-02",
-      "gsc_position": 62.83,
-      "gsc_impressions": 1558,
+      "gsc_position": 60.69,
+      "gsc_impressions": 1333,
+      "gsc_clicks": 1,
+      "gsc_ctr": 0.08,
+      "gsc_date": "2026-06-06",
       "status": "published",
       "health": "updated",
-      "notes": "Full rewrite June 2026: stronger title with year, use-case grid, FAQ expanded to 9, visa hex examples, brand hex, transparent PNG tips, updated JSON-LD dateModified."
+      "notes": "Full rewrite June 2, 2026. Do not rewrite again before 2026-07-01."
     },
     {
       "slug": "how-to-blur-image-in-figma",
@@ -85,8 +99,11 @@
       "semantic_siblings": ["blur in figma", "figma blur image", "figma blur effect"],
       "published": "2025-09-01",
       "last_updated": "2025-09-01",
-      "gsc_position": 9.13,
+      "gsc_position": 9.27,
       "gsc_impressions": 15,
+      "gsc_clicks": 1,
+      "gsc_ctr": 6.67,
+      "gsc_date": "2026-06-06",
       "status": "published",
       "health": "low-volume"
     },
@@ -97,19 +114,36 @@
       "target_keyword": "instagram image sizes 2026",
       "cluster": "social-media-resize",
       "type": "spoke",
-      "semantic_siblings": [
-        "instagram post size 2026",
-        "instagram image dimensions",
-        "instagram story size",
-        "resize image for instagram",
-        "instagram photo size guide"
-      ],
+      "semantic_siblings": ["instagram post size 2026", "instagram image dimensions", "instagram story size", "resize image for instagram", "instagram photo size guide"],
       "published": "2026-06-04",
       "last_updated": "2026-06-04",
       "gsc_position": null,
       "gsc_impressions": null,
+      "gsc_clicks": null,
+      "gsc_ctr": null,
+      "gsc_date": null,
       "status": "published",
-      "notes": "New spoke for social-media-resize cluster. Targets 3:4 grid change angle. Links to resize-image-for-instagram.html tool (pos 9.33, 178 impr) and image-quality-checker."
+      "health": "new",
+      "notes": "Published June 4. No GSC data yet — check again in 2 weeks."
+    },
+    {
+      "slug": "facebook-image-sizes-2026",
+      "url": "https://www.changeimageto.com/blog/facebook-image-sizes-2026.html",
+      "title": "Facebook Image Sizes 2026: Every Format & Dimension (Updated)",
+      "target_keyword": "facebook image sizes 2026",
+      "cluster": "social-media-resize",
+      "type": "spoke",
+      "semantic_siblings": ["facebook image dimensions 2026", "facebook post size 2026", "facebook cover photo size", "resize image for facebook", "facebook image size guide", "facebook photo dimensions"],
+      "published": "2026-06-06",
+      "last_updated": "2026-06-06",
+      "gsc_position": null,
+      "gsc_impressions": null,
+      "gsc_clicks": null,
+      "gsc_ctr": null,
+      "gsc_date": null,
+      "status": "published",
+      "health": "new",
+      "notes": "New spoke for social-media-resize cluster. Targets resize-image-for-facebook tool page (2922 impr at pos 14.67, CTR 1.27%). Covers feed, cover, profile, Stories, Reels, event cover. Internal links to resize-image-for-facebook.html and image-quality-checker.html."
     }
   ]
 }
