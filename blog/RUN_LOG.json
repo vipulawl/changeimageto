@@ -1,11 +1,73 @@
 {
   "_meta": {
-    "total_runs": 1,
-    "successful_runs": 1,
+    "total_runs": 6,
+    "successful_runs": 6,
     "failed_runs": 0,
-    "last_updated": "2026-06-04"
+    "last_updated": "2026-06-08",
+    "note": "Runs 2026-05-31 through 2026-06-07 were not logged at runtime; entries reconstructed from CONTENT_LOG strategy_notes. Token data unavailable for those runs."
   },
   "runs": [
+    {
+      "run_id": "2026-06-08",
+      "date": "2026-06-08",
+      "started_at": "2026-06-08T06:50:00Z",
+      "completed_at": "2026-06-08T07:29:30Z",
+      "duration_minutes": 40,
+      "status": "success",
+      "action_type": "NEW",
+      "priority_level": "B",
+      "article_slug": "how-to-check-image-quality-online",
+      "article_title": "How to Check Image Quality Online Free — No Signup (2026)",
+      "target_keyword": "how to check image quality online",
+      "cluster": "image-quality",
+      "gsc_signal": {"position": 9.89, "impressions": 7845, "clicks": 153, "ctr": 1.95, "note": "Figures from supporting tool page image-quality-checker.html"},
+      "pr_url": "https://github.com/vipulawl/changeimageto/pull/13",
+      "pr_number": 13,
+      "article_size_bytes": 16200,
+      "summary": {
+        "total_tool_calls": 28,
+        "successful_tool_calls": 26,
+        "failed_tool_calls": 2,
+        "token_summary": {
+          "estimated_total_input": 98000,
+          "estimated_total_output": 18000,
+          "estimated_total": 116000,
+          "note": "Estimates based on character count / 4. GitHub MCP write calls failed (2x 403) before Composio fallback succeeded. See Anthropic Console for exact totals."
+        },
+        "key_blocker": "GitHub MCP is read-only (403 on all write ops). Fixed: SKILL.md updated to use Composio exclusively for all GitHub writes.",
+        "fix_recommendation": "Composio now wired as the permanent GitHub write path. SKILL.md updated accordingly."
+      }
+    },
+    {
+      "run_id": "2026-06-07",
+      "date": "2026-06-07",
+      "status": "success",
+      "action_type": "NEW",
+      "priority_level": "B",
+      "article_slug": "change-image-background-to-white-online",
+      "article_title": "Change Image Background to White Online Free — No Signup",
+      "target_keyword": "change image background to white online",
+      "cluster": "background-color-change",
+      "gsc_signal": {"position": 21.05, "impressions": 3764, "clicks": 33, "ctr": 0.77},
+      "pr_url": null,
+      "pr_number": null,
+      "summary": {"key_blocker": "GitHub push failed — token unavailable, MCP read-only. No PR created.", "token_summary": {"note": "Not logged — run predated RUN_LOG instrumentation."}}
+    },
+    {
+      "run_id": "2026-06-06",
+      "date": "2026-06-06",
+      "status": "success",
+      "action_type": "NEW",
+      "priority_level": "C",
+      "article_slug": "facebook-image-sizes-2026",
+      "article_title": "Facebook Image Sizes 2026: Every Format & Dimension (Updated)",
+      "target_keyword": "facebook image sizes 2026",
+      "cluster": "social-media-resize",
+      "gsc_signal": {"position": 14.67, "impressions": 2922, "clicks": 39, "ctr": 1.27},
+      "pr_url": null,
+      "pr_number": null,
+      "summary": {"key_blocker": "GitHub push failed — token unavailable. No PR created.", "token_summary": {"note": "Not logged — run predated RUN_LOG instrumentation."}}
+    },
     {
       "run_id": "2026-06-04",
       "date": "2026-06-04",
@@ -27,16 +89,44 @@
         "total_tool_calls": 11,
         "successful_tool_calls": 9,
         "failed_tool_calls": 2,
-        "total_llm_calls": 16,
         "token_summary": {
           "estimated_total_input": 15072,
           "estimated_total_output": 9780,
           "estimated_total": 24852,
-          "note": "Estimates via character count / 4. See Anthropic Console for exact daily totals."
+          "note": "Estimates via character count / 4."
         },
-        "key_blocker": "GitHub MCP connector lacks write access (403 on create_branch). Composio connector worked as fallback.",
-        "fix_recommendation": "Store GitHub PAT in outputs/changeimageto_github_token.txt to enable direct bash push."
+        "key_blocker": "GitHub MCP connector lacks write access (403). Composio worked as fallback."
       }
+    },
+    {
+      "run_id": "2026-06-02",
+      "date": "2026-06-02",
+      "status": "success",
+      "action_type": "UPDATE",
+      "priority_level": "A",
+      "article_slug": "change-image-background-color-online",
+      "article_title": "Change Image Background Color Online Free — No Signup (2026)",
+      "target_keyword": "change image background color online",
+      "cluster": "background-color-change",
+      "gsc_signal": {"position": 63.95, "impressions": 1518, "clicks": 1, "ctr": 0.06},
+      "pr_url": null,
+      "pr_number": null,
+      "summary": {"key_blocker": "GitHub push method unclear for this run.", "token_summary": {"note": "Not logged — run predated RUN_LOG instrumentation."}}
+    },
+    {
+      "run_id": "2026-05-31",
+      "date": "2026-05-31",
+      "status": "success",
+      "action_type": "UPDATE",
+      "priority_level": "A",
+      "article_slug": "free-photoshop-alternatives",
+      "article_title": "Best Free Photoshop Alternatives 2026 (No Subscription Needed)",
+      "target_keyword": "free photoshop alternatives",
+      "cluster": "comparisons-alternatives",
+      "gsc_signal": {"position": 52.53, "impressions": 3483, "clicks": 1, "ctr": 0.03},
+      "pr_url": "https://github.com/vipulawl/changeimageto/pull/4",
+      "pr_number": 4,
+      "summary": {"key_blocker": null, "token_summary": {"note": "Not logged — run predated RUN_LOG instrumentation."}}
     }
   ]
 }
