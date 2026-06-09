@@ -231,6 +231,11 @@
             <priority>0.7</priority>
         </url>
         <url>
+            <loc>https://www.changeimageto.com/blog/facebook-image-sizes-2026.html</loc>
+            <changefreq>monthly</changefreq>
+            <priority>0.7</priority>
+        </url>
+        <url>
             <loc>https://www.changeimageto.com/blog/free-photoshop-alternatives.html</loc>
             <changefreq>monthly</changefreq>
             <priority>0.7</priority>
@@ -316,6 +321,11 @@
             <priority>0.7</priority>
         </url>
         <url>
+            <loc>https://www.changeimageto.com/blog/how-to-remove-gemini-watermark.html</loc>
+            <changefreq>monthly</changefreq>
+            <priority>0.7</priority>
+        </url>
+        <url>
             <loc>https://www.changeimageto.com/blog/how-to-resize-an-image-in-canva.html</loc>
             <changefreq>monthly</changefreq>
             <priority>0.7</priority>
@@ -372,6 +382,11 @@
         </url>
         <url>
             <loc>https://www.changeimageto.com/blog/index.html</loc>
+            <changefreq>monthly</changefreq>
+            <priority>0.7</priority>
+        </url>
+        <url>
+            <loc>https://www.changeimageto.com/blog/instagram-image-sizes-2026.html</loc>
             <changefreq>monthly</changefreq>
             <priority>0.7</priority>
         </url>
@@ -467,11 +482,6 @@
         </url>
         <url>
             <loc>https://www.changeimageto.com/api.html</loc>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://www.changeimageto.com/blog-admin.html</loc>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -656,11 +666,6 @@
             <priority>0.5</priority>
         </url>
         <url>
-            <loc>https://www.changeimageto.com/feedback-popup.html</loc>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
             <loc>https://www.changeimageto.com/grayscale-background.html</loc>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
@@ -712,66 +717,6 @@
         </url>
         <url>
             <loc>https://www.changeimageto.com/resize-image-for-instagram.html</loc>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://www.changeimageto.com/test-edit-text-in-image.html</loc>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://www.changeimageto.com/test-enhance.html</loc>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://www.changeimageto.com/test-google-enhance.html</loc>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://www.changeimageto.com/test-grayscale-background.html</loc>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://www.changeimageto.com/test-rembg.html</loc>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://www.changeimageto.com/test-remove-gemini-watermark-production.html</loc>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://www.changeimageto.com/test-remove-gemini-watermark.html</loc>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://www.changeimageto.com/test-replicate-professional-headshot.html</loc>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://www.changeimageto.com/test-replicate-text-removal.html</loc>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://www.changeimageto.com/test-restore.html</loc>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://www.changeimageto.com/test-unscribe.html</loc>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://www.changeimageto.com/test-upscayl.html</loc>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>

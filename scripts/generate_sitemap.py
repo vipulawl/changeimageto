@@ -65,6 +65,22 @@ def get_priority_and_frequency(filename: str) -> Tuple[float, str]:
     # Fallback
     return 0.5, "monthly"
 
+SKIP_FILES = {
+    "blog-admin.html",
+    "feedback-popup.html",
+}
+
+def should_skip_file(rel_path_str: str) -> bool:
+    """Return True for internal, test, or non-public pages."""
+    basename = Path(rel_path_str).name
+    if basename.startswith("test-"):
+        return True
+    if basename in SKIP_FILES:
+        return True
+    if any(skip in rel_path_str for skip in ["node_modules", ".git", "__pycache__"]):
+        return True
+    return False
+
 def scan_html_files(frontend_dir: Path) -> List[Tuple[str, float, str]]:
     """Scan frontend directory for HTML files and return their sitemap info."""
     html_files = []
@@ -74,8 +90,7 @@ def scan_html_files(frontend_dir: Path) -> List[Tuple[str, float, str]]:
         rel_path = html_file.relative_to(frontend_dir)
         rel_path_str = str(rel_path)
         
-        # Skip certain files
-        if any(skip in rel_path_str for skip in ['node_modules', '.git', '__pycache__']):
+        if should_skip_file(rel_path_str):
             continue
             
         priority, freq = get_priority_and_frequency(rel_path_str)
