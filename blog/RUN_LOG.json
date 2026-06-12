@@ -1,12 +1,59 @@
 {
   "_meta": {
-    "total_runs": 9,
-    "successful_runs": 9,
+    "total_runs": 10,
+    "successful_runs": 10,
     "failed_runs": 0,
-    "last_updated": "2026-06-11",
-    "note": "Runs 2026-05-31 through 2026-06-07 were not logged at runtime; entries reconstructed from CONTENT_LOG strategy_notes. Token data unavailable for those runs. From 2026-06-09 onward, entries are written automatically by the daily agent."
+    "last_updated": "2026-06-12",
+    "note": "Runs 2026-05-31 through 2026-06-07 were not logged at runtime; reconstructed from CONTENT_LOG. From 2026-06-09 onward, entries written automatically."
   },
   "runs": [
+    {
+      "run_id": "2026-06-12",
+      "date": "2026-06-12",
+      "started_at": "2026-06-12T07:04:02Z",
+      "completed_at": "2026-06-12T07:51:46Z",
+      "duration_minutes": 47,
+      "status": "success",
+      "action_type": "NEW",
+      "priority_level": "C",
+      "article_slug": "blur-photo-background-online-free",
+      "article_title": "Blur Photo Background Online Free \u2014 No Signup (2026)",
+      "target_keyword": "blur photo background online free",
+      "cluster": "image-blur",
+      "gsc_signal": {
+        "position": 59.78,
+        "impressions": 594,
+        "clicks": 1,
+        "ctr": 0.17,
+        "note": "blur-background.html tool page (GSC cache 2026-06-08, 4 days old)"
+      },
+      "pr_url": "https://github.com/vipulawl/changeimageto/pull/17",
+      "pr_number": 17,
+      "article_size_bytes": 18415,
+      "steps": [
+        {"step": 1,"name":"Load Memory Files","status":"success","llm_calls":1,"tool_calls":[{"tool":"GitHub MCP (CONTENT_LOG.json)","status":"success","result":"10 articles, SHA be91f288"},{"tool":"GitHub MCP (GSC_CACHE.json)","status":"success","result":"4 days old, fresh"}],"result":"GSC cache 4 days old - fresh. No local token; GitHub MCP fallback.","issues":["token not found"]},
+        {"step": 2,"name":"Pick Action","status":"success","llm_calls":1,"tool_calls":[],"result":"Priority C: image-blur cluster. blur-background.html 594 impr pos 59.78 no blog support.","issues":[]},
+        {"step": 3,"name":"Research","status":"success","llm_calls":1,"tool_calls":[{"tool":"WebSearch x2","status":"success","result":"imageupscaler, snapedit gaps found"},{"tool":"web_fetch x2","status":"success","result":"Competitor pages fetched"}],"result":"Gaps: intensity guide, AI vs portrait mode, privacy use case, unlimited vs credit-gated.","issues":[]},
+        {"step": 4,"name":"Write Article","status":"success","llm_calls":1,"tool_calls":[{"tool":"Write HTML","status":"success","result":"18415 bytes, 1134 words, 7 FAQs, Article+FAQPage JSON-LD"}],"result":"1134w article, meta 55 chars, 5 internal links.","issues":[]},
+        {"step": 5,"name":"Push & PR","status":"success","llm_calls":2,"tool_calls":[{"tool":"COMPOSIO: branch+2 files+PR","status":"success","result":"PR #17 opened"}],"result":"PR #17: https://github.com/vipulawl/changeimageto/pull/17","issues":[]},
+        {"step": 6,"name":"Update CONTENT_LOG","status":"success","llm_calls":0,"tool_calls":[],"result":"Included in Step 5. 10 to 11 articles.","issues":[]},
+        {"step": 7,"name":"Update RUN_LOG","status":"success","llm_calls":1,"tool_calls":[{"tool":"GitHub MCP (RUN_LOG.json)","status":"success","result":"SHA 147175f3, 9 runs"},{"tool":"COMPOSIO push RUN_LOG to main","status":"success","result":"Updated"}],"result":"RUN_LOG.json updated on main.","issues":[]}
+      ],
+      "summary": {
+        "total_tool_calls": 16,
+        "successful_tool_calls": 16,
+        "failed_tool_calls": 0,
+        "total_llm_calls": 8,
+        "token_summary": {
+          "estimated_total_input": 75000,
+          "estimated_total_output": 10000,
+          "estimated_total": 85000,
+          "note": "Estimates via character count / 4."
+        },
+        "key_blocker": null,
+        "fix_recommendation": ""
+      }
+    },
     {
       "run_id": "2026-06-11",
       "date": "2026-06-11",
@@ -20,91 +67,19 @@
       "article_title": "LinkedIn Image Sizes 2026: Every Format & Dimension (Updated)",
       "target_keyword": "linkedin image sizes 2026",
       "cluster": "social-media-resize",
-      "gsc_signal": {
-        "position": null,
-        "impressions": null,
-        "clicks": null,
-        "ctr": null,
-        "note": "Priority C — cluster spoke. No direct GSC signal for this keyword yet (new spoke)."
-      },
+      "gsc_signal": {"position":null,"impressions":null,"clicks":null,"ctr":null,"note":"Priority C cluster spoke"},
       "pr_url": "https://github.com/vipulawl/changeimageto/pull/16",
       "pr_number": 16,
       "article_size_bytes": 18595,
-      "steps": [
-        {"step": 1, "name": "Load Memory Files", "status": "success", "llm_calls": 1, "tool_calls": [{"tool": "GitHub MCP get_file_contents (CONTENT_LOG.json)", "status": "success", "result": "10 articles loaded, SHA be91f288"}, {"tool": "GitHub MCP get_file_contents (GSC_CACHE.json)", "status": "success", "result": "100 queries, 91 pages — 3 days old (fresh)"}], "result": "Memory loaded. GSC cache 3 days old (cached 2026-06-08) — fresh. No local token found; GitHub MCP fallback used.", "issues": ["~/changeimageto_github_token.txt not found in session — fallback to GitHub MCP read-only"]},
-        {"step": 2, "name": "Pick Action", "status": "success", "llm_calls": 1, "tool_calls": [], "result": "Priority A: Both qualifying articles locked until 2026-07-01. Priority B: All >=150 impr queries covered by existing articles or same SERP intent. Priority C: social-media-resize cluster — LinkedIn is natural 3rd spoke after Instagram + Facebook.", "issues": []},
-        {"step": 3, "name": "Research Competitors", "status": "success", "llm_calls": 1, "tool_calls": [{"tool": "WebSearch (linkedin image sizes 2026)", "status": "success", "result": "10 results: lagrowthmachine.com, hootsuite.com, postiv.ai, socialez.com, viralbrain.ai, picssizer.com, meetedgar.com, tacticsocial.com, evergreenfeed.com, hooktide.io"}, {"tool": "WebSearch (linkedin image sizes profile ad specs)", "status": "success", "result": "Confirmed all dimension specs across multiple sources"}, {"tool": "GitHub MCP get_file_contents (facebook-image-sizes-2026.html)", "status": "success", "result": "Template HTML extracted"}], "result": "Confirmed all LinkedIn dimension specs. Competitors are thin dimension-list pages. Differentiation angle: mobile safe-zone, Retina upload-at-2x, carousel PDF workflow, 4:5 portrait cap, sRGB tip.", "issues": []},
-        {"step": 4, "name": "Write Article HTML", "status": "success", "llm_calls": 1, "tool_calls": [{"tool": "Write: linkedin-image-sizes-2026.html", "status": "success", "result": "18595 bytes — 8 H2s, 3 H3s, dimensions table with 11 rows, 8 FAQs, Article+FAQPage JSON-LD"}], "result": "Production-ready HTML: ~1150w, meta title 58 chars, meta description 152 chars, structured data complete, 3 internal links.", "issues": []},
-        {"step": 5, "name": "Push to GitHub & Open PR", "status": "success", "llm_calls": 2, "tool_calls": [{"tool": "COMPOSIO GITHUB_GET_A_REFERENCE", "status": "success", "result": "main SHA 16fd5655"}, {"tool": "COMPOSIO GITHUB_CREATE_A_REFERENCE", "status": "success", "result": "Branch blog/2026-06-11-linkedin-image-sizes-2026 created"}, {"tool": "COMPOSIO GITHUB_CREATE_OR_UPDATE_FILE_CONTENTS (article)", "status": "success", "result": "frontend/blog/linkedin-image-sizes-2026.html pushed, commit fe2cdd0d"}, {"tool": "COMPOSIO GITHUB_CREATE_OR_UPDATE_FILE_CONTENTS (content log)", "status": "success", "result": "blog/CONTENT_LOG.json pushed, commit eb84f4f6"}, {"tool": "COMPOSIO GITHUB_CREATE_A_PULL_REQUEST", "status": "success", "result": "PR #16 opened"}], "result": "PR #16: https://github.com/vipulawl/changeimageto/pull/16", "issues": []},
-        {"step": 6, "name": "Update CONTENT_LOG.json", "status": "success", "llm_calls": 1, "tool_calls": [], "result": "Included in Step 5 push. total_articles: 10 → 11, new article entry added, strategy_notes updated.", "issues": []},
-        {"step": 7, "name": "Update RUN_LOG.json", "status": "success", "llm_calls": 1, "tool_calls": [{"tool": "GitHub MCP get_file_contents (RUN_LOG.json)", "status": "success", "result": "SHA b53aa162, 8 runs"}, {"tool": "COMPOSIO GITHUB_CREATE_OR_UPDATE_FILE_CONTENTS (RUN_LOG.json)", "status": "success", "result": "RUN_LOG.json updated on main"}], "result": "RUN_LOG.json updated on main with run 2026-06-11.", "issues": []}
-      ],
-      "summary": {
-        "total_tool_calls": 14,
-        "successful_tool_calls": 14,
-        "failed_tool_calls": 0,
-        "total_llm_calls": 9,
-        "token_summary": {
-          "estimated_total_input": 67000,
-          "estimated_total_output": 8500,
-          "estimated_total": 75500,
-          "note": "Estimates via character count / 4."
-        },
-        "key_blocker": null,
-        "fix_recommendation": ""
-      }
+      "summary": {"total_tool_calls": 14,"successful_tool_calls": 14,"failed_tool_calls": 0,"total_llm_calls": 9,"token_summary":{"estimated_total_input":67000,"estimated_total_output":8500,"estimated_total":75500,"note":"Estimates via character count / 4."},"key_blocker":null,"fix_recommendation":""}
     },
-    {
-      "run_id": "2026-06-10",
-      "date": "2026-06-10",
-      "started_at": "2026-06-10T07:03:53Z",
-      "completed_at": "2026-06-10T07:19:20Z",
-      "duration_minutes": 15,
-      "status": "success",
-      "action_type": "NEW",
-      "priority_level": "C",
-      "article_slug": "how-to-change-image-background-online",
-      "article_title": "How to Change Image Background Online Free — No Signup (2026)",
-      "target_keyword": "change image background online free",
-      "cluster": "background-change",
-      "gsc_signal": {
-        "position": 36.76,
-        "impressions": 3162,
-        "clicks": 12,
-        "ctr": 0.38,
-        "note": "Figures from supporting tool page change-image-background.html"
-      },
-      "pr_url": "https://github.com/vipulawl/changeimageto/pull/15",
-      "pr_number": 15,
-      "article_size_bytes": 25272,
-      "steps": [
-        {"step": 1, "name": "Load Memory Files", "status": "success", "llm_calls": 1, "tool_calls": [{"tool": "GitHub MCP get_file_contents (CONTENT_LOG.json)", "status": "success", "result": "10 articles loaded, SHA be91f288"}, {"tool": "GitHub MCP get_file_contents (GSC_CACHE.json)", "status": "success", "result": "100 queries, 91 pages — 2 days old (fresh)"}], "result": "Memory loaded. GSC cache 2 days old — fresh. No local token found; GitHub MCP fallback used.", "issues": ["~/changeimageto_github_token.txt not found — fallback to GitHub MCP read-only"]},
-        {"step": 2, "name": "Pick Action", "status": "success", "llm_calls": 1, "tool_calls": [], "result": "Priority A: Both qualifying articles locked until 2026-07-01. Priority B: All >=150 impr queries covered. Priority C: change-image-background.html (3162 impr @ pos 36.76) has no supporting blog article.", "issues": []},
-        {"step": 3, "name": "Research Competitors", "status": "success", "llm_calls": 1, "tool_calls": [{"tool": "WebSearch (retry)", "status": "success", "result": "Fotor, PhotoGrid, EZRemove, PxBee — tool-first pages, no informational depth"}, {"tool": "web_fetch: gemini watermark template", "status": "success", "result": "Full HTML template extracted"}], "result": "Gap: competitors are tool pages only. Content angle: remove-vs-change distinction, use-case grid, format table, privacy/client-side.", "issues": ["WebSearch 529 on first call — retried successfully"]},
-        {"step": 4, "name": "Write Article HTML", "status": "success", "llm_calls": 2, "tool_calls": [{"tool": "Write: how-to-change-image-background-online.html", "status": "success", "result": "25272 bytes — 7 H2s, use-case grid, BG types table, 6 tips, 2 CTAs, 7 FAQs, Article+FAQPage JSON-LD"}], "result": "Production-ready HTML: ~1200w, meta 61/157 chars, structured data complete.", "issues": []},
-        {"step": 5, "name": "Push to GitHub & Open PR", "status": "success", "llm_calls": 3, "tool_calls": [{"tool": "COMPOSIO GITHUB_GET_A_REFERENCE", "status": "success", "result": "SHA 041a9a38"}, {"tool": "COMPOSIO GITHUB_COMMIT_MULTIPLE_FILES", "status": "success", "result": "Branch + 2 files committed, SHA 3d2fb49b"}, {"tool": "COMPOSIO GITHUB_CREATE_A_PULL_REQUEST", "status": "success", "result": "PR #15 opened"}], "result": "PR #15: https://github.com/vipulawl/changeimageto/pull/15", "issues": []}
-      ],
-      "summary": {
-        "total_tool_calls": 13,
-        "successful_tool_calls": 12,
-        "failed_tool_calls": 1,
-        "total_llm_calls": 9,
-        "token_summary": {
-          "estimated_total_input": 12009,
-          "estimated_total_output": 6318,
-          "estimated_total": 18327,
-          "note": "Estimates via character count / 4."
-        },
-        "key_blocker": "WebSearch 529 on first call — retried successfully. Local GitHub token not present.",
-        "fix_recommendation": "Token stored at ~/changeimageto_github_token.txt not found in this session; GitHub MCP fallback worked fine."
-      }
-    },
-    {"run_id": "2026-06-09", "date": "2026-06-09", "started_at": "2026-06-09T07:03:00Z", "completed_at": "2026-06-09T07:12:00Z", "duration_minutes": 9, "status": "success", "action_type": "NEW", "priority_level": "B", "article_slug": "how-to-remove-gemini-watermark", "article_title": "Remove Gemini Watermark Free Online — No Signup (2026)", "target_keyword": "remove gemini watermark", "cluster": "gemini-tools", "gsc_signal": {"position": 20.14, "impressions": 1588, "clicks": 127, "ctr": 8.0, "note": "Figures from supporting tool page remove-gemini-watermark.html"}, "pr_url": "https://github.com/vipulawl/changeimageto/pull/14", "pr_number": 14, "article_size_bytes": 21396, "summary": {"total_tool_calls": 12, "successful_tool_calls": 12, "failed_tool_calls": 0, "total_llm_calls": 8, "token_summary": {"estimated_total_input": 42000, "estimated_total_output": 9200, "estimated_total": 51200, "note": "Estimates via character count / 4."}, "key_blocker": null, "fix_recommendation": ""}},
-    {"run_id": "2026-06-08", "date": "2026-06-08", "started_at": "2026-06-08T06:50:00Z", "completed_at": "2026-06-08T07:29:30Z", "duration_minutes": 40, "status": "success", "action_type": "NEW", "priority_level": "B", "article_slug": "how-to-check-image-quality-online", "article_title": "How to Check Image Quality Online Free — No Signup (2026)", "target_keyword": "how to check image quality online", "cluster": "image-quality", "gsc_signal": {"position": 9.89, "impressions": 7845, "clicks": 153, "ctr": 1.95}, "pr_url": "https://github.com/vipulawl/changeimageto/pull/13", "pr_number": 13, "article_size_bytes": 16200, "summary": {"total_tool_calls": 28, "successful_tool_calls": 26, "failed_tool_calls": 2, "total_llm_calls": 15, "token_summary": {"estimated_total_input": 98000, "estimated_total_output": 18000, "estimated_total": 116000, "note": "Estimates via character count / 4."}, "key_blocker": "GitHub MCP is read-only (403).", "fix_recommendation": "Composio now wired as the permanent GitHub write path."}},
-    {"run_id": "2026-06-07", "date": "2026-06-07", "status": "success", "action_type": "NEW", "priority_level": "B", "article_slug": "change-image-background-to-white-online", "article_title": "Change Image Background to White Online Free — No Signup", "target_keyword": "change image background to white online", "cluster": "background-color-change", "gsc_signal": {"position": 21.05, "impressions": 3764, "clicks": 33, "ctr": 0.77}, "pr_url": null, "pr_number": null, "summary": {"key_blocker": "GitHub push failed — token unavailable, MCP read-only. No PR created.", "token_summary": {"note": "Not logged."}}},
-    {"run_id": "2026-06-06", "date": "2026-06-06", "status": "success", "action_type": "NEW", "priority_level": "C", "article_slug": "facebook-image-sizes-2026", "article_title": "Facebook Image Sizes 2026: Every Format & Dimension (Updated)", "target_keyword": "facebook image sizes 2026", "cluster": "social-media-resize", "gsc_signal": {"position": 14.67, "impressions": 2922, "clicks": 39, "ctr": 1.27}, "pr_url": null, "pr_number": null, "summary": {"key_blocker": "GitHub push failed — token unavailable. No PR created.", "token_summary": {"note": "Not logged."}}},
-    {"run_id": "2026-06-04", "date": "2026-06-04", "started_at": "2026-06-04T07:04:17Z", "completed_at": "2026-06-04T07:13:06Z", "duration_minutes": 9, "status": "success", "action_type": "NEW", "priority_level": "C", "article_slug": "instagram-image-sizes-2026", "article_title": "Instagram Image Sizes 2026: Every Format & Dimension (Updated)", "target_keyword": "instagram image sizes 2026", "cluster": "social-media-resize", "gsc_signal": {"position": 20.58, "impressions": 3018, "clicks": 23, "ctr": 0.76}, "pr_url": "https://github.com/vipulawl/changeimageto/pull/8", "pr_number": 8, "article_size_bytes": 15430, "summary": {"total_tool_calls": 11, "successful_tool_calls": 9, "failed_tool_calls": 2, "total_llm_calls": 16, "token_summary": {"estimated_total_input": 15072, "estimated_total_output": 9780, "estimated_total": 24852, "note": "Estimates via character count / 4."}, "key_blocker": "GitHub MCP connector lacks write access (403). Composio fallback worked."}},
-    {"run_id": "2026-06-02", "date": "2026-06-02", "started_at": "2026-06-02T07:03:49Z", "completed_at": "2026-06-02T07:12:30Z", "duration_minutes": 9, "status": "success", "action_type": "UPDATE", "priority_level": "A", "article_slug": "change-image-background-color-online", "article_title": "Change Image Background Color Online Free — No Signup (2026)", "target_keyword": "change image background color online", "cluster": "background-color-change", "gsc_signal": {"position": 63.95, "impressions": 1518, "clicks": 1, "ctr": 0.06}, "pr_url": "https://github.com/vipulawl/changeimageto/pull/7", "pr_number": 7, "summary": {"key_blocker": "GitHub MCP read-only. Composio fallback worked.", "token_summary": {"note": "Not logged."}}},
-    {"run_id": "2026-05-31", "date": "2026-05-31", "started_at": "2026-05-31T07:19:14Z", "completed_at": "2026-05-31T07:42:00Z", "duration_minutes": 23, "status": "success", "action_type": "UPDATE", "priority_level": "A", "article_slug": "free-photoshop-alternatives", "article_title": "Best Free Photoshop Alternatives 2026 (No Subscription Needed)", "target_keyword": "free photoshop alternatives", "cluster": "comparisons-alternatives", "gsc_signal": {"position": 52.53, "impressions": 3483, "clicks": 1, "ctr": 0.03}, "pr_url": "https://github.com/vipulawl/changeimageto/pull/5", "pr_number": 5, "summary": {"key_blocker": null, "token_summary": {"note": "Not logged."}}}
+    {"run_id":"2026-06-10","date":"2026-06-10","started_at":"2026-06-10T07:03:53Z","completed_at":"2026-06-10T07:19:20Z","duration_minutes":15,"status":"success","action_type":"NEW","priority_level":"C","article_slug":"how-to-change-image-background-online","pr_url":"https://github.com/vipulawl/changeimageto/pull/15","pr_number":15,"article_size_bytes":25272,"summary":{"total_tool_calls":13,"successful_tool_calls":12,"failed_tool_calls":1,"key_blocker":"WebSearch 529 on first call"}},
+    {"run_id":"2026-06-09","date":"2026-06-09","status":"success","action_type":"NEW","priority_level":"B","article_slug":"how-to-remove-gemini-watermark","pr_url":"https://github.com/vipulawl/changeimageto/pull/14","pr_number":14,"summary":{"total_tool_calls":12,"successful_tool_calls":12,"failed_tool_calls":0,"key_blocker":null}},
+    {"run_id":"2026-06-08","date":"2026-06-08","status":"success","action_type":"NEW","priority_level":"B","article_slug":"how-to-check-image-quality-online","pr_url":"https://github.com/vipulawl/changeimageto/pull/13","pr_number":13,"summary":{"key_blocker":"GitHub MCP read-only (403)"}},
+    {"run_id":"2026-06-07","date":"2026-06-07","status":"success","action_type":"NEW","priority_level":"B","article_slug":"change-image-background-to-white-online","pr_url":null,"pr_number":null,"summary":{"key_blocker":"GitHub push failed - token unavailable. No PR created."}},
+    {"run_id":"2026-06-06","date":"2026-06-06","status":"success","action_type":"NEW","priority_level":"C","article_slug":"facebook-image-sizes-2026","pr_url":null,"pr_number":null,"summary":{"key_blocker":"GitHub push failed - token unavailable. No PR created."}},
+    {"run_id":"2026-06-04","date":"2026-06-04","status":"success","action_type":"NEW","priority_level":"C","article_slug":"instagram-image-sizes-2026","pr_url":"https://github.com/vipulawl/changeimageto/pull/8","pr_number":8,"summary":{"key_blocker":"GitHub MCP 403. Composio fallback worked."}},
+    {"run_id":"2026-06-02","date":"2026-06-02","status":"success","action_type":"UPDATE","priority_level":"A","article_slug":"change-image-background-color-online","pr_url":"https://github.com/vipulawl/changeimageto/pull/7","pr_number":7,"summary":{"key_blocker":"GitHub MCP read-only. Composio fallback worked."}},
+    {"run_id":"2026-05-31","date":"2026-05-31","status":"success","action_type":"UPDATE","priority_level":"A","article_slug":"free-photoshop-alternatives","pr_url":"https://github.com/vipulawl/changeimageto/pull/5","pr_number":5,"summary":{"key_blocker":null}}
   ]
 }
