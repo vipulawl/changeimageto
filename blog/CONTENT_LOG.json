@@ -2,8 +2,8 @@
   "_meta": {
     "description": "Single source of truth for changeimageto.com content strategy.",
     "last_updated": "2026-06-12",
-    "last_strategy_review": "2026-05-29",
-    "total_articles": 13,
+    "last_strategy_review": "2026-06-12",
+    "total_articles": 14,
     "next_strategy_review": "2026-06-19"
   },
   "strategy_notes": [
@@ -61,6 +61,11 @@
       "date": "2026-06-12",
       "author": "daily-writer",
       "note": "New article: blur-photo-background-online-free. Priority C: image-blur cluster spoke. Tool page blur-background.html has 594 impressions at pos 59.78, CTR 0.17% with zero supporting blog content. Priority A locked (both candidates protected until 2026-07-01). Priority B: all 150+ impr queries covered by existing articles. Gaps vs competitors: blur intensity guide, AI vs portrait mode, privacy use case, unlimited vs credit-gated tools."
+    },
+    {
+      "date": "2026-06-12",
+      "author": "friday-strategy",
+      "note": "Weekly strategy run. GSC: 56 queries, 33 pages fetched. CLUSTER CHANGES: comparisons-alternatives recovering (pos 47.98->44.44, -3.5); image-blur stable; image-quality stable; background-color-change recovering (pos 59.92->57.52, -2.4); social-media-resize/gemini-tools untapped (new articles). NEW DISCOVERY: canva-vs-photopea.html had 2108 impressions at pos 6.92 but only 0.05% CTR (1 click) -- not in log, critically undertapped. Added to comparisons-alternatives cluster. REWRITE: canva-vs-photopea.html -- fixed title, meta, OG tags (year was 2024), added Article+FAQ JSON-LD schemas, added quick verdict box, updated footer date, improved internal links. Expected CTR improvement from 0.05% to ~3-4% = +63 clicks/week. CANNIBALIZATION: photopea-vs-canva.html (149 impr, pos 15.94) competes with canva-vs-photopea.html -- flagged for consolidation. NEW OPPORTUNITY: image resolution checker (280 impr, pos 11.4) uncovered -- added to image-quality missing_spokes. UNLISTED HIGH-IMPRESSION PAGES: capcut-vs-davinci-resolve.html (1202 impr), remove-background-from-image-android.html (703 impr), remove-background-from-image-canva.html (776 impr) -- flagged for future log addition."
     }
   ],
   "articles": [
@@ -87,6 +92,31 @@
       "status": "published",
       "health": "updated",
       "notes": "Full rewrite May 2026. Do not rewrite again before 2026-07-01."
+    },
+    {
+      "slug": "canva-vs-photopea",
+      "url": "https://www.changeimageto.com/blog/canva-vs-photopea.html",
+      "title": "Canva vs Photopea (2026): Honest Verdict for Every Use Case",
+      "target_keyword": "canva vs photopea",
+      "cluster": "comparisons-alternatives",
+      "type": "pillar",
+      "semantic_siblings": [
+        "canva vs photopea 2026",
+        "photopea vs canva",
+        "canva or photopea",
+        "best free design tool 2026",
+        "canva photopea comparison"
+      ],
+      "published": "2024-11-17",
+      "last_updated": "2026-06-12",
+      "gsc_position": 6.92,
+      "gsc_impressions": 2108,
+      "gsc_clicks": 1,
+      "gsc_ctr": 0.05,
+      "gsc_date": "2026-06-12",
+      "status": "published",
+      "health": "critical_ctr",
+      "notes": "Rewrote June 12: fixed title (OG was showing 2024), added Article+FAQ JSON-LD, added quick verdict box. Expected CTR 0.05% -> 3-4%. Cannibalization risk with photopea-vs-canva.html -- flag for redirect."
     },
     {
       "slug": "how-to-blur-image-in-paint",
