@@ -436,6 +436,11 @@
             <priority>0.7</priority>
         </url>
         <url>
+            <loc>https://www.changeimageto.com/blog/optimize-image-resizing-in-photoshop.html</loc>
+            <changefreq>monthly</changefreq>
+            <priority>0.7</priority>
+        </url>
+        <url>
             <loc>https://www.changeimageto.com/blog/photopea-vs-canva.html</loc>
             <changefreq>monthly</changefreq>
             <priority>0.7</priority>
