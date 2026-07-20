@@ -31,7 +31,7 @@ EXISTING_FUNCTIONALITY_PAGES = {
     'change-color-of-image.html',
     'convert-image-format.html',
     'bulk-image-resizer.html',
-    'image-quality-checker.html',
+    'bulk-image-quality-checker.html',
     'real-estate-photo-enhancement.html',
     'remove-background-for-shopify.html',  # Programmatic SEO page
 }
@@ -60,7 +60,7 @@ def get_base_template(page_type: str) -> Optional[str]:
         'change_color': 'change-color-of-image.html',
         'convert_format': 'convert-image-format.html',
         'bulk_resize': 'bulk-image-resizer.html',
-        'image_quality': 'image-quality-checker.html',
+        'image_quality': 'bulk-image-quality-checker.html',
         'real_estate_enhance': 'real-estate-photo-enhancement.html'
     }
     

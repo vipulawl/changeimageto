@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         <url>
             <loc>https://www.changeimageto.com/</loc>
+            <lastmod>2026-07-20</lastmod>
             <changefreq>daily</changefreq>
             <priority>1.0</priority>
         </url>
@@ -36,13 +37,15 @@
             <priority>0.9</priority>
         </url>
         <url>
-            <loc>https://www.changeimageto.com/image-quality-checker.html</loc>
+            <loc>https://www.changeimageto.com/bulk-image-quality-checker.html</loc>
+            <lastmod>2026-07-20</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.9</priority>
         </url>
         <url>
-            <loc>https://www.changeimageto.com/remove-background-from-image.html</loc>
-            <changefreq>daily</changefreq>
+            <loc>https://www.changeimageto.com/image-resolution-checker.html</loc>
+            <lastmod>2026-07-20</lastmod>
+            <changefreq>weekly</changefreq>
             <priority>0.9</priority>
         </url>
         <url>
@@ -261,11 +264,6 @@
             <priority>0.7</priority>
         </url>
         <url>
-            <loc>https://www.changeimageto.com/blog/check-image-quality.html</loc>
-            <changefreq>monthly</changefreq>
-            <priority>0.7</priority>
-        </url>
-        <url>
             <loc>https://www.changeimageto.com/blog/check-image-resolution-online-free.html</loc>
             <changefreq>monthly</changefreq>
             <priority>0.7</priority>
@@ -431,7 +429,7 @@
             <priority>0.7</priority>
         </url>
         <url>
-            <loc>https://www.changeimageto.com/blog/image-quality-checker.html</loc>
+            <loc>https://www.changeimageto.com/blog/</loc>
             <changefreq>monthly</changefreq>
             <priority>0.7</priority>
         </url>

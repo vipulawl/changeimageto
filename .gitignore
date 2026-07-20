@@ -5,5 +5,7 @@ scripts/seo-agent/config.local.yaml
 scripts/seo-agent/seo_agent_state.db
 scripts/seo-agent/last_run.txt
 scripts/blogging-agent/.env
+.env.hetzner
+.hetzner-server-ip
 scripts/blogging-agent/google-credentials.json
 scripts/blogging-agent/.venv/

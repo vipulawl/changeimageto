@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { href: '/convert-image-format.html', label: 'Convert image format' },
             { href: '/blur-background.html', label: 'Blur Background' },
             { href: '/bulk-image-resizer.html', label: 'Bulk Image Resizer' },
-            { href: '/image-quality-checker.html', label: 'Image Quality Checker' },
+            { href: '/', label: 'Image Quality Checker' },
           ].map(i => `<a href="${i.href}">${i.label}</a>`).join('');
           // Insert right before footer to match existing structure
           footer.parentElement.insertBefore(nav, footer);

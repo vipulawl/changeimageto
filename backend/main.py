@@ -743,7 +743,7 @@ def render_article_html(title: str, slug: str, body_sections: list) -> str:
               <li><a href="/bulk-resize-images-without-losing-quality.html">Bulk Resize Without Losing Quality</a></li>
               <li><a href="/bulk-resize-images-for-ecommerce.html">Bulk Resize for E-commerce</a></li>
               <li><a href="/bulk-resize-images-for-social-media.html">Bulk Resize for Social Media</a></li>
-              <li><a href="/image-quality-checker.html">Image Quality Checker</a></li>
+              <li><a href="/">Image Quality Checker</a></li>
               <li><a href="/real-estate-photo-enhancement.html">Real Estate Photo Enhancement</a></li>
             </ul>
           </div>

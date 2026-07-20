@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Image Resolution Checker — Check Photo DPI, Dimensions & Print Size</title>
+    <meta name="description" content="Free image resolution checker. Check pixel dimensions, DPI, megapixels and maximum print size instantly. See if your photo is high-res enough for print or web. No signup." />
+    <meta name="keywords" content="image resolution checker, check photo DPI, image dimensions, print size calculator, megapixels, high resolution photo, DPI checker, print resolution" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="ChangeImageTo" />
+    <link rel="canonical" href="https://www.changeimageto.com/image-resolution-checker.html" />
+
+    <meta property="og:title" content="Image Resolution Checker — Check Photo DPI, Dimensions & Print Size" />
+    <meta property="og:description" content="Free image resolution checker. Check pixel dimensions, DPI, megapixels and maximum print size instantly. See if your photo is high-res enough for print or web. No signup." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.changeimageto.com/image-resolution-checker.html" />
+    <meta property="og:site_name" content="ChangeImageTo" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Image Resolution Checker — Check Photo DPI, Dimensions & Print Size" />
+    <meta name="twitter:description" content="Free image resolution checker. Check pixel dimensions, DPI, megapixels and maximum print size instantly. See if your photo is high-res enough for print or web. No signup." />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Image Resolution Checker",
+      "url": "https://www.changeimageto.com/image-resolution-checker.html",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (web browser)",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Pixel dimensions and megapixel readout",
+        "EXIF DPI (XResolution / YResolution) detection",
+        "Print size calculator with inches and cm",
+        "300 DPI pass/fail for standard print sizes",
+        "Platform minimum checks for Amazon, Shopify, eBay, Instagram, and print",
+        "Aspect ratio and file format detection"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "ChangeImageTo",
+        "url": "https://www.changeimageto.com/",
+        "logo": "https://www.changeimageto.com/logo.png"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is an image resolution checker?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An image resolution checker reads your photo’s pixel width and height, megapixels, aspect ratio, file size, and any EXIF DPI tags, then shows whether the image is sharp enough for common print sizes and platform minimums."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does changing DPI from 72 to 300 improve my photo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The EXIF DPI tag is only a label. Changing 72 to 300 does not add pixels or detail. Print quality depends on pixel count divided by print size in inches (effective DPI), not the metadata tag."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What DPI do I need for print?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Professional print standards typically use 300 DPI. Effective DPI = pixels ÷ print inches. For example, an 8×10 inch print at 300 DPI needs at least 2400×3000 pixels."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I check if my photo is high enough resolution for Amazon or Instagram?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Upload the image on this page. We compare your longest edge and dimensions against common platform guidance: Amazon recommends 1600px on the longest edge, Instagram feed posts work best at 1080px on the short side, and Shopify/eBay also benefit from large product images."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the image resolution checker free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. It runs entirely in your browser, requires no signup, and does not add watermarks. Your file is analyzed locally for dimensions and EXIF DPI."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I do if my image fails the 300 DPI print check?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Print smaller, or increase pixel count with an upscaler. Use our Upscale Image tool when resolution is insufficient, or the full Image Quality Checker on the homepage if you also need blur and noise analysis."
+          }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Check Image Resolution and Print DPI",
+      "description": "Upload a photo to see dimensions, megapixels, EXIF DPI, effective print DPI, and pass/fail for standard print sizes and platforms.",
+      "totalTime": "PT1M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Upload your photo",
+          "text": "Drag and drop or browse a JPG, PNG, WebP, or GIF. Analysis runs instantly in your browser."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Review dimensions and DPI",
+          "text": "See width, height, megapixels, aspect ratio, file size, format, and EXIF DPI if present."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Calculate print size",
+          "text": "Enter a desired print width and height in inches or centimeters to get effective DPI versus the 300 DPI print standard."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Check standard sizes and platforms",
+          "text": "Compare pass/fail for 4×6 through 24×36 and platform minimums like Amazon, Shopify, eBay, Instagram, and print."
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.changeimageto.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Image Resolution Checker",
+          "item": "https://www.changeimageto.com/image-resolution-checker.html"
+        }
+      ]
+    }
+    </script>
+
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="./styles.css?v=20250916-3" />
+    <link rel="stylesheet" href="./styles.css?v=20250916-3" />
+
+    <script src="https://cdn.jsdelivr.net/npm/exifr@7.1.3/dist/lite.umd.js"></script>
+
+    <style>
+      .site-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:8px;flex-wrap:wrap}
+      .quality-hero{margin:12px 0 40px;text-align:center}
+      .quality-hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border:1px solid #a7f3d0;border-radius:999px;padding:6px 12px;margin:0 0 16px}
+      .quality-hero h1{margin:0 0 12px;font-size:clamp(26px,4.8vw,40px);line-height:1.15;letter-spacing:-.02em;color:var(--fg);font-weight:700}
+      .quality-hero-sub{margin:0 auto 20px;max-width:620px;color:var(--muted);font-size:clamp(15px,2.2vw,18px);line-height:1.5}
+      .quality-hero-trust{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:0 0 28px;color:var(--fg-soft);font-size:13px;font-weight:500}
+      .quality-hero-trust span{display:inline-flex;align-items:center;gap:6px}
+      .quality-hero-trust span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+      .hero-dropzone{position:relative;max-width:720px;margin:0 auto;background:var(--card);border:2px dashed var(--border);border-radius:20px;padding:48px 28px;cursor:pointer;transition:border-color .2s,box-shadow .2s,background .2s;box-shadow:var(--shadow)}
+      .hero-dropzone:hover,.hero-dropzone.drag{border-color:var(--accent);background:var(--accent-soft);box-shadow:var(--shadow-lg)}
+      .hero-dropzone-icon{width:56px;height:56px;margin:0 auto 16px;border-radius:16px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center}
+      .hero-dropzone h2{margin:0 0 8px;font-size:20px;color:var(--fg)}
+      .hero-dropzone p{margin:0;color:var(--muted);font-size:14px}
+      .hero-dropzone .hero-browse{color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+      .hero-dropzone-meta{margin-top:14px;font-size:12px;color:var(--muted)}
+      .hero-error{display:none;max-width:720px;margin:16px auto 0;padding:12px 16px;border-radius:10px;background:#fef2f2;color:#b91c1c;border:1px solid #fecaca;font-size:14px}
+      .hero-error.active{display:block}
+
+      .results-panel{display:none;max-width:900px;margin:0 auto 40px;text-align:left}
+      .results-panel.active{display:block}
+      .result-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:24px;box-shadow:var(--shadow);margin-bottom:20px}
+      .result-top{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
+      .result-preview{width:140px;height:140px;border-radius:12px;object-fit:cover;border:1px solid var(--border);background:var(--bg-alt);flex-shrink:0}
+      .result-main{flex:1;min-width:220px}
+      .result-main h2{margin:0 0 6px;font-size:20px;color:var(--fg)}
+      .result-filename{margin:0 0 12px;color:var(--muted);font-size:13px;word-break:break-all}
+      .stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:8px}
+      @media(min-width:640px){.stat-grid{grid-template-columns:repeat(3,1fr)}}
+      .stat-box{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:12px 14px}
+      .stat-box span{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
+      .stat-box strong{font-size:16px;color:var(--fg);font-weight:700}
+      .result-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+
+      .section-block{margin:48px 0}
+      .section-block h2{margin:0 0 10px;font-size:clamp(22px,3vw,28px);color:var(--fg)}
+      .section-block > p.lead{margin:0 0 20px;color:var(--muted);max-width:640px;line-height:1.6}
+      .calc-grid{display:grid;gap:16px}
+      @media(min-width:700px){.calc-grid{grid-template-columns:1fr 1fr}}
+      .calc-fields{display:grid;gap:14px}
+      .field-row{display:grid;gap:8px}
+      .field-row label{font-weight:600;font-size:14px;color:var(--fg)}
+      .field-row input,.field-row select{background:var(--card);color:var(--fg);border:1px solid var(--border);padding:10px 12px;border-radius:8px;font-size:15px;font-family:inherit;width:100%}
+      .field-row input:focus,.field-row select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(5,150,105,.15)}
+      .unit-toggle{display:inline-flex;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg)}
+      .unit-toggle button{border:none;background:transparent;padding:10px 16px;font-weight:600;font-size:14px;cursor:pointer;color:var(--muted);font-family:inherit}
+      .unit-toggle button.active{background:var(--accent);color:var(--on-accent)}
+      .calc-output{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:20px;display:flex;flex-direction:column;justify-content:center;gap:12px;min-height:160px}
+      .calc-dpi{font-size:36px;font-weight:700;color:var(--fg);line-height:1;margin:0}
+      .calc-dpi-label{font-size:13px;color:var(--muted);margin:0}
+      .badge{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;font-weight:700;font-size:13px;width:fit-content}
+      .badge.pass{background:#ecfdf5;color:#047857}
+      .badge.fail{background:#fef2f2;color:#b91c1c}
+      .badge.neutral{background:var(--bg-alt);color:var(--fg-soft)}
+      .calc-hint{margin:0;font-size:13px;color:var(--muted);line-height:1.5}
+
+      .table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:16px;background:var(--card);box-shadow:var(--shadow-sm)}
+      .print-table{width:100%;border-collapse:collapse;min-width:560px}
+      .print-table th,.print-table td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--border);font-size:14px}
+      .print-table th{background:var(--bg);color:var(--fg);font-weight:600;font-size:13px}
+      .print-table tbody tr:last-child td{border-bottom:none}
+      .print-table tbody tr:hover{background:rgba(5,150,105,.04)}
+      .print-table td{color:var(--muted)}
+      .print-table td:first-child{color:var(--fg);font-weight:600}
+      .empty-hint{margin:0;padding:24px;text-align:center;color:var(--muted);font-size:14px}
+
+      .note-card{background:linear-gradient(135deg,var(--accent-soft),#ffffff);border:1px solid #a7f3d0;border-radius:16px;padding:22px 24px}
+      .note-card h3{margin:0 0 8px;font-size:18px;color:var(--fg)}
+      .note-card p{margin:0;color:var(--fg-soft);line-height:1.65;font-size:15px}
+
+      .platform-grid{display:grid;gap:12px}
+      @media(min-width:700px){.platform-grid{grid-template-columns:repeat(2,1fr)}}
+      .platform-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+      .platform-card h3{margin:0 0 6px;font-size:16px;color:var(--fg)}
+      .platform-card p{margin:0;font-size:13px;color:var(--muted);line-height:1.5}
+
+      .steps-list{counter-reset:step;list-style:none;padding:0;margin:24px 0 0;display:grid;gap:14px}
+      .steps-list li{position:relative;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 18px 18px 64px;color:var(--muted);line-height:1.55}
+      .steps-list li::before{counter-increment:step;content:counter(step);position:absolute;left:18px;top:18px;width:32px;height:32px;border-radius:50%;background:var(--accent-soft);color:var(--accent-2);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+      .steps-list strong{color:var(--fg)}
+
+      .related-grid{display:grid;gap:14px}
+      @media(min-width:700px){.related-grid{grid-template-columns:repeat(3,1fr)}}
+      .related-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-decoration:none;color:inherit;transition:border-color .2s,box-shadow .2s,transform .2s;display:block}
+      .related-card:hover{border-color:var(--accent);box-shadow:var(--shadow);transform:translateY(-2px)}
+      .related-card h3{margin:0 0 8px;font-size:16px;color:var(--fg)}
+      .related-card p{margin:0;font-size:14px;color:var(--muted);line-height:1.5}
+
+      .faq-section{margin:48px 0;max-width:800px}
+      .faq-section h2{text-align:left;margin-bottom:24px}
+      .faq-grid{display:grid;gap:12px}
+      .faq-item{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+      .faq-item summary{padding:18px 48px 18px 20px;cursor:pointer;font-weight:600;color:var(--fg);list-style:none;position:relative}
+      .faq-item summary::-webkit-details-marker{display:none}
+      .faq-item summary::after{content:'+';position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:20px;color:var(--accent)}
+      .faq-item[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+      .faq-item p{padding:0 20px 18px;margin:0;color:var(--muted);line-height:1.6}
+
+      .footer-grid-compact{display:grid;grid-template-columns:2fr 1fr;gap:40px;margin-bottom:40px}
+      @media(max-width:700px){.footer-grid-compact{grid-template-columns:1fr;gap:24px}}
+    </style>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (window.location.hash.includes(":~:text")) {
+        if (typeof gtag === "function") {
+          gtag("event", "ai_overview", { anchor: window.location.hash });
+        } else {
+          const checkGtag = setInterval(() => {
+            if (typeof gtag === "function") {
+              clearInterval(checkGtag);
+              gtag("event", "ai_overview", { anchor: window.location.hash });
+            }
+          }, 100);
+          setTimeout(() => clearInterval(checkGtag), 10000);
+        }
+      }
+    });
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D3Q582VFCG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-D3Q582VFCG');
+    </script>
+  </head>
+  <body>
+    <header class="container header">
+      <div class="site-top">
+        <a href="/" class="logo-link" style="margin-bottom:0">
+          <img src="/logo.png?v=20250921-1" alt="ChangeImageTo" class="logo-img" loading="eager" width="200" height="68" />
+        </a>
+        <nav class="top-nav">
+          <a href="/" aria-label="Image quality checker">Quality Checker</a>
+          <a href="/blog" aria-label="Read our blog" style="margin-left:16px">Blog</a>
+          <a href="/api.html" aria-label="API Access" style="margin-left:16px">API</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="quality-hero" aria-labelledby="resolution-hero-title">
+        <p class="quality-hero-eyebrow">Free image resolution checker</p>
+        <h1 id="resolution-hero-title">Image Resolution Checker — Check DPI, Dimensions &amp; Print Size</h1>
+        <p class="quality-hero-sub">Upload a photo to see pixel dimensions, megapixels, EXIF DPI, and whether it’s sharp enough for print or web — instantly in your browser.</p>
+        <div class="quality-hero-trust" aria-hidden="true">
+          <span>100% free</span>
+          <span>No signup</span>
+          <span>Client-side only</span>
+        </div>
+
+        <div class="hero-dropzone" id="heroDropzone" role="button" tabindex="0" aria-label="Upload an image to check resolution">
+          <div class="hero-dropzone-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+          </div>
+          <h2>Drop an image here</h2>
+          <p>or <span class="hero-browse">browse files</span> · JPG, PNG, WebP, GIF</p>
+          <p class="hero-dropzone-meta">Analyzed instantly in your browser · No upload to a server</p>
+          <input type="file" id="fileInput" accept="image/*" style="display:none" />
+        </div>
+        <div class="hero-error" id="heroError" role="alert"></div>
+      </section>
+
+      <section class="results-panel" id="resultsPanel" aria-live="polite">
+        <div class="result-card">
+          <div class="result-top">
+            <img class="result-preview" id="previewImg" alt="Uploaded image preview" />
+            <div class="result-main">
+              <h2>Resolution results</h2>
+              <p class="result-filename" id="fileName"></p>
+              <div class="stat-grid" id="statGrid"></div>
+              <div class="result-actions">
+                <button type="button" class="btn" id="resetBtn">Check another image</button>
+                <a class="btn secondary" href="/upscale-image.html" id="upscaleCta" style="display:none">Upscale this image</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-card" id="printCalcSection">
+          <h2 style="margin:0 0 8px;font-size:20px">Print size calculator</h2>
+          <p style="margin:0 0 18px;color:var(--muted);font-size:14px;line-height:1.55">Enter the size you want to print. Effective DPI = pixels ÷ inches (cm is converted ÷ 2.54). Pass requires ≥ 300 DPI.</p>
+          <div class="calc-grid">
+            <div class="calc-fields">
+              <div class="field-row">
+                <label>Unit</label>
+                <div class="unit-toggle" role="group" aria-label="Print size unit">
+                  <button type="button" class="active" data-unit="in" id="unitIn">Inches</button>
+                  <button type="button" data-unit="cm" id="unitCm">Centimeters</button>
+                </div>
+              </div>
+              <div class="field-row">
+                <label for="printWidth">Print width</label>
+                <input type="number" id="printWidth" min="0.1" step="0.01" value="8" />
+              </div>
+              <div class="field-row">
+                <label for="printHeight">Print height</label>
+                <input type="number" id="printHeight" min="0.1" step="0.01" value="10" />
+              </div>
+            </div>
+            <div class="calc-output" id="calcOutput">
+              <p class="calc-dpi-label">Effective DPI</p>
+              <p class="calc-dpi" id="calcDpi">—</p>
+              <span class="badge neutral" id="calcBadge">Upload an image</span>
+              <p class="calc-hint" id="calcHint">DPI is the lower of width and height DPI so the whole print stays sharp.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-card">
+          <h2 style="margin:0 0 8px;font-size:20px">Standard print sizes at 300 DPI</h2>
+          <p style="margin:0 0 16px;color:var(--muted);font-size:14px;line-height:1.55">Effective DPI when fitting your image into each print size (minimum of width DPI and height DPI). Pass ≥ 300 DPI.</p>
+          <div class="table-wrap">
+            <table class="print-table" aria-label="Print size pass fail table">
+              <thead>
+                <tr>
+                  <th>Print size</th>
+                  <th>Dimensions</th>
+                  <th>Effective DPI</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
+              <tbody id="printTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="result-card">
+          <h2 style="margin:0 0 8px;font-size:20px">Platform minimums</h2>
+          <p style="margin:0 0 16px;color:var(--muted);font-size:14px;line-height:1.55">Pass/fail against common guidance for your current image.</p>
+          <div class="platform-grid" id="platformGrid"></div>
+        </div>
+      </section>
+
+      <section class="section-block" id="exif-note">
+        <div class="note-card">
+          <h3>EXIF DPI is only a label</h3>
+          <p>The DPI (or PPI) tag stored in EXIF metadata does <strong>not</strong> change how many pixels your photo has. Editing 72 → 300 DPI adds no detail and will not make a soft print sharp. What matters for print is <strong>pixel count ÷ print size in inches</strong> (effective DPI). Use the calculator above — not the EXIF tag alone — to decide if an image is print-ready.</p>
+        </div>
+      </section>
+
+      <section class="section-block" id="how-it-works">
+        <h2>How it works</h2>
+        <p class="lead">Four quick steps — all processed locally in your browser.</p>
+        <ol class="steps-list">
+          <li><strong>Upload your photo.</strong> Drag and drop or browse a JPG, PNG, WebP, or GIF. Analysis runs instantly in your browser.</li>
+          <li><strong>Review dimensions and DPI.</strong> See width, height, megapixels, aspect ratio, file size, format, and EXIF DPI if present (or “not set”).</li>
+          <li><strong>Calculate print size.</strong> Enter a desired print width and height in inches or centimeters to get effective DPI versus the 300 DPI print standard.</li>
+          <li><strong>Check standard sizes and platforms.</strong> Compare pass/fail for 4×6 through 24×36 and minimums for Amazon, Shopify, eBay, Instagram, and print.</li>
+        </ol>
+      </section>
+
+      <section class="faq-section" id="faq">
+        <h2>Frequently asked questions</h2>
+        <div class="faq-grid">
+          <details class="faq-item">
+            <summary>What is an image resolution checker?</summary>
+            <p>An image resolution checker reads your photo’s pixel width and height, megapixels, aspect ratio, file size, and any EXIF DPI tags, then shows whether the image is sharp enough for common print sizes and platform minimums.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does changing DPI from 72 to 300 improve my photo?</summary>
+            <p>No. The EXIF DPI tag is only a label. Changing 72 to 300 does not add pixels or detail. Print quality depends on pixel count divided by print size in inches (effective DPI), not the metadata tag.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What DPI do I need for print?</summary>
+            <p>Professional print standards typically use 300 DPI. Effective DPI = pixels ÷ print inches. For example, an 8×10 inch print at 300 DPI needs at least 2400×3000 pixels.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do I check if my photo is high enough resolution for Amazon or Instagram?</summary>
+            <p>Upload the image on this page. We compare your longest edge and dimensions against common platform guidance: Amazon recommends 1600px on the longest edge, Instagram feed posts work best at 1080px on the short side, and Shopify/eBay also benefit from large product images.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is the image resolution checker free?</summary>
+            <p>Yes. It runs entirely in your browser, requires no signup, and does not add watermarks. Your file is analyzed locally for dimensions and EXIF DPI.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What should I do if my image fails the 300 DPI print check?</summary>
+            <p>Print smaller, or increase pixel count with an upscaler. Use our <a href="/upscale-image.html" style="color:var(--accent);font-weight:600">Upscale Image</a> tool when resolution is insufficient, or the full <a href="/" style="color:var(--accent);font-weight:600">Image Quality Checker</a> on the homepage if you also need blur and noise analysis.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="section-block" id="related-tools">
+        <h2>Related tools</h2>
+        <p class="lead">Need more than dimensions? Continue with quality analysis, upscaling, or batch checks.</p>
+        <div class="related-grid">
+          <a class="related-card" href="/">
+            <h3>Image Quality Checker</h3>
+            <p>Full quality analysis for blur, noise, pixelation, resolution, and exposure on a single photo.</p>
+          </a>
+          <a class="related-card" href="/upscale-image.html">
+            <h3>Upscale Image</h3>
+            <p>Increase resolution when your photo fails print or platform minimums and needs more pixels.</p>
+          </a>
+          <a class="related-card" href="/bulk-image-quality-checker.html">
+            <h3>Bulk Quality Checker</h3>
+            <p>Analyze up to 50 photos at once for ecommerce catalogs and marketing batches.</p>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="comprehensive-footer">
+      <div class="container">
+        <div class="footer-grid-compact">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <img src="/logo.png?v=20250921-1" alt="ChangeImageTo" style="height:32px;margin-bottom:16px" />
+            </div>
+            <p class="footer-description">
+              Free image quality and resolution tools. Check dimensions, DPI, and print readiness, then enhance or upscale when you need more detail — no signup required.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h3 class="footer-heading">Image Tools</h3>
+            <ul class="footer-links">
+              <li><a href="/">Image Quality Checker</a></li>
+              <li><a href="/bulk-image-quality-checker.html">Bulk Quality Checker</a></li>
+              <li><a href="/image-resolution-checker.html">Resolution Checker</a></li>
+              <li><a href="/enhance-image.html">Enhance</a></li>
+              <li><a href="/upscale-image.html">Upscale</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <p class="footer-copyright">© 2026 ChangeImageTo.com. All rights reserved.</p>
+            <div class="footer-bottom-links">
+              <a href="/privacy-policy.html">Privacy</a>
+              <a href="/contact.html">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js?v=20251220-1" defer></script>
+    <script>
+(function () {
+  const PRINT_SIZES = [
+    { name: '4×6', wIn: 4, hIn: 6 },
+    { name: '5×7', wIn: 5, hIn: 7 },
+    { name: '8×10', wIn: 8, hIn: 10 },
+    { name: 'A4', wIn: 8.27, hIn: 11.69 },
+    { name: '11×14', wIn: 11, hIn: 14 },
+    { name: 'A3', wIn: 11.69, hIn: 16.54 },
+    { name: '16×20', wIn: 16, hIn: 20 },
+    { name: '18×24', wIn: 18, hIn: 24 },
+    { name: '24×36', wIn: 24, hIn: 36 }
+  ];
+
+  const PRINT_STANDARD_DPI = 300;
+  let imageMeta = null;
+  let printUnit = 'in';
+  let objectUrl = null;
+
+  const dropzone = document.getElementById('heroDropzone');
+  const fileInput = document.getElementById('fileInput');
+  const heroError = document.getElementById('heroError');
+  const resultsPanel = document.getElementById('resultsPanel');
+  const previewImg = document.getElementById('previewImg');
+  const fileNameEl = document.getElementById('fileName');
+  const statGrid = document.getElementById('statGrid');
+  const printTableBody = document.getElementById('printTableBody');
+  const platformGrid = document.getElementById('platformGrid');
+  const calcDpi = document.getElementById('calcDpi');
+  const calcBadge = document.getElementById('calcBadge');
+  const calcHint = document.getElementById('calcHint');
+  const printWidth = document.getElementById('printWidth');
+  const printHeight = document.getElementById('printHeight');
+  const resetBtn = document.getElementById('resetBtn');
+  const upscaleCta = document.getElementById('upscaleCta');
+  const unitIn = document.getElementById('unitIn');
+  const unitCm = document.getElementById('unitCm');
+
+  function showError(msg) {
+    heroError.textContent = msg;
+    heroError.classList.add('active');
+  }
+
+  function clearError() {
+    heroError.textContent = '';
+    heroError.classList.remove('active');
+  }
+
+  function gcd(a, b) {
+    a = Math.abs(a); b = Math.abs(b);
+    while (b) { const t = b; b = a % b; a = t; }
+    return a || 1;
+  }
+
+  function formatBytes(bytes) {
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+    return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+  }
+
+  function formatDpi(value) {
+    if (value == null || !isFinite(value)) return 'not set';
+    const n = Number(value);
+    if (!isFinite(n) || n <= 0) return 'not set';
+    return Math.round(n * 10) / 10 === Math.round(n) ? String(Math.round(n)) : n.toFixed(1);
+  }
+
+  function normalizeResolution(value, unit) {
+    if (value == null || value === '') return null;
+    let n = typeof value === 'object' && value.numerator != null
+      ? value.numerator / (value.denominator || 1)
+      : Number(value);
+    if (!isFinite(n) || n <= 0) return null;
+    // ResolutionUnit 3 = centimeters → convert to DPI (per inch)
+    if (unit === 3) n = n * 2.54;
+    return n;
+  }
+
+  function loadImage(file) {
+    return new Promise(function (resolve, reject) {
+      const url = URL.createObjectURL(file);
+      const img = new Image();
+      img.onload = function () {
+        resolve({ img: img, url: url, width: img.naturalWidth || img.width, height: img.naturalHeight || img.height });
+      };
+      img.onerror = function () {
+        URL.revokeObjectURL(url);
+        reject(new Error('Could not read that image. Try JPG, PNG, WebP, or GIF.'));
+      };
+      img.src = url;
+    });
+  }
+
+  async function readExifDpi(file) {
+    try {
+      if (typeof exifr === 'undefined' || !exifr.parse) {
+        return { x: null, y: null };
+      }
+      const data = await exifr.parse(file, {
+        pick: ['XResolution', 'YResolution', 'ResolutionUnit'],
+        translateValues: false
+      });
+      if (!data) return { x: null, y: null };
+      const unit = data.ResolutionUnit;
+      return {
+        x: normalizeResolution(data.XResolution, unit),
+        y: normalizeResolution(data.YResolution, unit)
+      };
+    } catch (e) {
+      return { x: null, y: null };
+    }
+  }
+
+  function effectiveDpi(imgW, imgH, printWIn, printHIn) {
+    if (!printWIn || !printHIn || printWIn <= 0 || printHIn <= 0) return null;
+    const wDpi = imgW / printWIn;
+    const hDpi = imgH / printHIn;
+    return Math.min(wDpi, hDpi);
+  }
+
+  function toInches(value, unit) {
+    const n = Number(value);
+    if (!isFinite(n) || n <= 0) return null;
+    return unit === 'cm' ? n / 2.54 : n;
+  }
+
+  function passFailBadge(pass) {
+    return pass
+      ? '<span class="badge pass">Pass</span>'
+      : '<span class="badge fail">Fail</span>';
+  }
+
+  function updateCalculator() {
+    if (!imageMeta) {
+      calcDpi.textContent = '—';
+      calcBadge.className = 'badge neutral';
+      calcBadge.textContent = 'Upload an image';
+      calcHint.textContent = 'DPI is the lower of width and height DPI so the whole print stays sharp.';
+      return;
+    }
+    const wIn = toInches(printWidth.value, printUnit);
+    const hIn = toInches(printHeight.value, printUnit);
+    if (!wIn || !hIn) {
+      calcDpi.textContent = '—';
+      calcBadge.className = 'badge neutral';
+      calcBadge.textContent = 'Enter valid sizes';
+      return;
+    }
+    const dpi = effectiveDpi(imageMeta.width, imageMeta.height, wIn, hIn);
+    const rounded = Math.round(dpi);
+    calcDpi.textContent = String(rounded);
+    const pass = dpi >= PRINT_STANDARD_DPI;
+    calcBadge.className = 'badge ' + (pass ? 'pass' : 'fail');
+    calcBadge.textContent = pass ? 'Pass (≥ 300 DPI)' : 'Fail (< 300 DPI)';
+    const unitLabel = printUnit === 'cm' ? 'cm' : 'in';
+    calcHint.textContent = 'At ' + printWidth.value + '×' + printHeight.value + ' ' + unitLabel +
+      ' your image delivers ~' + rounded + ' DPI (min of width/height). Professional print target is 300 DPI.';
+  }
+
+  function renderPrintTable() {
+    if (!imageMeta) {
+      printTableBody.innerHTML = '<tr><td colspan="4"><p class="empty-hint">Upload an image to see print size results.</p></td></tr>';
+      return;
+    }
+    printTableBody.innerHTML = PRINT_SIZES.map(function (size) {
+      const dpi = effectiveDpi(imageMeta.width, imageMeta.height, size.wIn, size.hIn);
+      const rounded = Math.round(dpi);
+      const pass = dpi >= PRINT_STANDARD_DPI;
+      const dimLabel = size.wIn + '×' + size.hIn + ' in';
+      return '<tr>' +
+        '<td>' + size.name + '</td>' +
+        '<td>' + dimLabel + '</td>' +
+        '<td>' + rounded + ' DPI</td>' +
+        '<td>' + passFailBadge(pass) + '</td>' +
+        '</tr>';
+    }).join('');
+  }
+
+  function renderPlatforms() {
+    if (!imageMeta) {
+      platformGrid.innerHTML = '';
+      return;
+    }
+    const longest = Math.max(imageMeta.width, imageMeta.height);
+    const shortest = Math.min(imageMeta.width, imageMeta.height);
+    const maxPrintInAt300 = {
+      w: imageMeta.width / PRINT_STANDARD_DPI,
+      h: imageMeta.height / PRINT_STANDARD_DPI
+    };
+
+    const platforms = [
+      {
+        name: 'Amazon',
+        detail: 'Recommended ≥ 1600px on the longest edge for zoom.',
+        pass: longest >= 1600,
+        status: longest >= 1600 ? 'Pass' : 'Fail — longest edge is ' + longest + 'px'
+      },
+      {
+        name: 'Shopify',
+        detail: 'Recommended product images around 2048×2048 (or ≥ 1024px).',
+        pass: longest >= 1024,
+        status: longest >= 2048 ? 'Pass (ideal)' : (longest >= 1024 ? 'Pass (minimum)' : 'Fail — need ≥ 1024px')
+      },
+      {
+        name: 'eBay',
+        detail: 'Recommended ≥ 1600px longest edge for zoom; min often 500px.',
+        pass: longest >= 1600,
+        status: longest >= 1600 ? 'Pass' : (longest >= 500 ? 'Below zoom ideal' : 'Fail — below 500px')
+      },
+      {
+        name: 'Instagram',
+        detail: 'Feed posts look sharp at ≥ 1080px on the short side.',
+        pass: shortest >= 1080,
+        status: shortest >= 1080 ? 'Pass' : 'Fail — short side is ' + shortest + 'px'
+      },
+      {
+        name: 'Print (300 DPI)',
+        detail: 'Max sharp print ≈ ' + maxPrintInAt300.w.toFixed(1) + '×' + maxPrintInAt300.h.toFixed(1) + ' in at 300 DPI.',
+        pass: maxPrintInAt300.w >= 4 && maxPrintInAt300.h >= 6,
+        status: (maxPrintInAt300.w >= 4 && maxPrintInAt300.h >= 6) ? 'Pass for common small prints' : 'Limited — best for small prints or web'
+      }
+    ];
+
+    platformGrid.innerHTML = platforms.map(function (p) {
+      const badgeClass = p.pass ? 'pass' : 'fail';
+      const badgeText = p.pass ? 'Pass' : 'Fail';
+      return '<div class="platform-card">' +
+        '<div><h3>' + p.name + '</h3><p>' + p.detail + '</p><p style="margin-top:8px">' + p.status + '</p></div>' +
+        '<span class="badge ' + badgeClass + '">' + badgeText + '</span>' +
+        '</div>';
+    }).join('');
+  }
+
+  function renderStats() {
+    const g = gcd(imageMeta.width, imageMeta.height);
+    const ratio = (imageMeta.width / g) + ':' + (imageMeta.height / g);
+    const mp = (imageMeta.width * imageMeta.height) / 1e6;
+    const dpiLabel = (imageMeta.exifX == null && imageMeta.exifY == null)
+      ? 'not set'
+      : formatDpi(imageMeta.exifX) + ' × ' + formatDpi(imageMeta.exifY);
+
+    const stats = [
+      { label: 'Dimensions', value: imageMeta.width + ' × ' + imageMeta.height + ' px' },
+      { label: 'Megapixels', value: mp.toFixed(2) + ' MP' },
+      { label: 'Aspect ratio', value: ratio },
+      { label: 'File size', value: formatBytes(imageMeta.size) },
+      { label: 'Format', value: imageMeta.format },
+      { label: 'EXIF DPI (X × Y)', value: dpiLabel }
+    ];
+
+    statGrid.innerHTML = stats.map(function (s) {
+      return '<div class="stat-box"><span>' + s.label + '</span><strong>' + s.value + '</strong></div>';
+    }).join('');
+
+    const failsCommonPrint = effectiveDpi(imageMeta.width, imageMeta.height, 8, 10) < PRINT_STANDARD_DPI;
+    upscaleCta.style.display = failsCommonPrint ? '' : 'none';
+  }
+
+  async function processFile(file) {
+    if (!file || !file.type || !file.type.startsWith('image/')) {
+      showError('Please choose an image file (JPG, PNG, WebP, or GIF).');
+      return;
+    }
+    clearError();
+    try {
+      const loaded = await loadImage(file);
+      if (objectUrl) URL.revokeObjectURL(objectUrl);
+      objectUrl = loaded.url;
+
+      const exif = await readExifDpi(file);
+      const ext = (file.name.split('.').pop() || '').toUpperCase() || (file.type.split('/')[1] || 'IMAGE').toUpperCase();
+
+      imageMeta = {
+        width: loaded.width,
+        height: loaded.height,
+        size: file.size,
+        format: ext,
+        name: file.name,
+        exifX: exif.x,
+        exifY: exif.y
+      };
+
+      previewImg.src = objectUrl;
+      fileNameEl.textContent = file.name;
+      dropzone.style.display = 'none';
+      resultsPanel.classList.add('active');
+      renderStats();
+      updateCalculator();
+      renderPrintTable();
+      renderPlatforms();
+      resultsPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch (err) {
+      showError(err.message || 'Failed to analyze image.');
+    }
+  }
+
+  function resetAll() {
+    imageMeta = null;
+    if (objectUrl) {
+      URL.revokeObjectURL(objectUrl);
+      objectUrl = null;
+    }
+    fileInput.value = '';
+    resultsPanel.classList.remove('active');
+    dropzone.style.display = '';
+    previewImg.removeAttribute('src');
+    clearError();
+    upscaleCta.style.display = 'none';
+    updateCalculator();
+    printTableBody.innerHTML = '';
+    platformGrid.innerHTML = '';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function setUnit(unit) {
+    if (unit === printUnit) return;
+    const w = Number(printWidth.value);
+    const h = Number(printHeight.value);
+    if (isFinite(w) && w > 0 && isFinite(h) && h > 0) {
+      if (unit === 'cm') {
+        printWidth.value = (w * 2.54).toFixed(2);
+        printHeight.value = (h * 2.54).toFixed(2);
+      } else {
+        printWidth.value = (w / 2.54).toFixed(2);
+        printHeight.value = (h / 2.54).toFixed(2);
+      }
+    }
+    printUnit = unit;
+    unitIn.classList.toggle('active', unit === 'in');
+    unitCm.classList.toggle('active', unit === 'cm');
+    updateCalculator();
+  }
+
+  dropzone.addEventListener('click', function () { fileInput.click(); });
+  dropzone.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      fileInput.click();
+    }
+  });
+  dropzone.addEventListener('dragover', function (e) {
+    e.preventDefault();
+    dropzone.classList.add('drag');
+  });
+  dropzone.addEventListener('dragleave', function () {
+    dropzone.classList.remove('drag');
+  });
+  dropzone.addEventListener('drop', function (e) {
+    e.preventDefault();
+    dropzone.classList.remove('drag');
+    const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+    if (file) processFile(file);
+  });
+  fileInput.addEventListener('change', function () {
+    const file = fileInput.files && fileInput.files[0];
+    if (file) processFile(file);
+  });
+  resetBtn.addEventListener('click', resetAll);
+  printWidth.addEventListener('input', updateCalculator);
+  printHeight.addEventListener('input', updateCalculator);
+  unitIn.addEventListener('click', function () { setUnit('in'); });
+  unitCm.addEventListener('click', function () { setUnit('cm'); });
+})();
+    </script>
+  </body>
+</html>

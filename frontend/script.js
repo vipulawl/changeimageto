@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { href: '/blur-background.html', label: 'Blur Background' },
         { href: '/grayscale-background.html', label: 'Black & White Image Background' },
             { href: '/bulk-image-resizer.html', label: 'Bulk Image Resizer' },
-            { href: '/image-quality-checker.html', label: 'Image Quality Checker' },
+            { href: '/', label: 'Image Quality Checker' },
           ].map(i => `<a href="${i.href}">${i.label}</a>`).join('');
           // Insert right before footer to match existing structure
           footer.parentElement.insertBefore(nav, footer);
@@ -155,7 +155,8 @@ document.addEventListener('DOMContentLoaded', function() {
     try {
       const toolLinks = [
         { href: '/', label: 'Image Quality Checker' },
-        { href: '/image-quality-checker.html', label: 'Bulk Quality Checker' },
+        { href: '/bulk-image-quality-checker.html', label: 'Bulk Quality Checker' },
+        { href: '/image-resolution-checker.html', label: 'Image Resolution Checker' },
         { href: '/enhance-image.html', label: 'Enhance Image' },
         { href: '/upscale-image.html', label: 'Upscale Image' },
         { href: '/compress-image-online.html', label: 'Compress Image' },
@@ -181,6 +182,16 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     } catch (e) {
       console.warn('Footer tools update failed:', e);
+    }
+
+    // Site hygiene: copyright year + remove dead #terms/#cookies/#security anchors
+    try {
+      document.querySelectorAll('.footer-copyright').forEach(el => {
+        el.innerHTML = el.innerHTML.replace(/©\s*20\d{2}/, '© 2026');
+      });
+      document.querySelectorAll('footer a[href="#terms"], footer a[href="#cookies"], footer a[href="#security"]').forEach(a => a.remove());
+    } catch (e) {
+      console.warn('Footer hygiene failed:', e);
     }
 });
 

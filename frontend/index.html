@@ -25,10 +25,76 @@
     {"@context":"https://schema.org","@type":"WebSite","name":"ChangeImageTo","alternateName":"Image Quality Checker","description":"Free image quality checker: detect blur, noise, pixelation, resolution and exposure, then fix issues with free tools.","url":"https://www.changeimageto.com/","potentialAction":{"@type":"SearchAction","target":"https://www.changeimageto.com/?q={search_term_string}","query-input":"required name=search_term_string"}}
     </script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"WebApplication","name":"Free Image Quality Checker","applicationCategory":"MultimediaApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Blur detection","Noise analysis","Pixelation detection","Resolution checking","Exposure assessment","Quality score 0-100"],"description":"Free online image quality checker. Upload a photo to detect blur, noise, pixelation, resolution and exposure issues, then fix them with enhance, upscale and compress tools.","url":"https://www.changeimageto.com/","provider":{"@type":"Organization","name":"ChangeImageTo","url":"https://www.changeimageto.com/"}}
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Image Quality Checker",
+      "url": "https://www.changeimageto.com/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (web browser)",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Blur and sharpness detection",
+        "Noise and grain analysis",
+        "Pixelation detection",
+        "Resolution check",
+        "Exposure analysis",
+        "Compression artifact detection"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "ChangeImageTo",
+        "url": "https://www.changeimageto.com/",
+        "logo": "https://www.changeimageto.com/logo.png"
+      }
+    }
     </script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an image quality checker?","acceptedAnswer":{"@type":"Answer","text":"An image quality checker analyzes a photo for issues like blur, noise, pixelation, low resolution, and bad exposure, then returns a quality score so you know if the image is ready to use."}},{"@type":"Question","name":"How do I check image quality online for free?","acceptedAnswer":{"@type":"Answer","text":"Upload a photo on ChangeImageTo’s homepage. The free image quality checker scores sharpness, noise, resolution, and exposure in seconds — no signup required."}},{"@type":"Question","name":"What quality issues does the checker detect?","acceptedAnswer":{"@type":"Answer","text":"It detects blur (soft focus or motion blur), noise/grain, pixelation, low resolution, overexposure, underexposure, and compression artifacts."}},{"@type":"Question","name":"What does the image quality score mean?","acceptedAnswer":{"@type":"Answer","text":"Scores from 80–100 are good and usually ready to publish. 60–79 is fair and may need minor fixes. Below 60 means significant issues — enhance, upscale, or recapture before using."}},{"@type":"Question","name":"Can I fix problems after checking image quality?","acceptedAnswer":{"@type":"Answer","text":"Yes. After analysis, ChangeImageTo links you to free fix tools such as enhance, upscale, compress, and background editors based on the issues found."}},{"@type":"Question","name":"Can I check multiple images at once?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use the bulk image quality checker to analyze up to 50 photos in one batch — ideal for ecommerce catalogs and marketing assets."}},{"@type":"Question","name":"Is the image quality checker free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The image quality checker is 100% free with no watermarks, no credits, and no account required."}},{"@type":"Question","name":"What image formats are supported?","acceptedAnswer":{"@type":"Answer","text":"JPG, PNG, WebP, GIF and other common formats are supported. Maximum file size is 10MB per image."}}]}
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"What is an image quality checker?","acceptedAnswer":{"@type":"Answer","text":"An image quality checker analyzes a photo for issues like blur, noise, pixelation, low resolution, and bad exposure, then returns a quality score so you know if the image is ready to use."}},
+        {"@type":"Question","name":"How do I check image quality online for free?","acceptedAnswer":{"@type":"Answer","text":"Upload a photo in the dropzone at the top of this page. Our free image quality checker scores sharpness, noise, resolution, and exposure in seconds — no account required."}},
+        {"@type":"Question","name":"What quality issues does the checker detect?","acceptedAnswer":{"@type":"Answer","text":"It detects blur (soft focus or motion blur), noise/grain, pixelation, low resolution, overexposure, underexposure, and compression artifacts that make photos look unprofessional."}},
+        {"@type":"Question","name":"What does the image quality score mean?","acceptedAnswer":{"@type":"Answer","text":"80–100 is good and usually ready to publish. 60–79 is fair and may need minor fixes. Below 60 means significant issues — enhance, upscale, or recapture before using."}},
+        {"@type":"Question","name":"Can I fix problems after checking image quality?","acceptedAnswer":{"@type":"Answer","text":"Yes. After analysis we link you to free fix tools such as enhance, upscale, and compress based on the issues found."}},
+        {"@type":"Question","name":"Can I check multiple images at once?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use the bulk image quality checker to analyze up to 50 photos in one batch — ideal for ecommerce catalogs and marketing assets."}},
+        {"@type":"Question","name":"Is the image quality checker free?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is 100% free with no watermarks, no credits, and no signup. You can check and fix images for personal or commercial use."}},
+        {"@type":"Question","name":"What image formats are supported?","acceptedAnswer":{"@type":"Answer","text":"JPG, PNG, WebP, GIF and other common formats. Maximum file size is 10MB per image for fast analysis."}},
+        {"@type":"Question","name":"Are my photos stored after the quality check?","acceptedAnswer":{"@type":"Answer","text":"Images are sent for analysis and are not kept as a permanent public gallery. Use original files you are comfortable uploading for processing."}},
+        {"@type":"Question","name":"How is this different from just looking at the photo?","acceptedAnswer":{"@type":"Answer","text":"Visual review misses soft blur, mild noise, and compression damage — especially at scale. Automated scores give a consistent bar for teams shipping dozens of assets daily."}}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Check Image Quality Online",
+      "description": "Upload a photo to get an instant quality score for blur, noise, resolution, and exposure, then fix issues with free tools.",
+      "totalTime": "PT1M",
+      "step": [
+        {"@type":"HowToStep","name":"Upload a photo","text":"Drag and drop, browse, or paste. JPG, PNG, WebP, and GIF up to 10MB."},
+        {"@type":"HowToStep","name":"Get a quality score","text":"See overall score (0–100) plus blur, noise, resolution, and exposure breakdowns."},
+        {"@type":"HowToStep","name":"Review detected issues","text":"Know exactly what’s wrong: blurry, noisy, pixelated, dark, bright, or compressed."},
+        {"@type":"HowToStep","name":"Fix what fails","text":"Jump to enhance, upscale, compress, or other free tools recommended for each issue."}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Image Quality Checker","item":"https://www.changeimageto.com/"}
+      ]
+    }
     </script>
 
     <!-- DNS prefetch for external resources -->
@@ -312,7 +378,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="site-top">
         <a href="/" class="logo-link" style="margin-bottom:0"><img src="/logo.png?v=20250921-1" alt="ChangeImageTo" class="logo-img" loading="eager" width="200" height="68" /></a>
         <nav class="top-nav">
-          <a href="/image-quality-checker.html">Bulk Checker</a>
+          <a href="/bulk-image-quality-checker.html">Bulk Checker</a>
           <a href="/blog" aria-label="Read our blog" style="margin-left:16px">Blog</a>
           <a href="/api.html" aria-label="API Access" style="margin-left:16px">API</a>
         </nav>
@@ -365,11 +431,11 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           <div class="hero-result-actions">
             <button type="button" class="btn" id="heroResetBtn">Check another image</button>
-            <a class="btn secondary" href="/image-quality-checker.html">Bulk check up to 50 images</a>
+            <a class="btn secondary" href="/bulk-image-quality-checker.html">Bulk check up to 50 images</a>
           </div>
         </div>
 
-        <p class="hero-bulk-link">Need to check many photos? Use the <a href="/image-quality-checker.html">bulk image quality checker</a>.</p>
+        <p class="hero-bulk-link">Need to check many photos? Use the <a href="/bulk-image-quality-checker.html">bulk image quality checker</a>.</p>
       </section>
 
       <!-- Second fold: free tools to fix quality -->
@@ -380,7 +446,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         <div class="feature-grid">
           <div class="feature-card">
-            <a class="stretched-link" href="/image-quality-checker.html" aria-label="Bulk Image Quality Checker">Bulk Image Quality Checker</a>
+            <a class="stretched-link" href="/bulk-image-quality-checker.html" aria-label="Bulk Image Quality Checker">Bulk Image Quality Checker</a>
             <div class="feature-icon">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
@@ -389,7 +455,20 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <h3>Bulk Quality Checker</h3>
             <p>Analyze up to 50 images at once for blur, noise, pixelation, and exposure.</p>
-            <a href="/image-quality-checker.html" class="feature-btn">Bulk Check Images</a>
+            <a href="/bulk-image-quality-checker.html" class="feature-btn">Bulk Check Images</a>
+          </div>
+
+          <div class="feature-card">
+            <a class="stretched-link" href="/image-resolution-checker.html" aria-label="Image Resolution Checker">Image Resolution Checker</a>
+            <div class="feature-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <path d="M3 9h18M9 21V9"/>
+              </svg>
+            </div>
+            <h3>Image Resolution Checker</h3>
+            <p>Check pixel dimensions, DPI, megapixels, and whether a photo is print-ready at 300 DPI.</p>
+            <a href="/image-resolution-checker.html" class="feature-btn">Check Resolution</a>
           </div>
 
           <div class="feature-card">
@@ -814,7 +893,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <li><strong>Review detected issues</strong> — know exactly what’s wrong: blurry, noisy, pixelated, dark, bright, or compressed.</li>
           <li><strong>Fix what fails</strong> — jump to enhance, upscale, compress, or other free tools recommended for each issue.</li>
         </ol>
-        <p>Need to audit a catalog? Use the <a href="/image-quality-checker.html">bulk image quality checker</a> to analyze up to 50 images at once.</p>
+        <p>Need to audit a catalog? Use the <a href="/bulk-image-quality-checker.html">bulk image quality checker</a> to analyze up to 50 images at once.</p>
       </section>
 
       <!-- Score bands -->
@@ -855,7 +934,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           <div class="use-case">
             <h3>AI &amp; data pipelines</h3>
-            <p>Filter bad inputs before OCR, vision APIs, or training. Pair the web checker with our <a href="/image-quality-checker.html">bulk tool</a> or <a href="https://github.com/vipul510-web/imageguard" rel="noopener" target="_blank">imageguard</a> Python library.</p>
+            <p>Filter bad inputs before OCR, vision APIs, or training. Pair the web checker with our <a href="/bulk-image-quality-checker.html">bulk tool</a> or <a href="https://github.com/vipul510-web/imageguard" rel="noopener" target="_blank">imageguard</a> Python library.</p>
           </div>
         </div>
       </section>
@@ -874,7 +953,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <li><strong>No signup</strong> — upload and check instantly</li>
           <li><strong>Actionable scores</strong> — overall score plus blur, noise, resolution, and exposure</li>
           <li><strong>Fix in one place</strong> — links to enhance, upscale, compress, and more</li>
-          <li><strong>Bulk ready</strong> — analyze up to 50 images on the <a href="/image-quality-checker.html">bulk checker</a></li>
+          <li><strong>Bulk ready</strong> — analyze up to 50 images on the <a href="/bulk-image-quality-checker.html">bulk checker</a></li>
           <li><strong>Privacy minded</strong> — images are processed for analysis and not kept as a permanent gallery</li>
         </ul>
       </section>
@@ -976,7 +1055,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </details>
           <details class="faq-item">
             <summary>Can I check multiple images at once?</summary>
-            <p>Yes. Use the <a href="/image-quality-checker.html">bulk image quality checker</a> to analyze up to 50 photos in one batch — ideal for ecommerce catalogs and marketing assets.</p>
+            <p>Yes. Use the <a href="/bulk-image-quality-checker.html">bulk image quality checker</a> to analyze up to 50 photos in one batch — ideal for ecommerce catalogs and marketing assets.</p>
           </details>
           <details class="faq-item">
             <summary>Is the image quality checker free?</summary>
@@ -999,13 +1078,13 @@ document.addEventListener("DOMContentLoaded", () => {
     </main>
 
     <nav class="seo-links">
-      <a href="/image-quality-checker.html">Bulk Image Quality Checker</a>
+      <a href="/bulk-image-quality-checker.html">Bulk Image Quality Checker</a>
+      <a href="/image-resolution-checker.html">Image Resolution Checker</a>
       <a href="/enhance-image.html">Enhance Image</a>
       <a href="/upscale-image.html">AI Image Upscaler</a>
       <a href="/compress-image-online.html">Compress image online</a>
       <a href="/blog/how-to-check-image-quality-online.html">How to check image quality online</a>
-      <a href="/blog/image-quality-checker.html">Image quality checker guide</a>
-      <a href="/blog/check-image-quality.html">Check image quality</a>
+      <a href="/image-resolution-checker.html">Image Resolution Checker</a>
       <a href="/remove-background-from-image.html">Remove Background from Image</a>
       <a href="/change-image-background.html">Change image background</a>
       <a href="/blur-background.html">Blur Background</a>
@@ -1048,7 +1127,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <h3 class="footer-heading">Image Tools</h3>
             <ul class="footer-links">
               <li><a href="/">Image Quality Checker</a></li>
-              <li><a href="/image-quality-checker.html">Bulk Quality Checker</a></li>
+              <li><a href="/bulk-image-quality-checker.html">Bulk Quality Checker</a></li>
+              <li><a href="/image-resolution-checker.html">Image Resolution Checker</a></li>
               <li><a href="/enhance-image.html">Enhance Image</a></li>
               <li><a href="/upscale-image.html">Upscale Image</a></li>
               <li><a href="/compress-image-online.html">Compress Image</a></li>
@@ -1065,8 +1145,6 @@ document.addEventListener("DOMContentLoaded", () => {
               <li><a href="/remove-text-from-image.html">Remove Text / Watermark</a></li>
               <li><a href="/remove-gemini-watermark.html">Remove Gemini Watermark</a></li>
               <li><a href="/bulk-image-resizer.html">Bulk Image Resizer</a></li>
-              <li><a href="/image-quality-checker.html">Image Quality Checker</a></li>
-              <li><a href="/compress-image-online.html">Compress Image</a></li>
               <li><a href="/real-estate-photo-enhancement.html">Real Estate Photo Enhancement</a></li>
               <li><a href="/nano-banana-change-image.html">Nano Banana Change Image</a></li>
               <li><a href="/gemini-change-image-size.html">Gemini Change Image Size</a></li>
@@ -1118,13 +1196,11 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="footer-bottom">
           <div class="footer-bottom-content">
             <p class="footer-copyright">
-              © 2024 ChangeImageTo.com. All rights reserved. Built for speed and quality.
+              © 2026 ChangeImageTo.com. All rights reserved. Built for speed and quality.
             </p>
             <div class="footer-bottom-links">
               <a href="/privacy-policy.html">Privacy</a>
-              <a href="#terms">Terms</a>
-              <a href="#cookies">Cookies</a>
-              <a href="#security">Security</a>
+              <a href="/contact.html">Contact</a>
             </div>
           </div>
         </div>
