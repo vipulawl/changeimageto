@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ChangeImageTo MCP — Image Editing for Cursor, Claude &amp; VS Code (Model Context Protocol)</title>
+    <meta name="description" content="Official ChangeImageTo MCP server: remove background, blur or grayscale backgrounds, upscale, OCR, PDF, Gemini text edits, inpainting, bulk resize and quality checks from Cursor, Claude Desktop, or any MCP client.">
+    <meta name="keywords" content="MCP, Model Context Protocol, image editing MCP, Cursor MCP, Claude MCP, remove background MCP, background removal API, photo editing LLM, VS Code MCP, image processing MCP">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.changeimageto.com/changeimageto-mcp.html" />
+
+    <meta property="og:title" content="ChangeImageTo MCP — Image Editing for Cursor &amp; Claude" />
+    <meta property="og:description" content="16 image tools as MCP tools: remove background, upscale, OCR, PDF, bulk processing, and more. Open source on GitHub." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.changeimageto.com/changeimageto-mcp.html" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "ChangeImageTo MCP",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Cross-platform",
+      "description": "Model Context Protocol server exposing ChangeImageTo image APIs: background removal, blur and grayscale backgrounds, color and format conversion, upscaling, enhancement, OCR, PDF export, Gemini text editing, watermark removal, inpainting, and bulk tools.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "url": "https://www.changeimageto.com/changeimageto-mcp.html",
+      "codeRepository": "https://github.com/vipul510-web/mcp-changeimageto",
+      "isAccessibleForFree": true
+    }
+    </script>
+
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+
+    <style>
+      :root{--bg:#f7f8fa;--bg-alt:#eef1f5;--fg:#111827;--fg-soft:#374151;--muted:#6b7280;--accent:#059669;--accent-2:#047857;--accent-soft:#ecfdf5;--on-accent:#ffffff;--card:#ffffff;--border:#e5e7eb;--shadow-sm:0 1px 2px rgba(16,24,40,.05);--shadow:0 1px 3px rgba(16,24,40,.08),0 1px 2px rgba(16,24,40,.04);--shadow-lg:0 20px 40px rgba(16,24,40,.10)}
+      *{box-sizing:border-box}
+      body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6}
+      .container{max-width:900px;margin:0 auto;padding:16px}
+      .header h1{margin:0 0 8px}
+      .logo-link{display:inline-flex;align-items:center;gap:10px;margin-bottom:16px;text-decoration:none;color:inherit}
+      .logo-img{height:28px;width:auto;display:block}
+      @media(min-width:768px){.container{padding:24px}.logo-img{height:36px}}
+      .top-nav a{color:var(--fg-soft);text-decoration:none;font-weight:600;margin-left:16px}
+      .top-nav a:hover{text-decoration:underline}
+      .top-nav a:first-child{margin-left:0}
+      .content-section{margin:32px 0;padding:28px;background:var(--card);border:1px solid var(--border);border-radius:16px}
+      .content-section h1{font-size:clamp(26px,4vw,34px);margin:0 0 12px;line-height:1.2}
+      .content-section h2{font-size:22px;margin:28px 0 14px;color:var(--fg)}
+      .content-section h3{font-size:17px;margin:20px 0 10px;color:var(--fg)}
+      .content-section p,.content-section li{color:var(--muted)}
+      .content-section p{margin:0 0 16px;line-height:1.75}
+      .content-section ul{margin:0 0 16px;padding-left:20px}
+      .content-section li{margin-bottom:8px}
+      .highlight{color:var(--accent);font-weight:600}
+      .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 8px}
+      .cta-button{display:inline-block;background:var(--accent);color:#001633;padding:12px 22px;border-radius:10px;text-decoration:none;font-weight:700}
+      .cta-button.secondary{background:#233142;color:#eaf0f6}
+      .cta-button:hover{filter:brightness(1.06)}
+      pre,code{background:var(--bg);border:1px solid var(--border);border-radius:8px;font-size:13px}
+      pre{padding:14px;overflow:auto;margin:12px 0}
+      code{padding:2px 6px}
+      .tools-table{width:100%;border-collapse:collapse;font-size:14px;margin:16px 0}
+      .tools-table th,.tools-table td{text-align:left;padding:10px 12px;border:1px solid var(--border)}
+      .tools-table th{background:var(--bg);color:var(--fg);font-weight:600}
+      .tools-table td{color:var(--muted)}
+      .note{font-size:14px;border-left:4px solid var(--accent);padding:12px 16px;background:rgba(106,167,255,0.08);margin:16px 0;border-radius:0 8px 8px 0}
+      @media(max-width:768px){.content-section{padding:20px}}
+    </style>
+    <link rel="stylesheet" href="./styles.css?v=20260429-1" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="./styles.css?v=20260429-1"></noscript>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.location.hash.includes(":~:text") && typeof gtag === "function") {
+    gtag("event", "ai_overview", { anchor: window.location.hash });
+  }
+});
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3Q582VFCG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-D3Q582VFCG');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4059286158672130"
+     crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header class="container header">
+      <a href="/" class="logo-link">
+        <img src="/logo.png?v=20250921-1" alt="ChangeImageTo" class="logo-img" loading="eager" width="200" height="68" />
+      </a>
+      <nav class="top-nav">
+        <a href="/blog" aria-label="Read our blog">Blog</a>
+        <a href="/api.html" aria-label="API Access">API</a>
+        <a href="/image-editing-mcp-servers.html" aria-label="Browse MCP tools">MCPs</a>
+        <a href="/image-editing-skills.html" aria-label="Browse image editing skills">Skills</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <article class="content-section">
+        <p style="margin:0 0 8px"><a href="/image-editing-mcp-servers.html" style="color:var(--muted);text-decoration:none;font-size:14px">← Image editing MCP servers</a></p>
+        <h1>ChangeImageTo MCP</h1>
+        <p style="font-size:18px;color:var(--muted);margin-bottom:8px">
+          The official <span class="highlight">Model Context Protocol</span> server for <strong style="color:var(--fg)">ChangeImageTo</strong>. Use natural language in <strong style="color:var(--fg)">Cursor</strong>, <strong style="color:var(--fg)">Claude Desktop</strong>, <strong style="color:var(--fg)">VS Code</strong>, or any MCP-compatible client to run the same image engines as changeimageto.com.
+        </p>
+        <div class="cta-row">
+          <a href="https://github.com/vipul510-web/mcp-changeimageto" class="cta-button" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          <a href="#install" class="cta-button secondary">Install &amp; config</a>
+          <a href="/remove-background-from-image.html" class="cta-button secondary">Try in browser</a>
+        </div>
+
+        <h2>What you get</h2>
+        <p>Sixteen tools map one-to-one to our production REST API. Processing runs on the same backend that powers the website (configurable via environment variable if you self-host).</p>
+        <ul>
+          <li><strong class="highlight">Cutouts &amp; backgrounds:</strong> remove background, blur background, grayscale background, solid color / composite backgrounds</li>
+          <li><strong class="highlight">Adjust &amp; convert:</strong> color adjustments, format conversion (PNG, JPEG, WebP, and more), upscaling, denoise / sharpen / enhance</li>
+          <li><strong class="highlight">Text &amp; cleanup:</strong> OCR (image to text), remove detected text, Gemini-powered text replacement, Gemini watermark cleanup, mask inpainting</li>
+          <li><strong class="highlight">Documents &amp; batch:</strong> image to PDF, bulk resize, bulk convert, bulk image quality scoring</li>
+        </ul>
+
+        <h2 id="install">Install</h2>
+        <p>Python 3.10+. From a clone of the repo:</p>
+        <pre><code>python3 -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install .</code></pre>
+        <p>Or install directly from Git:</p>
+        <pre><code>pip install git+https://github.com/vipul510-web/mcp-changeimageto.git</code></pre>
+
+        <h3>Cursor / Claude Desktop (example)</h3>
+        <p>Add an MCP server entry pointing at <code>server.py</code> or the <code>mcp-changeimageto</code> console script. Set the API base to our Cloud Run backend (default in the package) or your own deployment:</p>
+        <pre><code>{
+  "mcpServers": {
+    "changeimageto": {
+      "command": "/path/to/mcp-changeimageto/.venv/bin/python",
+      "args": ["/path/to/mcp-changeimageto/server.py"],
+      "env": {
+        "CHANGEIMAGETO_API_BASE": "https://bgremover-backend-121350814881.us-central1.run.app"
+      }
+    }
+  }
+}</code></pre>
+        <div class="note">
+          The marketing domain <strong>www.changeimageto.com</strong> serves the web app only; image APIs live on the backend URL above unless you override <code>CHANGEIMAGETO_API_BASE</code>.
+        </div>
+
+        <h2>Tool reference</h2>
+        <table class="tools-table">
+          <thead>
+            <tr><th>MCP tool</th><th>API</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>remove_background</code></td><td><code>POST /api/remove-bg</code></td></tr>
+            <tr><td><code>blur_background</code></td><td><code>POST /api/blur-background</code></td></tr>
+            <tr><td><code>grayscale_background</code></td><td><code>POST /api/grayscale-background</code></td></tr>
+            <tr><td><code>change_image_color</code></td><td><code>POST /api/change-color</code></td></tr>
+            <tr><td><code>convert_image_format</code></td><td><code>POST /api/convert-format</code></td></tr>
+            <tr><td><code>upscale_image</code></td><td><code>POST /api/upscale-image</code></td></tr>
+            <tr><td><code>enhance_image</code></td><td><code>POST /api/enhance-image</code></td></tr>
+            <tr><td><code>remove_text_from_image</code></td><td><code>POST /api/remove-text</code></td></tr>
+            <tr><td><code>remove_gemini_watermark</code></td><td><code>POST /api/remove-gemini-watermark</code></td></tr>
+            <tr><td><code>edit_text_in_image</code></td><td><code>POST /api/edit-text-in-image</code></td></tr>
+            <tr><td><code>image_to_pdf</code></td><td><code>POST /api/image-to-pdf</code></td></tr>
+            <tr><td><code>image_to_text_ocr</code></td><td><code>POST /api/image-to-text</code></td></tr>
+            <tr><td><code>remove_painted_areas</code></td><td><code>POST /api/remove-painted-areas</code></td></tr>
+            <tr><td><code>bulk_resize_images</code></td><td><code>POST /api/bulk-resize</code></td></tr>
+            <tr><td><code>bulk_convert_images</code></td><td><code>POST /api/bulk-convert-format</code></td></tr>
+            <tr><td><code>bulk_quality_check</code></td><td><code>POST /api/bulk-quality-check</code></td></tr>
+          </tbody>
+        </table>
+        <p>Images may be passed as a URL, local path, or base64 data URL. Binary results are returned as JSON with base64 when under the size limit.</p>
+
+        <h2>More documentation &amp; topics</h2>
+        <p>Full README, environment variables, and GitHub topics for discovery: <a href="https://github.com/vipul510-web/mcp-changeimageto" target="_blank" rel="noopener noreferrer" class="highlight">github.com/vipul510-web/mcp-changeimageto</a></p>
+
+        <h2>Related</h2>
+        <ul>
+          <li><a href="/image-editing-mcp-servers.html">Image editing MCP servers directory</a></li>
+          <li><a href="/api.html">ChangeImageTo API overview</a></li>
+          <li><a href="/chrome-extension.html">Chrome extension</a></li>
+        </ul>
+      </article>
+    </main>
+
+    <footer class="comprehensive-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <img src="/logo.png?v=20250921-1" alt="ChangeImageTo" style="height: 32px; margin-bottom: 16px;">
+            </div>
+            <p class="footer-description">Free online image editing and official MCP tools for developers.</p>
+          </div>
+          <div class="footer-section">
+            <h3 class="footer-heading">Company</h3>
+            <ul class="footer-links">
+              <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="/contact.html">Contact Us</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/api.html">API</a></li>
+              <li><a href="/changeimageto-mcp.html">ChangeImageTo MCP</a></li>
+              <li><a href="/image-editing-mcp-servers.html">MCP directory</a></li>
+              <li><a href="/chrome-extension.html">Chrome Extension</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <p class="footer-copyright">© 2024 ChangeImageTo.com. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./script.js?v=20251220-1" defer></script>
+  </body>
+</html>

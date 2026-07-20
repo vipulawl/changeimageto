@@ -186,7 +186,7 @@
           const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
           const currentPort = window.location.port || '8080';
           const backendPort = currentPort === '8080' ? '8000' : currentPort;
-          const API_BASE = isLocal ? `http://127.0.0.1:${backendPort}` : 'https://api.changeimageto.com';
+          const API_BASE = isLocal ? `http://127.0.0.1:${backendPort}` : 'https://bgremover-backend-121350814881.us-central1.run.app';
 
           const formData = new FormData();
           formData.append('file', currentFile);

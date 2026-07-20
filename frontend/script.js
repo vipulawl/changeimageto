@@ -26,7 +26,7 @@ function logUserAction(action, details = {}) {
     
     // Send to backend analytics endpoint (local dev uses 8000)
     const isLocalFrontend = (['127.0.0.1','localhost'].includes(window.location.hostname)) && window.location.port === '8080';
-    const analyticsBase = window.API_BASE || (isLocalFrontend ? 'http://127.0.0.1:8000' : 'https://api.changeimageto.com');
+    const analyticsBase = window.API_BASE || (isLocalFrontend ? 'http://127.0.0.1:8000' : 'https://bgremover-backend-121350814881.us-central1.run.app');
     fetch(analyticsBase + '/api/analytics', {
         method: 'POST',
         headers: {
@@ -607,7 +607,7 @@ if (form) form.addEventListener('submit', async (e) => {
     body.append('file', currentFile);
     
     const isLocalFrontend = (['127.0.0.1','localhost'].includes(window.location.hostname)) && window.location.port === '8080';
-    const apiBase = window.API_BASE || (isLocalFrontend ? 'http://127.0.0.1:8000' : 'https://api.changeimageto.com');
+    const apiBase = window.API_BASE || (isLocalFrontend ? 'http://127.0.0.1:8000' : 'https://bgremover-backend-121350814881.us-central1.run.app');
     let endpoint = '/api/remove-bg';
     
     console.log('API Base:', apiBase);
@@ -1005,7 +1005,7 @@ if (convertFormatPages.includes(window.location.pathname)) {
       if (quality) {
         body.append('quality', quality.value);
       }
-      const apiBase = window.API_BASE || (window.location.hostname === '127.0.0.1' && window.location.port === '8080' ? 'http://127.0.0.1:8000' : 'https://api.changeimageto.com');
+      const apiBase = window.API_BASE || (window.location.hostname === '127.0.0.1' && window.location.port === '8080' ? 'http://127.0.0.1:8000' : 'https://bgremover-backend-121350814881.us-central1.run.app');
       try {
         console.log('Sending conversion request:', { targetFormat: target.value, fileName: file.name, fileSize: file.size });
         const res = await fetch(apiBase + '/api/convert-format', { method: 'POST', body });
@@ -1262,7 +1262,7 @@ if (resetBtn) resetBtn.addEventListener('click', () => {
     
     // Send to backend
     const isLocalFrontend = (['127.0.0.1','localhost'].includes(window.location.hostname)) && window.location.port === '8080';
-    const apiBase = window.API_BASE || (isLocalFrontend ? 'http://127.0.0.1:8000' : 'https://api.changeimageto.com');
+    const apiBase = window.API_BASE || (isLocalFrontend ? 'http://127.0.0.1:8000' : 'https://bgremover-backend-121350814881.us-central1.run.app');
     
     fetch(apiBase + '/api/feedback/impression', {
       method: 'POST',
@@ -1357,7 +1357,7 @@ if (resetBtn) resetBtn.addEventListener('click', () => {
     
     // Send to backend
     const isLocalFrontend = (['127.0.0.1','localhost'].includes(window.location.hostname)) && window.location.port === '8080';
-    const apiBase = window.API_BASE || (isLocalFrontend ? 'http://127.0.0.1:8000' : 'https://api.changeimageto.com');
+    const apiBase = window.API_BASE || (isLocalFrontend ? 'http://127.0.0.1:8000' : 'https://bgremover-backend-121350814881.us-central1.run.app');
     
     fetch(apiBase + '/api/feedback', {
       method: 'POST',

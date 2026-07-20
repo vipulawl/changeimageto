@@ -308,7 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let extractedText = '';
         
         const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-        const API_BASE = isLocal ? 'http://127.0.0.1:8000' : 'https://api.changeimageto.com';
+        const API_BASE = isLocal ? 'http://127.0.0.1:8000' : 'https://bgremover-backend-121350814881.us-central1.run.app';
         
         function showStatus(message, type = 'info') {
           statusDiv.textContent = message;

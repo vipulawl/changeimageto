@@ -419,7 +419,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.appendChild(popup);
         let selectedRating = 0, hasShownFeedback = sessionStorage.getItem('feedbackShown') === 'true';
         function logImpression(action) {
-          const apiBase = (['127.0.0.1','localhost'].includes(window.location.hostname) && window.location.port === '8080') ? 'http://127.0.0.1:8000' : 'https://api.changeimageto.com';
+          const apiBase = (['127.0.0.1','localhost'].includes(window.location.hostname) && window.location.port === '8080') ? 'http://127.0.0.1:8000' : 'https://bgremover-backend-121350814881.us-central1.run.app';
           fetch(apiBase + '/api/feedback/impression', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({page: window.location.pathname, operation: 'remove_background', action: action, userAgent: navigator.userAgent, timestamp: new Date().toISOString()})}).catch(() => {});
         }
         function showFeedbackPopup() {
@@ -451,7 +451,7 @@ document.addEventListener("DOMContentLoaded", () => {
         function submitFeedback() {
           if (selectedRating === 0) return;
           const commentEl = document.getElementById('feedback-comment');
-          const apiBase = (['127.0.0.1','localhost'].includes(window.location.hostname) && window.location.port === '8080') ? 'http://127.0.0.1:8000' : 'https://api.changeimageto.com';
+          const apiBase = (['127.0.0.1','localhost'].includes(window.location.hostname) && window.location.port === '8080') ? 'http://127.0.0.1:8000' : 'https://bgremover-backend-121350814881.us-central1.run.app';
           fetch(apiBase + '/api/feedback', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({rating: selectedRating, comment: commentEl ? commentEl.value.trim() : '', page: window.location.pathname, operation: 'remove_background', timestamp: new Date().toISOString(), userAgent: navigator.userAgent})}).catch(() => {});
           logImpression('submitted');
           hasShownFeedback = true;
@@ -592,7 +592,7 @@ document.addEventListener("DOMContentLoaded", () => {
           processBtn.textContent = 'Processing…';
 
           const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-          const API_BASE = isLocal ? 'http://127.0.0.1:8000' : 'https://api.changeimageto.com';
+          const API_BASE = isLocal ? 'http://127.0.0.1:8000' : 'https://bgremover-backend-121350814881.us-central1.run.app';
 
           const formData = new FormData();
           formData.append('file', currentFile);

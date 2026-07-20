@@ -485,7 +485,7 @@ document.addEventListener("DOMContentLoaded", () => {
           };
           
           const isLocalFrontend = (['127.0.0.1','localhost'].includes(window.location.hostname)) && window.location.port === '8080';
-          const apiBase = window.API_BASE || (isLocalFrontend ? 'http://127.0.0.1:8000' : 'https://api.changeimageto.com');
+          const apiBase = window.API_BASE || (isLocalFrontend ? 'http://127.0.0.1:8000' : 'https://bgremover-backend-121350814881.us-central1.run.app');
           
           fetch(apiBase + '/api/feedback/impression', {
             method: 'POST',
@@ -549,7 +549,7 @@ document.addEventListener("DOMContentLoaded", () => {
           };
           
           const isLocalFrontend = (['127.0.0.1','localhost'].includes(window.location.hostname)) && window.location.port === '8080';
-          const apiBase = window.API_BASE || (isLocalFrontend ? 'http://127.0.0.1:8000' : 'https://api.changeimageto.com');
+          const apiBase = window.API_BASE || (isLocalFrontend ? 'http://127.0.0.1:8000' : 'https://bgremover-backend-121350814881.us-central1.run.app');
           
           fetch(apiBase + '/api/feedback', {
             method: 'POST',
@@ -750,7 +750,7 @@ document.addEventListener("DOMContentLoaded", () => {
           processBtn.textContent = 'Processing…';
 
           const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-          const API_BASE = isLocal ? 'http://127.0.0.1:8000' : 'https://api.changeimageto.com';
+          const API_BASE = isLocal ? 'http://127.0.0.1:8000' : 'https://bgremover-backend-121350814881.us-central1.run.app';
 
           const formData = new FormData();
           formData.append('file', currentFile);

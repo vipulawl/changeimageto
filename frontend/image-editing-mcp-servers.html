@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Image Editing MCP Servers — Cursor, Claude &amp; VS Code | ChangeImageTo</title>
+    <meta name="description" content="Directory of Model Context Protocol servers for image editing. Start with the official ChangeImageTo MCP: remove background, upscale, OCR, PDF, bulk tools. Works with Cursor, Claude Desktop, and other MCP clients.">
+    <meta name="keywords" content="MCP servers, image editing MCP, Model Context Protocol, Cursor image tools, Claude image MCP, background removal MCP, MCP directory, photo editing AI">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.changeimageto.com/image-editing-mcp-servers.html" />
+
+    <meta property="og:title" content="Image Editing MCP Servers | ChangeImageTo" />
+    <meta property="og:description" content="Official ChangeImageTo MCP plus a curated list of MCP servers for image workflows." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.changeimageto.com/image-editing-mcp-servers.html" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Image editing MCP servers",
+      "description": "Directory of Model Context Protocol servers for image editing and photo pipelines.",
+      "url": "https://www.changeimageto.com/image-editing-mcp-servers.html",
+      "isPartOf": { "@type": "WebSite", "name": "ChangeImageTo", "url": "https://www.changeimageto.com/" }
+    }
+    </script>
+
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+
+    <style>
+      :root{--bg:#f7f8fa;--bg-alt:#eef1f5;--fg:#111827;--fg-soft:#374151;--muted:#6b7280;--accent:#059669;--accent-2:#047857;--accent-soft:#ecfdf5;--on-accent:#ffffff;--card:#ffffff;--border:#e5e7eb;--shadow-sm:0 1px 2px rgba(16,24,40,.05);--shadow:0 1px 3px rgba(16,24,40,.08),0 1px 2px rgba(16,24,40,.04);--shadow-lg:0 20px 40px rgba(16,24,40,.10)}
+      *{box-sizing:border-box}
+      body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6}
+      .container{max-width:1000px;margin:0 auto;padding:16px}
+      .logo-link{display:inline-flex;align-items:center;gap:10px;margin-bottom:16px;text-decoration:none;color:inherit}
+      .logo-img{height:28px;width:auto}
+      @media(min-width:768px){.container{padding:24px}.logo-img{height:36px}}
+      .top-nav a{color:var(--fg-soft);text-decoration:none;font-weight:600;margin-left:16px}
+      .top-nav a:hover{text-decoration:underline}
+      .top-nav a:first-child{margin-left:0}
+      /* Featured official MCP — above the fold */
+      .mcp-featured-top{
+        background:linear-gradient(135deg,#1a3a5c 0%,#0d1829 50%,#0b0f13 100%);
+        border:1px solid var(--border);
+        border-radius:20px;
+        padding:28px 32px 32px;
+        margin:8px 0 40px;
+        position:relative;
+        overflow:hidden;
+        box-shadow:0 12px 40px rgba(0,0,0,0.35);
+      }
+      .mcp-featured-top::before{
+        content:"";
+        position:absolute;
+        top:-40%;right:-10%;
+        width:280px;height:280px;
+        background:radial-gradient(circle,rgba(106,167,255,0.25) 0%,transparent 70%);
+        pointer-events:none;
+      }
+      .mcp-featured-badge{
+        display:inline-block;
+        font-size:11px;font-weight:700;
+        letter-spacing:0.06em;
+        text-transform:uppercase;
+        color:#001633;
+        background:linear-gradient(90deg,var(--accent),#93c5fd);
+        padding:6px 12px;border-radius:999px;
+        margin-bottom:14px;
+      }
+      .mcp-featured-top h1{font-size:clamp(24px,4vw,34px);margin:0 0 12px;line-height:1.2;max-width:720px;position:relative}
+      .mcp-featured-top .lead{font-size:17px;color:#c5d0dc;margin:0 0 20px;max-width:680px;line-height:1.65;position:relative}
+      .mcp-featured-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;position:relative}
+      .mcp-btn-primary{
+        display:inline-block;background:var(--accent);color:#001633;
+        padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:700;
+        font-size:15px;
+      }
+      .mcp-btn-primary:hover{filter:brightness(1.08)}
+      .mcp-btn-ghost{
+        display:inline-block;border:1px solid rgba(106,167,255,0.5);color:var(--accent);
+        padding:12px 22px;border-radius:10px;text-decoration:none;font-weight:600;font-size:15px;
+      }
+      .mcp-btn-ghost:hover{background:rgba(106,167,255,0.1)}
+      .mcp-meta-row{margin-top:18px;font-size:14px;color:var(--muted);position:relative}
+      .mcp-meta-row a{color:var(--accent)}
+      .content-block{margin:32px 0 48px}
+      .content-block h2{font-size:26px;margin:0 0 16px}
+      .content-block p{color:var(--muted);max-width:720px;line-height:1.75}
+      .mcp-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:28px}
+      @media(min-width:720px){.mcp-grid{grid-template-columns:repeat(2,1fr)}}
+      .mcp-card{
+        background:var(--card);border:1px solid var(--border);border-radius:16px;
+        padding:24px;display:flex;flex-direction:column;gap:12px
+      }
+      .mcp-card h3{margin:0;font-size:20px}
+      .mcp-card p{margin:0;color:var(--muted);font-size:15px;flex:1;line-height:1.65}
+      .mcp-card .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+      .mcp-card .tag{font-size:12px;padding:4px 10px;border-radius:999px;background:var(--bg);border:1px solid var(--border);color:var(--muted)}
+      .mcp-card a.more{align-self:flex-start;color:var(--accent);font-weight:600;text-decoration:none;margin-top:4px}
+      .mcp-card a.more:hover{text-decoration:underline}
+      .mcp-card.official{border-color:rgba(106,167,255,0.45);box-shadow:0 0 0 1px rgba(106,167,255,0.12)}
+      .coming-soon{
+        border:1px dashed var(--border);border-radius:16px;padding:28px;text-align:center;color:var(--muted)
+      }
+      .coming-soon strong{color:var(--fg)}
+    </style>
+    <link rel="stylesheet" href="./styles.css?v=20260429-1" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="./styles.css?v=20260429-1"></noscript>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3Q582VFCG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-D3Q582VFCG');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4059286158672130"
+     crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header class="container header">
+      <a href="/" class="logo-link">
+        <img src="/logo.png?v=20250921-1" alt="ChangeImageTo" class="logo-img" loading="eager" width="200" height="68" />
+      </a>
+      <nav class="top-nav">
+        <a href="/blog" aria-label="Read our blog">Blog</a>
+        <a href="/api.html" aria-label="API Access">API</a>
+        <a href="/image-editing-mcp-servers.html" aria-label="Browse MCP tools"><strong>MCPs</strong></a>
+        <a href="/image-editing-skills.html" aria-label="Browse image editing skills">Skills</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <!-- Prominent listing hero: official ChangeImageTo MCP -->
+      <section class="mcp-featured-top" aria-labelledby="mcp-featured-title">
+        <span class="mcp-featured-badge">Official · Model Context Protocol</span>
+        <h1 id="mcp-featured-title">ChangeImageTo MCP — image editing inside Cursor &amp; Claude</h1>
+        <p class="lead">
+          Our open-source MCP server exposes <strong style="color:var(--fg)">16 image tools</strong> from the same API that powers changeimageto.com:
+          remove or replace backgrounds, blur or grayscale backgrounds, upscale, denoise, OCR, PDF export, Gemini text edits, watermark cleanup, inpainting, and bulk resize, convert, and quality checks.
+        </p>
+        <div class="mcp-featured-actions">
+          <a class="mcp-btn-primary" href="/changeimageto-mcp.html">Full setup guide &amp; tool list</a>
+          <a class="mcp-btn-ghost" href="https://github.com/vipul510-web/mcp-changeimageto" target="_blank" rel="noopener noreferrer">GitHub repository</a>
+        </div>
+        <p class="mcp-meta-row">
+          Install with pip, wire it into your MCP client config, and optionally point <code style="background:rgba(0,0,0,0.35);padding:2px 8px;border-radius:6px;font-size:13px">CHANGEIMAGETO_API_BASE</code> at your own backend.
+          Questions? <a href="/contact.html">Contact us</a>.
+        </p>
+      </section>
+
+      <section class="content-block">
+        <h2>What is an image editing MCP?</h2>
+        <p>
+          <a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener noreferrer">Model Context Protocol</a> (MCP) lets AI assistants call tools your machine exposes over a standard protocol.
+          An <strong>image editing MCP</strong> is a small server that registers tools like “remove background” or “run OCR” so coders and agents can process images without leaving the IDE.
+          That’s ideal for <strong>Cursor</strong>, <strong>Claude Desktop</strong>, and other hosts that support MCP.
+        </p>
+      </section>
+
+      <section class="content-block" aria-labelledby="directory-heading">
+        <h2 id="directory-heading">Directory</h2>
+        <p>Servers below are focused on raster photo / image workflows. We start with our official MCP; more listings may be added over time.</p>
+
+        <div class="mcp-grid">
+          <article class="mcp-card official">
+            <h3>ChangeImageTo MCP</h3>
+            <p>Official server from the ChangeImageTo team. Wraps production <code>/api/*</code> routes: backgrounds, color, formats, upscale, enhance, text &amp; watermark removal, PDF, OCR, inpainting, bulk jobs.</p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">MIT</span>
+              <span class="tag">16 tools</span>
+              <span class="tag">Cursor</span>
+              <span class="tag">Claude</span>
+            </div>
+            <a class="more" href="/changeimageto-mcp.html">Documentation &amp; install →</a>
+          </article>
+
+          <article class="mcp-card">
+            <h3>Suggest a listing</h3>
+            <p>Maintaining a small, high-signal list helps developers find quality MCPs. If you ship an open MCP for image editing, compression, or vision pipelines, tell us and we may add it here.</p>
+            <div class="tags">
+              <span class="tag">Community</span>
+            </div>
+            <a class="more" href="/contact.html">Contact us →</a>
+          </article>
+        </div>
+
+        <div class="coming-soon" style="margin-top:32px">
+          <p style="margin:0"><strong>Tip:</strong> Prefer the browser? All tools also run on <a href="/" style="color:var(--accent)">changeimageto.com</a> with no MCP setup.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="comprehensive-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <img src="/logo.png?v=20250921-1" alt="ChangeImageTo" style="height: 32px; margin-bottom: 16px;">
+            </div>
+            <p class="footer-description">Image tools for the web and for MCP-enabled IDEs.</p>
+          </div>
+          <div class="footer-section">
+            <h3 class="footer-heading">Developer</h3>
+            <ul class="footer-links">
+              <li><a href="/api.html">API</a></li>
+              <li><a href="/changeimageto-mcp.html">ChangeImageTo MCP</a></li>
+              <li><a href="/image-editing-mcp-servers.html">MCP directory</a></li>
+              <li><a href="/chrome-extension.html">Chrome extension</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3 class="footer-heading">Company</h3>
+            <ul class="footer-links">
+              <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="/contact.html">Contact Us</a></li>
+              <li><a href="/about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <p class="footer-copyright">© 2024 ChangeImageTo.com. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./script.js?v=20251220-1" defer></script>
+  </body>
+</html>

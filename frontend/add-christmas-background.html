@@ -758,7 +758,7 @@
             
             // Fetch Christmas backgrounds from Pixabay via backend
             const isLocalFrontend = (['127.0.0.1','localhost'].includes(window.location.hostname)) && window.location.port === '8080';
-            const apiBase = window.API_BASE || (isLocalFrontend ? 'http://127.0.0.1:8000' : 'https://api.changeimageto.com');
+            const apiBase = window.API_BASE || (isLocalFrontend ? 'http://127.0.0.1:8000' : 'https://bgremover-backend-121350814881.us-central1.run.app');
             
             try {
                 const response = await fetch(apiBase + '/api/christmas-backgrounds');

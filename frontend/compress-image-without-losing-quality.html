@@ -361,7 +361,7 @@ document.addEventListener("DOMContentLoaded", () => {
           formData.append('quality', quality.value);
           formData.append('transparent', 'false');
           const isLocalFrontend = (['127.0.0.1','localhost'].includes(window.location.hostname)) && window.location.port === '8080';
-          const apiBase = window.API_BASE || (isLocalFrontend ? 'http://127.0.0.1:8000' : 'https://api.changeimageto.com');
+          const apiBase = window.API_BASE || (isLocalFrontend ? 'http://127.0.0.1:8000' : 'https://bgremover-backend-121350814881.us-central1.run.app');
           try {
             const res = await fetch(apiBase + '/api/convert-format', { method: 'POST', body: formData });
             if (!res.ok) throw new Error(await res.text());

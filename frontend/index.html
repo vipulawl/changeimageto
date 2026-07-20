@@ -27,7 +27,7 @@
     <!-- Preconnect to critical external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://api.changeimageto.com">
+    <link rel="preconnect" href="https://bgremover-backend-121350814881.us-central1.run.app">
     
     <!-- Preload critical resources immediately -->
     <link rel="preload" as="image" href="/logo.png?v=20250921-1">
@@ -1320,7 +1320,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           // Send to backend
           const isLocalFrontend = (['127.0.0.1','localhost'].includes(window.location.hostname)) && window.location.port === '8080';
-          const apiBase = window.API_BASE || (isLocalFrontend ? 'http://127.0.0.1:8000' : 'https://api.changeimageto.com');
+          const apiBase = window.API_BASE || (isLocalFrontend ? 'http://127.0.0.1:8000' : 'https://bgremover-backend-121350814881.us-central1.run.app');
 
           fetch(apiBase + '/api/whats-missing', {
             method: 'POST',

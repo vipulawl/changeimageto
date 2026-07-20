@@ -5,8 +5,8 @@
     { "source": "/index.html", "destination": "/", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "https://api.changeimageto.com/api/$1" },
-    { "source": "/blog/(.*\\.html)", "destination": "https://api.changeimageto.com/blog/$1" }
+    { "source": "/api/(.*)", "destination": "https://bgremover-backend-121350814881.us-central1.run.app/api/$1" },
+    { "source": "/blog/(.*\\.html)", "destination": "https://bgremover-backend-121350814881.us-central1.run.app/blog/$1" }
   ],
   "headers": [
     {
