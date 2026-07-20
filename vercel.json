@@ -3,9 +3,9 @@
   "outputDirectory": "frontend",
   "redirects": [
     { "source": "/index.html", "destination": "/", "permanent": true },
-    { "source": "/image-quality-checker.html", "destination": "/", "permanent": true },
-    { "source": "/blog/image-quality-checker.html", "destination": "/blog/how-to-check-image-quality-online.html", "permanent": true },
-    { "source": "/blog/check-image-quality.html", "destination": "/blog/how-to-check-image-quality-online.html", "permanent": true }
+    { "source": "/image-quality-checker.html", "destination": "/", "statusCode": 301 },
+    { "source": "/blog/image-quality-checker.html", "destination": "/blog/how-to-check-image-quality-online.html", "statusCode": 301 },
+    { "source": "/blog/check-image-quality.html", "destination": "/blog/how-to-check-image-quality-online.html", "statusCode": 301 }
   ],
   "rewrites": [
     { "source": "/api/(.*)", "destination": "https://bgremover-backend-121350814881.us-central1.run.app/api/$1" },
