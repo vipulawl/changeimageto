@@ -186,6 +186,11 @@
             <priority>0.7</priority>
         </url>
         <url>
+            <loc>https://www.changeimageto.com/blog/bulk-resize.html</loc>
+            <changefreq>monthly</changefreq>
+            <priority>0.7</priority>
+        </url>
+        <url>
             <loc>https://www.changeimageto.com/blog/canva-vs-photopea.html</loc>
             <changefreq>monthly</changefreq>
             <priority>0.7</priority>
@@ -242,6 +247,11 @@
         </url>
         <url>
             <loc>https://www.changeimageto.com/blog/change-photo-background-white-amazon-listings.html</loc>
+            <changefreq>monthly</changefreq>
+            <priority>0.7</priority>
+        </url>
+        <url>
+            <loc>https://www.changeimageto.com/blog/changeimageto-20260312.html</loc>
             <changefreq>monthly</changefreq>
             <priority>0.7</priority>
         </url>
@@ -511,6 +521,11 @@
             <priority>0.7</priority>
         </url>
         <url>
+            <loc>https://www.changeimageto.com/blog/requeued-how-to-blur-image-background.html</loc>
+            <changefreq>monthly</changefreq>
+            <priority>0.7</priority>
+        </url>
+        <url>
             <loc>https://www.changeimageto.com/blog/requeued-how-to-resize-an-image-in-html.html</loc>
             <changefreq>monthly</changefreq>
             <priority>0.7</priority>
@@ -671,6 +686,11 @@
             <priority>0.5</priority>
         </url>
         <url>
+            <loc>https://www.changeimageto.com/changeimageto-mcp.html</loc>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://www.changeimageto.com/chrome-extension.html</loc>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
@@ -762,6 +782,11 @@
         </url>
         <url>
             <loc>https://www.changeimageto.com/grayscale-background.html</loc>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://www.changeimageto.com/image-editing-mcp-servers.html</loc>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
