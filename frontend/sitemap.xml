@@ -2,7 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         <url>
             <loc>https://www.changeimageto.com/</loc>
-            <lastmod>2026-07-20</lastmod>
             <changefreq>daily</changefreq>
             <priority>1.0</priority>
         </url>
@@ -37,15 +36,8 @@
             <priority>0.9</priority>
         </url>
         <url>
-            <loc>https://www.changeimageto.com/bulk-image-quality-checker.html</loc>
-            <lastmod>2026-07-20</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>0.9</priority>
-        </url>
-        <url>
-            <loc>https://www.changeimageto.com/image-resolution-checker.html</loc>
-            <lastmod>2026-07-20</lastmod>
-            <changefreq>weekly</changefreq>
+            <loc>https://www.changeimageto.com/remove-background-from-image.html</loc>
+            <changefreq>daily</changefreq>
             <priority>0.9</priority>
         </url>
         <url>
@@ -429,11 +421,6 @@
             <priority>0.7</priority>
         </url>
         <url>
-            <loc>https://www.changeimageto.com/blog/</loc>
-            <changefreq>monthly</changefreq>
-            <priority>0.7</priority>
-        </url>
-        <url>
             <loc>https://www.changeimageto.com/blog/image-validation-for-machine-learning-datasets.html</loc>
             <changefreq>monthly</changefreq>
             <priority>0.7</priority>
@@ -624,6 +611,11 @@
             <priority>0.5</priority>
         </url>
         <url>
+            <loc>https://www.changeimageto.com/bulk-image-quality-checker.html</loc>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://www.changeimageto.com/bulk-resize-images-for-ecommerce.html</loc>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
@@ -785,6 +777,11 @@
         </url>
         <url>
             <loc>https://www.changeimageto.com/image-editing-mcp-servers.html</loc>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://www.changeimageto.com/image-resolution-checker.html</loc>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
