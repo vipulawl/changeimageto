@@ -154,18 +154,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Ensure the footer "Image Tools" list is consistent across all pages
     try {
       const toolLinks = [
+        { href: '/', label: 'Image Quality Checker' },
+        { href: '/image-quality-checker.html', label: 'Bulk Quality Checker' },
+        { href: '/enhance-image.html', label: 'Enhance Image' },
+        { href: '/upscale-image.html', label: 'Upscale Image' },
+        { href: '/compress-image-online.html', label: 'Compress Image' },
         { href: '/remove-background-from-image.html', label: 'Remove Background' },
         { href: '/change-image-background.html', label: 'Change Background' },
         { href: '/change-color-of-image.html', label: 'Change Image Colors' },
-        { href: '/upscale-image.html', label: 'Upscale Image' },
-        { href: '/enhance-image.html', label: 'Enhance Image' },
         { href: '/blur-background.html', label: 'Blur Background' },
         { href: '/grayscale-background.html', label: 'Black & White Image Background' },
         { href: '/convert-image-format.html', label: 'Convert Image Format' },
         { href: '/remove-people-from-photo.html', label: 'Remove People / Objects' },
         { href: '/remove-text-from-image.html', label: 'Remove Text / Watermark' },
-        { href: '/bulk-image-resizer.html', label: 'Bulk Image Resizer' },
-        { href: '/image-quality-checker.html', label: 'Image Quality Checker' }
+        { href: '/bulk-image-resizer.html', label: 'Bulk Image Resizer' }
       ];
 
       // Find any footer section with heading "Image Tools" and update the following UL
@@ -184,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function getPageType() {
     const path = window.location.pathname;
-    if (path === '/' || path === '/index.html') return 'remove_background';
+    if (path === '/' || path === '/index.html') return 'image_quality_checker';
     if (path.includes('change-image-background-to-')) return 'color_specific';
     if (path === '/change-image-background.html') return 'color_palette';
     if (path === '/change-color-of-image.html') return 'color_change';
