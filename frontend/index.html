@@ -3,19 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Free Online Image Tools - Remove & Change Background, Resize, Bulk Editor</title>
-    <meta name="description" content="Free online image tools: remove background, change image background colors, bulk resize, change image colors. No login required, instant processing.">
-    <meta name="keywords" content="free image tools, remove background, change image background, change image color, bulk resize, online photo editor, image processing">
+    <title>Free Image Quality Checker — Detect Blur, Noise & Pixelation Online</title>
+    <meta name="description" content="Check image quality free: detect blur, noise, pixelation, resolution and exposure. Then fix issues with enhance, upscale, compress and more. No signup required.">
+    <meta name="keywords" content="image quality checker, check image quality, blur detection, photo quality checker, pixelation detector, free image quality test">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.changeimageto.com/" />
 
-    <meta property="og:title" content="ChangeImageTo.com - Free Online Image Tools" />
-    <meta property="og:description" content="Free online image tools: remove background, change colors, and more. No login required." />
+    <meta property="og:title" content="Free Image Quality Checker | ChangeImageTo" />
+    <meta property="og:description" content="Upload a photo to check sharpness, noise, resolution and exposure — then fix issues with free tools. No signup." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.changeimageto.com/" />
 
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"WebSite","name":"ChangeImageTo.com","description":"Free online image tools for background removal, color changes, and more.","url":"https://www.changeimageto.com/","potentialAction":{"@type":"SearchAction","target":"https://www.changeimageto.com/?q={search_term_string}","query-input":"required name=search_term_string"}}
+    {"@context":"https://schema.org","@type":"WebSite","name":"ChangeImageTo","description":"Free image quality checker and fix tools. Detect blur, noise, pixelation and exposure, then enhance, upscale or compress.","url":"https://www.changeimageto.com/","potentialAction":{"@type":"SearchAction","target":"https://www.changeimageto.com/?q={search_term_string}","query-input":"required name=search_term_string"}}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"Image Quality Checker","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free online image quality checker that detects blur, noise, pixelation, resolution and exposure issues.","url":"https://www.changeimageto.com/"}
     </script>
 
     <!-- DNS prefetch for external resources -->
@@ -159,6 +162,57 @@
       @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr 1fr;gap:32px}}
       @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:24px}.comprehensive-footer{padding:32px 0 20px}.footer-bottom-content{flex-direction:column;text-align:center;gap:12px}.footer-bottom-links{justify-content:center}}
       @media(max-width:480px){.footer-grid{grid-template-columns:1fr;gap:20px}}
+      /* Quality hero */
+      .site-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:8px;flex-wrap:wrap}
+      .quality-hero{margin:12px 0 48px;text-align:center}
+      .quality-hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border:1px solid #a7f3d0;border-radius:999px;padding:6px 12px;margin:0 0 16px}
+      .quality-hero h1{margin:0 0 12px;font-size:clamp(28px,5vw,44px);line-height:1.15;letter-spacing:-.02em;color:var(--fg);font-weight:700}
+      .quality-hero-sub{margin:0 auto 20px;max-width:560px;color:var(--muted);font-size:clamp(15px,2.2vw,18px);line-height:1.5}
+      .quality-hero-trust{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:0 0 28px;color:var(--fg-soft);font-size:13px;font-weight:500}
+      .quality-hero-trust span{display:inline-flex;align-items:center;gap:6px}
+      .quality-hero-trust span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+      .hero-dropzone{position:relative;max-width:720px;margin:0 auto;background:var(--card);border:2px dashed var(--border);border-radius:20px;padding:48px 28px;cursor:pointer;transition:border-color .2s,box-shadow .2s,background .2s;box-shadow:var(--shadow)}
+      .hero-dropzone:hover,.hero-dropzone.drag{border-color:var(--accent);background:var(--accent-soft);box-shadow:var(--shadow-lg)}
+      .hero-dropzone-icon{width:56px;height:56px;margin:0 auto 16px;border-radius:16px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center}
+      .hero-dropzone h2{margin:0 0 8px;font-size:20px;color:var(--fg)}
+      .hero-dropzone p{margin:0;color:var(--muted);font-size:14px}
+      .hero-dropzone .hero-browse{color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+      .hero-dropzone-meta{margin-top:14px;font-size:12px;color:var(--muted)}
+      .hero-analyzing{display:none;max-width:720px;margin:20px auto 0;padding:16px 20px;border-radius:12px;background:var(--accent-soft);color:var(--accent-2);font-weight:600;border:1px solid #a7f3d0}
+      .hero-analyzing.active{display:block}
+      .hero-result{display:none;max-width:720px;margin:24px auto 0;text-align:left;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:24px;box-shadow:var(--shadow)}
+      .hero-result.active{display:block}
+      .hero-result-top{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
+      .hero-result-preview{width:120px;height:120px;border-radius:12px;object-fit:cover;border:1px solid var(--border);background:var(--bg-alt);flex-shrink:0}
+      .hero-result-main{flex:1;min-width:200px}
+      .hero-result-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;font-weight:700;font-size:13px;margin-bottom:8px}
+      .hero-result-badge.good{background:#ecfdf5;color:#047857}
+      .hero-result-badge.fair{background:#fffbeb;color:#b45309}
+      .hero-result-badge.poor{background:#fef2f2;color:#b91c1c}
+      .hero-result-score{font-size:36px;font-weight:700;line-height:1;color:var(--fg);margin:0 0 4px}
+      .hero-result-file{margin:0;color:var(--muted);font-size:13px}
+      .hero-score-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:20px 0 0}
+      @media(min-width:560px){.hero-score-grid{grid-template-columns:repeat(4,1fr)}}
+      .hero-score-item{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:12px}
+      .hero-score-item span{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
+      .hero-score-item strong{font-size:18px;color:var(--fg)}
+      .hero-issues{margin:16px 0 0;padding:12px 14px;border-radius:10px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font-size:14px}
+      .hero-fixes{margin:16px 0 0}
+      .hero-fixes h3{margin:0 0 10px;font-size:14px;color:var(--fg)}
+      .hero-fixes-list{display:flex;flex-wrap:wrap;gap:8px}
+      .hero-fixes-list a{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:var(--on-accent);text-decoration:none;font-size:13px;font-weight:600}
+      .hero-fixes-list a:hover{background:var(--accent-2)}
+      .hero-result-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;align-items:center}
+      .hero-result-actions .btn{cursor:pointer;border:none}
+      .hero-bulk-link{margin:16px 0 0;font-size:14px;color:var(--muted)}
+      .hero-bulk-link a{color:var(--accent);font-weight:600;text-decoration:none}
+      .hero-bulk-link a:hover{text-decoration:underline}
+      .hero-error{display:none;max-width:720px;margin:16px auto 0;padding:12px 16px;border-radius:10px;background:#fef2f2;color:#b91c1c;border:1px solid #fecaca;font-size:14px}
+      .hero-error.active{display:block}
+      .tools-fold{margin:8px 0 40px}
+      .tools-fold-header{text-align:center;margin:0 0 28px}
+      .tools-fold-header h2{margin:0 0 8px;font-size:clamp(22px,3vw,30px);color:var(--fg)}
+      .tools-fold-header p{margin:0 auto;max-width:520px;color:var(--muted);font-size:16px}
     </style>
     
     <!-- Load main stylesheet asynchronously -->
@@ -222,25 +276,128 @@ document.addEventListener("DOMContentLoaded", () => {
   </head>
   <body>
     <header class="container header">
-      <a href="/" class="logo-link"><img src="/logo.png?v=20250921-1" alt="ChangeImageTo" class="logo-img" loading="eager" width="200" height="68" /></a>
-      <div style="display:flex;align-items:flex-start;gap:16px;justify-content:space-between;width:100%;flex-wrap:wrap">
-        <div style="flex:1;min-width:200px">
-          <h1 style="margin:0;font-size:clamp(16px,3.5vw,32px);line-height:1.2">Free Online Image Editing Tools – Remove & Change Backgrounds, Bulk Resize, Enhance Images</h1>
-          <p style="margin:8px 0 0;font-size:clamp(14px,2.5vw,16px);line-height:1.4">Transform images instantly with professional-grade tools. No login required.</p>
-        </div>
-        <nav class="top-nav" style="flex-shrink:0">
-          <a href="/blog" aria-label="Read our blog">Blog</a>
+      <div class="site-top">
+        <a href="/" class="logo-link" style="margin-bottom:0"><img src="/logo.png?v=20250921-1" alt="ChangeImageTo" class="logo-img" loading="eager" width="200" height="68" /></a>
+        <nav class="top-nav">
+          <a href="/image-quality-checker.html">Bulk Checker</a>
+          <a href="/blog" aria-label="Read our blog" style="margin-left:16px">Blog</a>
           <a href="/api.html" aria-label="API Access" style="margin-left:16px">API</a>
         </nav>
       </div>
     </header>
 
     <main class="container">
-      
+      <!-- Primary product: Image Quality Checker -->
+      <section class="quality-hero" aria-labelledby="quality-hero-title">
+        <p class="quality-hero-eyebrow">Free image quality checker</p>
+        <h1 id="quality-hero-title">Check image quality. Fix what’s wrong.</h1>
+        <p class="quality-hero-sub">Upload a photo to detect blur, noise, pixelation, resolution, and exposure — then fix issues with free tools.</p>
+        <div class="quality-hero-trust" aria-hidden="true">
+          <span>100% free</span>
+          <span>No signup</span>
+          <span>Instant score</span>
+        </div>
 
-      <!-- Hero Section with Main Features -->
-      <section class="hero-features">
+        <div class="hero-dropzone" id="heroDropzone" role="button" tabindex="0" aria-label="Upload an image to check quality">
+          <div class="hero-dropzone-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+          </div>
+          <h2>Drop an image here</h2>
+          <p>or <span class="hero-browse">browse files</span> · JPG, PNG, WebP, GIF</p>
+          <p class="hero-dropzone-meta">Max 10MB · Auto-analyzed on upload</p>
+          <input type="file" id="heroFileInput" accept="image/*" style="display:none" />
+        </div>
+
+        <div class="hero-analyzing" id="heroAnalyzing" role="status">Analyzing image quality…</div>
+        <div class="hero-error" id="heroError" role="alert"></div>
+
+        <div class="hero-result" id="heroResult">
+          <div class="hero-result-top">
+            <img class="hero-result-preview" id="heroPreview" alt="Uploaded image preview" />
+            <div class="hero-result-main">
+              <div class="hero-result-badge good" id="heroBadge">Good</div>
+              <p class="hero-result-score" id="heroScore">—</p>
+              <p class="hero-result-file" id="heroFileMeta"></p>
+            </div>
+          </div>
+          <div class="hero-score-grid" id="heroScoreGrid"></div>
+          <div class="hero-issues" id="heroIssues" style="display:none"></div>
+          <div class="hero-fixes" id="heroFixes" style="display:none">
+            <h3>Fix these issues</h3>
+            <div class="hero-fixes-list" id="heroFixesList"></div>
+          </div>
+          <div class="hero-result-actions">
+            <button type="button" class="btn" id="heroResetBtn">Check another image</button>
+            <a class="btn secondary" href="/image-quality-checker.html">Bulk check up to 50 images</a>
+          </div>
+        </div>
+
+        <p class="hero-bulk-link">Need to check many photos? Use the <a href="/image-quality-checker.html">bulk image quality checker</a>.</p>
+      </section>
+
+      <!-- Second fold: free tools to fix quality -->
+      <section class="tools-fold hero-features" id="free-tools">
+        <div class="tools-fold-header">
+          <h2>Fix quality issues with free tools</h2>
+          <p>Sharpen, upscale, compress, enhance, and edit images after you check them — no login required.</p>
+        </div>
         <div class="feature-grid">
+          <div class="feature-card">
+            <a class="stretched-link" href="/image-quality-checker.html" aria-label="Bulk Image Quality Checker">Bulk Image Quality Checker</a>
+            <div class="feature-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
+                <circle cx="12" cy="13" r="3"/>
+              </svg>
+            </div>
+            <h3>Bulk Quality Checker</h3>
+            <p>Analyze up to 50 images at once for blur, noise, pixelation, and exposure.</p>
+            <a href="/image-quality-checker.html" class="feature-btn">Bulk Check Images</a>
+          </div>
+
+          <div class="feature-card">
+            <a class="stretched-link" href="/enhance-image.html" aria-label="Enhance Image">Enhance Image</a>
+            <div class="feature-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l2.09 6.26L20 9l-5 3.64L16.18 20 12 16.9 7.82 20 9 12.64 4 9l5.91-.74L12 2z"/>
+              </svg>
+            </div>
+            <h3>Enhance Image</h3>
+            <p>Sharpen details and auto-improve contrast and brightness for a crisp look.</p>
+            <a href="/enhance-image.html" class="feature-btn">Enhance Image</a>
+          </div>
+
+          <div class="feature-card">
+            <a class="stretched-link" href="/upscale-image.html" aria-label="Upscale Image Quality">Upscale Image Quality</a>
+            <div class="feature-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+            <h3>Upscale Image Quality</h3>
+            <p>Increase image size up to 4× for sharper product photos, portraits, and prints.</p>
+            <a href="/upscale-image.html" class="feature-btn">Upscale Image to 4k</a>
+          </div>
+
+          <div class="feature-card">
+            <a class="stretched-link" href="/compress-image-online.html" aria-label="Compress Image">Compress Image</a>
+            <div class="feature-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                <path d="M12 22V12"/>
+                <path d="M9 8.3l3 1.7 3-1.7"/>
+              </svg>
+            </div>
+            <h3>Compress Image</h3>
+            <p>Reduce file size without wrecking quality — better for web and email.</p>
+            <a href="/compress-image-online.html" class="feature-btn">Compress Image</a>
+          </div>
+
           <div class="feature-card">
             <a class="stretched-link" href="/remove-background-from-image.html" aria-label="Remove Image Background">Remove Image Background</a>
             <div class="feature-icon">
@@ -331,19 +488,6 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
 
           <div class="feature-card">
-            <a class="stretched-link" href="/upscale-image.html" aria-label="Upscale Image Quality">Upscale Image Quality</a>
-            <div class="feature-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
-                <path d="m9 12 2 2 4-4"/>
-              </svg>
-            </div>
-            <h3>Upscale Image Quality</h3>
-            <p>Increase image size up to 4× for sharper product photos, portraits, and prints.</p>
-            <a href="/upscale-image.html" class="feature-btn">Upscale Image to 4k</a>
-          </div>
-
-          <div class="feature-card">
             <a class="stretched-link" href="/blur-background.html" aria-label="Blur Background">Blur Background</a>
             <div class="feature-icon">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -372,18 +516,6 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
 
           <div class="feature-card">
-            <a class="stretched-link" href="/enhance-image.html" aria-label="Enhance Image">Enhance Image</a>
-            <div class="feature-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2l2.09 6.26L20 9l-5 3.64L16.18 20 12 16.9 7.82 20 9 12.64 4 9l5.91-.74L12 2z"/>
-              </svg>
-            </div>
-            <h3>Enhance Image</h3>
-            <p>Sharpen details and auto-improve contrast and brightness for a crisp look.</p>
-            <a href="/enhance-image.html" class="feature-btn">Enhance Image</a>
-          </div>
-
-          <div class="feature-card">
             <a class="stretched-link" href="/bulk-image-resizer.html" aria-label="Bulk Image Resizer">Bulk Image Resizer</a>
             <div class="feature-icon">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -397,37 +529,6 @@ document.addEventListener("DOMContentLoaded", () => {
             <h3>Bulk Image Resizer</h3>
             <p>Resize multiple images at once. Upload up to 50 images and download as ZIP.</p>
             <a href="/bulk-image-resizer.html" class="feature-btn">Bulk Resize Images</a>
-          </div>
-
-          <div class="feature-card">
-            <a class="stretched-link" href="/image-quality-checker.html" aria-label="Image Quality Checker">Image Quality Checker</a>
-            <div class="feature-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
-                <circle cx="12" cy="13" r="3"/>
-                <path d="M9 9l6 6"/>
-                <path d="M15 9l-6 6"/>
-              </svg>
-            </div>
-            <h3>Image Quality Checker</h3>
-            <p>Detect blurry, noisy, pixelated photos. Perfect for ecommerce and marketing teams.</p>
-            <a href="/image-quality-checker.html" class="feature-btn">Check Image Quality</a>
-          </div>
-
-          <div class="feature-card">
-            <a class="stretched-link" href="/compress-image-online.html" aria-label="Compress Image">Compress Image</a>
-            <div class="feature-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
-                <path d="M12 22V12"/>
-                <path d="M9 8.3l3 1.7 3-1.7"/>
-                <path d="M9 12.3l3 1.7 3-1.7"/>
-                <path d="M9 16.3l3 1.7 3-1.7"/>
-              </svg>
-            </div>
-            <h3>Compress Image</h3>
-            <p>Reduce image file size without losing quality. Perfect for faster websites and email attachments.</p>
-            <a href="/compress-image-online.html" class="feature-btn">Compress Image</a>
           </div>
 
           <div class="feature-card">
@@ -1380,6 +1481,215 @@ document.addEventListener("DOMContentLoaded", () => {
         // Any non-critical JavaScript can be loaded here
         console.log('Page fully loaded, non-critical JS can execute');
       });
+    </script>
+
+    <script>
+      (function() {
+        const isLocalFrontend = (['127.0.0.1','localhost'].includes(window.location.hostname)) && (window.location.port === '8080' || window.location.port === '4321');
+        const apiBase = window.API_BASE || (isLocalFrontend ? 'http://127.0.0.1:8000' : 'https://bgremover-backend-121350814881.us-central1.run.app');
+
+        const dropzone = document.getElementById('heroDropzone');
+        const fileInput = document.getElementById('heroFileInput');
+        const analyzing = document.getElementById('heroAnalyzing');
+        const errorEl = document.getElementById('heroError');
+        const resultEl = document.getElementById('heroResult');
+        const preview = document.getElementById('heroPreview');
+        const badge = document.getElementById('heroBadge');
+        const scoreEl = document.getElementById('heroScore');
+        const fileMeta = document.getElementById('heroFileMeta');
+        const scoreGrid = document.getElementById('heroScoreGrid');
+        const issuesEl = document.getElementById('heroIssues');
+        const fixesEl = document.getElementById('heroFixes');
+        const fixesList = document.getElementById('heroFixesList');
+        const resetBtn = document.getElementById('heroResetBtn');
+
+        if (!dropzone || !fileInput) return;
+
+        let previewUrl = null;
+
+        function showError(msg) {
+          errorEl.textContent = msg;
+          errorEl.classList.add('active');
+          analyzing.classList.remove('active');
+        }
+
+        function clearError() {
+          errorEl.classList.remove('active');
+          errorEl.textContent = '';
+        }
+
+        function resetHero() {
+          clearError();
+          resultEl.classList.remove('active');
+          analyzing.classList.remove('active');
+          dropzone.style.display = '';
+          fileInput.value = '';
+          if (previewUrl) {
+            URL.revokeObjectURL(previewUrl);
+            previewUrl = null;
+          }
+        }
+
+        function categoryLabel(cat) {
+          if (cat === 'good') return 'Good quality';
+          if (cat === 'fair') return 'Fair quality';
+          return 'Needs improvement';
+        }
+
+        function scoreClass(score, metricType) {
+          if (metricType === 'noise') {
+            if (score >= 35) return 'good';
+            if (score >= 25) return 'fair';
+            return 'poor';
+          }
+          if (metricType === 'blur') {
+            if (score >= 40) return 'good';
+            if (score >= 30) return 'fair';
+            return 'poor';
+          }
+          if (metricType === 'exposure') {
+            if (score >= 60) return 'good';
+            if (score >= 40) return 'fair';
+            return 'poor';
+          }
+          if (score >= 80) return 'good';
+          if (score >= 60) return 'fair';
+          return 'poor';
+        }
+
+        async function analyzeFile(file) {
+          if (!file || !file.type.startsWith('image/')) {
+            showError('Please upload an image file (JPG, PNG, WebP, GIF).');
+            return;
+          }
+          if (file.size > 10 * 1024 * 1024) {
+            showError('File is too large. Max size is 10MB.');
+            return;
+          }
+
+          clearError();
+          resultEl.classList.remove('active');
+          dropzone.style.display = 'none';
+          analyzing.classList.add('active');
+
+          if (previewUrl) URL.revokeObjectURL(previewUrl);
+          previewUrl = URL.createObjectURL(file);
+          preview.src = previewUrl;
+
+          const formData = new FormData();
+          formData.append('files', file);
+
+          try {
+            const response = await fetch(apiBase + '/api/bulk-quality-check', {
+              method: 'POST',
+              body: formData
+            });
+            if (!response.ok) {
+              const errorText = await response.text();
+              throw new Error(errorText || 'Analysis failed');
+            }
+            const data = await response.json();
+            const image = (data.images && data.images[0]) || null;
+            if (!image) throw new Error('No analysis result returned.');
+
+            const metrics = image.quality_metrics || {};
+            const score = Math.round(metrics.overall_score || 0);
+            const category = image.category || 'fair';
+            const issues = metrics.issues || [];
+
+            badge.className = 'hero-result-badge ' + category;
+            badge.textContent = categoryLabel(category);
+            scoreEl.textContent = score + '/100';
+            fileMeta.textContent = (image.filename || file.name) + ' · ' + (metrics.dimensions || '') + ' · ' + (image.file_size_mb || (file.size / 1024 / 1024).toFixed(1)) + 'MB';
+
+            const items = [
+              { label: 'Blur', value: metrics.blur_score, type: 'blur' },
+              { label: 'Noise', value: metrics.noise_score, type: 'noise' },
+              { label: 'Resolution', value: metrics.resolution_score, type: 'general' },
+              { label: 'Exposure', value: metrics.exposure_score, type: 'exposure' }
+            ];
+            scoreGrid.innerHTML = items.map(function(item) {
+              const v = Math.round(item.value || 0);
+              return '<div class="hero-score-item"><span>' + item.label + '</span><strong>' + v + '%</strong></div>';
+            }).join('');
+
+            if (issues.length) {
+              issuesEl.style.display = 'block';
+              issuesEl.innerHTML = '<strong>Issues detected:</strong> ' + issues.join(', ');
+            } else {
+              issuesEl.style.display = 'none';
+            }
+
+            const links = image.repair_links || [];
+            const unique = [];
+            const seen = new Set();
+            links.forEach(function(link) {
+              const key = (link.url || '') + '|' + (link.description || '');
+              if (!seen.has(key)) {
+                seen.add(key);
+                unique.push(link);
+              }
+            });
+            if (unique.length && category !== 'good') {
+              fixesEl.style.display = 'block';
+              fixesList.innerHTML = unique.map(function(link) {
+                return '<a href="' + link.url + '">' + (link.description || 'Fix issue') + '</a>';
+              }).join('');
+            } else {
+              fixesEl.style.display = 'none';
+              fixesList.innerHTML = '';
+            }
+
+            analyzing.classList.remove('active');
+            resultEl.classList.add('active');
+            resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          } catch (err) {
+            dropzone.style.display = '';
+            showError(err.message || 'Something went wrong. Please try again.');
+          }
+        }
+
+        dropzone.addEventListener('click', function() { fileInput.click(); });
+        dropzone.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            fileInput.click();
+          }
+        });
+        dropzone.addEventListener('dragover', function(e) {
+          e.preventDefault();
+          dropzone.classList.add('drag');
+        });
+        dropzone.addEventListener('dragleave', function() {
+          dropzone.classList.remove('drag');
+        });
+        dropzone.addEventListener('drop', function(e) {
+          e.preventDefault();
+          dropzone.classList.remove('drag');
+          const file = e.dataTransfer.files && e.dataTransfer.files[0];
+          if (file) analyzeFile(file);
+        });
+        fileInput.addEventListener('change', function(e) {
+          const file = e.target.files && e.target.files[0];
+          if (file) analyzeFile(file);
+        });
+        resetBtn.addEventListener('click', resetHero);
+
+        document.addEventListener('paste', function(e) {
+          const items = e.clipboardData && e.clipboardData.items;
+          if (!items) return;
+          for (let i = 0; i < items.length; i++) {
+            if (items[i].type.indexOf('image') !== -1) {
+              const file = items[i].getAsFile();
+              if (file) {
+                e.preventDefault();
+                analyzeFile(file);
+              }
+              break;
+            }
+          }
+        });
+      })();
     </script>
   </body>
 </html>
