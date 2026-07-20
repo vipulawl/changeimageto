@@ -15,18 +15,18 @@
     <link rel="preload" as="style" href="../styles.css?v=20250921-1">
     <link rel="stylesheet" href="../styles.css?v=20250921-1">
     <style>
-      body, .main, main.container.main, .blog-content, .blog-content p, .blog-content li, .blog-content h2, .blog-content h3, .blog-content strong, .blog-content em { color: #ffffff; }
-      .blog-content a { color: #9ccfff; } .blog-content a:hover { text-decoration: underline; }
-      .header h1 { color: #ffffff; } .header p { color: var(--muted); } .top-nav a { color: #ffffff; }
+      body, .main, main.container.main, .blog-content, .blog-content p, .blog-content li, .blog-content h2, .blog-content h3, .blog-content strong, .blog-content em { color: var(--fg); }
+      .blog-content a { color: var(--accent); } .blog-content a:hover { text-decoration: underline; }
+      .header h1 { color: var(--fg); } .header p { color: var(--muted); } .top-nav a { color: var(--fg); }
       .blog-content { max-width: 800px; margin: 0 auto; line-height: 1.7; }
       .article-meta { display: flex; gap: 16px; margin-bottom: 24px; font-size: 14px; color: var(--muted); flex-wrap: wrap; }
       .article-intro { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 32px; }
       .blog-content h2 { font-size: 1.5rem; margin: 2rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
-      .blog-content h3 { font-size: 1.15rem; margin: 1.5rem 0 0.75rem; color: #9ccfff; }
+      .blog-content h3 { font-size: 1.15rem; margin: 1.5rem 0 0.75rem; color: var(--accent); }
       pre { background: #0d1117; border: 1px solid #2d3748; border-radius: 8px; padding: 16px; font-size: 0.83rem; overflow-x: auto; margin: 1rem 0; }
       code { font-family: 'Fira Code', monospace; font-size: 0.85em; }
       p code, li code { background: #161b22; padding: 2px 6px; border-radius: 4px; color: #a5d6ff; }
-      .callout { background: #0f1a2a; border-left: 4px solid #9ccfff; border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 1.5rem 0; }
+      .callout { background: #0f1a2a; border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 1.5rem 0; }
       .imageguard-cta { background: linear-gradient(135deg,#0f1117,#1a1f2e); border: 1px solid #2d3748; border-radius: 12px; padding: 24px 28px; margin: 2rem 0; }
       .imageguard-cta h3 { color: #56d364; margin: 0 0 8px 0; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.06em; }
       .imageguard-cta a.btn { display: inline-flex; align-items: center; gap: 8px; background: #238636; color: #fff; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; text-decoration: none; margin-top: 12px; }
@@ -35,7 +35,13 @@
       td { padding: 10px 14px; border: 1px solid #2d3748; }
       .article-footer { border-top: 1px solid var(--border); padding-top: 24px; margin-top: 32px; color: var(--muted); font-size: 14px; }
       .article-footer a { color: var(--accent); text-decoration: none; }
-    </style>
+    
+      /* darkbox-fix */
+      .callout, .callout p, .callout li, .callout strong, .callout code { color: #c9d1d9; }
+      pre, pre code { color: #e6edf3; }
+      .imageguard-cta, .imageguard-cta p, .imageguard-cta li, .imageguard-cta span { color: #c9d1d9; }
+      table th { color: #e6edf3; }
+</style>
 <script>document.addEventListener("DOMContentLoaded",()=>{if(window.location.hash.includes(":~:text")){if(typeof gtag==="function"){gtag("event","ai_overview",{anchor:window.location.hash});}else{const t=setInterval(()=>{if(typeof gtag==="function"){clearInterval(t);gtag("event","ai_overview",{anchor:window.location.hash});}},100);setTimeout(()=>clearInterval(t),10000);}}});</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D3Q582VFCG"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-D3Q582VFCG');</script>
@@ -159,7 +165,7 @@
 
         <div class="imageguard-cta">
           <h3>imageguard — compression detection + 5 other quality signals</h3>
-          <p style="color:#a0aec0;margin:0 0 4px 0;">Open-source on <a href="https://github.com/vipul510-web/imageguard" target="_blank" rel="noopener" style="color:#9ccfff;">GitHub</a>. Used in production at <a href="/image-quality-checker.html" style="color:#9ccfff;">changeimageto.com</a>.</p>
+          <p style="color:#a0aec0;margin:0 0 4px 0;">Open-source on <a href="https://github.com/vipul510-web/imageguard" target="_blank" rel="noopener" style="color:var(--accent);">GitHub</a>. Used in production at <a href="/image-quality-checker.html" style="color:var(--accent);">changeimageto.com</a>.</p>
           <a href="https://github.com/vipul510-web/imageguard" target="_blank" rel="noopener" class="btn">View on GitHub →</a>
         </div>
 

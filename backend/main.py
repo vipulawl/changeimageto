@@ -156,6 +156,7 @@ MODEL_NAME_FOR_CATEGORY = {
 
 BLOG_BUCKET = os.getenv("BLOG_BUCKET", "")
 CRON_TOKEN = os.getenv("CRON_TOKEN", "")
+IS_PRODUCTION = os.getenv("K_SERVICE") is not None or os.getenv("ENVIRONMENT") == "production"
 
 # IndexNow configuration
 INDEXNOW_KEY = os.getenv("INDEXNOW_KEY", "")
@@ -810,13 +811,13 @@ def render_article_html(title: str, slug: str, body_sections: list) -> str:
 <link rel=\"preload\" as=\"style\" href=\"/styles.css?v=20250921-1\"/><link rel=\"stylesheet\" href=\"/styles.css?v=20250921-1\"/>
 <style>
   /* Force readable white text on blog articles */
-  body, .main, main.container.main, .seo, .seo p, .seo li, .seo h2, .seo h3, .seo details, .seo summary {{ color: #ffffff; }}
-  .seo a {{ color: #9ccfff; }}
+  body, .main, main.container.main, .seo, .seo p, .seo li, .seo h2, .seo h3, .seo details, .seo summary {{ color: var(--fg); }}
+  .seo a {{ color: var(--accent); }}
   .seo a:hover {{ text-decoration: underline; }}
-  .seo-links a {{ color: #ffffff; }}
-  .header h1 {{ color: #ffffff; }}
+  .seo-links a {{ color: var(--fg); }}
+  .header h1 {{ color: var(--fg); }}
   .header p {{ color: var(--muted); }}
-  .top-nav a {{ color: #ffffff; }}
+  .top-nav a {{ color: var(--fg); }}
 </style>
 </head><body>
 <header class=\"container header\"><a href=\"https://www.changeimageto.com/\" class=\"logo-link\"><img src=\"https://www.changeimageto.com/logo.png?v=20250921-1\" alt=\"ChangeImageTo\" class=\"logo-img\" loading=\"eager\" width=\"200\" height=\"68\" /></a><div style=\"display:flex;align-items:center;gap:16px;justify-content:space-between;width:100%\"><h1 style=\"margin:0\">{title}</h1><nav class=\"top-nav\"><a href=\"https://www.changeimageto.com/blog\" aria-label=\"Read our blog\">Blog</a></nav></div></header>
@@ -2385,7 +2386,7 @@ async def blog_index():
   .blog-card:hover{{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.3)}}
   .blog-card-content{{display:flex;flex-direction:column;gap:12px}}
   .blog-card-title{{margin:0;font-size:20px;line-height:1.4}}
-  .blog-card-title a{{color:#fff;text-decoration:none;font-weight:600}}
+  .blog-card-title a{{color:var(--fg);text-decoration:none;font-weight:600}}
   .blog-card-title a:hover{{color:var(--accent,#6aa7ff);text-decoration:underline}}
   .blog-card-snippet{{color:var(--muted,#9aa7b2);margin:0;line-height:1.6;font-size:15px;flex:1}}
   .blog-card-meta{{display:flex;align-items:center;gap:8px;margin-top:8px;padding-top:12px;border-top:1px solid var(--border,#1e2630)}}
@@ -2473,9 +2474,10 @@ class BlogStatus(Enum):
 
 # Database configuration - must be defined before functions that use it
 # Use absolute path in production to avoid issues with working directory
-if os.getenv("K_SERVICE") or os.getenv("ENVIRONMENT") == "production":
-    # In Cloud Run, use /tmp for ephemeral storage (will be lost on restart if not synced!)
-    # But we MUST sync to Cloud Storage for persistence
+if os.getenv("DB_FILE"):
+    DB_FILE = os.getenv("DB_FILE")
+elif os.getenv("K_SERVICE") or os.getenv("ENVIRONMENT") == "production":
+    # Cloud Run: /tmp (synced to GCS). Hetzner: set DB_FILE=/data/blog_management.db instead.
     DB_FILE = os.path.join(os.getenv("TMPDIR", "/tmp"), "blog_management.db")
 else:
     DB_FILE = 'blog_management.db'
@@ -3140,7 +3142,7 @@ async def update_blog_index():
   .blog-card:hover{{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.3)}}
   .blog-card-content{{display:flex;flex-direction:column;gap:12px}}
   .blog-card-title{{margin:0;font-size:20px;line-height:1.4}}
-  .blog-card-title a{{color:#fff;text-decoration:none;font-weight:600}}
+  .blog-card-title a{{color:var(--fg);text-decoration:none;font-weight:600}}
   .blog-card-title a:hover{{color:var(--accent,#6aa7ff);text-decoration:underline}}
   .blog-card-snippet{{color:var(--muted,#9aa7b2);margin:0;line-height:1.6;font-size:15px;flex:1}}
   .blog-card-meta{{display:flex;align-items:center;gap:8px;margin-top:8px;padding-top:12px;border-top:1px solid var(--border,#1e2630)}}
@@ -4195,7 +4197,7 @@ async def create_payment_checkout(request: Request):
         
         # Use test_mode for local development, live_mode for production
         # Check if we're running in Cloud Run (production) vs local
-        is_production = os.getenv("K_SERVICE") is not None  # K_SERVICE is set by Cloud Run
+        is_production = IS_PRODUCTION
         dodo_env = "live_mode" if is_production else "test_mode"
         
         logger.info(f"Creating Dodo Payments client with {dodo_env}, API key length: {len(clean_api_key)}")
@@ -4258,7 +4260,7 @@ async def verify_payment(
         
         # Initialize Dodo Payments client
         # Use test_mode for local development, live_mode for production
-        is_production = os.getenv("K_SERVICE") is not None
+        is_production = IS_PRODUCTION
         dodo_env = "live_mode" if is_production else "test_mode"
         
         client = dodopayments.DodoPayments(
@@ -4493,7 +4495,7 @@ async def test_google_text_removal(
         dodo_api_key = os.getenv("DODO_PAYMENTS_API_KEY")
         if dodo_api_key:
             # Use same environment as checkout creation (test_mode for local, live_mode for production)
-            is_production = os.getenv("K_SERVICE") is not None
+            is_production = IS_PRODUCTION
             dodo_env = "live_mode" if is_production else "test_mode"
             
             client = dodopayments.DodoPayments(
@@ -4791,7 +4793,7 @@ async def test_google_text_removal(
         
         # Fallback to Replicate if Gemini fails (only in production)
         # Skip fallback for payment/auth errors or if already tried Replicate
-        is_production = os.getenv("K_SERVICE") is not None
+        is_production = IS_PRODUCTION
         if is_production and not any(err in error_msg.lower() for err in ['payment', 'auth', 'session', '403', '401', '400']):
             try:
                 logger.info("Attempting fallback to Replicate flux-kontext-apps/text-removal")
@@ -5476,7 +5478,7 @@ async def edit_text_in_image(
             dodo_api_key = os.getenv("DODO_PAYMENTS_API_KEY")
             if dodo_api_key:
                 # Use same environment as checkout creation (test_mode for local, live_mode for production)
-                is_production = os.getenv("K_SERVICE") is not None
+                is_production = IS_PRODUCTION
                 dodo_env = "live_mode" if is_production else "test_mode"
                 
                 client = dodopayments.DodoPayments(
@@ -6016,7 +6018,7 @@ async def test_google_enhance_payment(
         dodo_api_key = os.getenv("DODO_PAYMENTS_API_KEY")
         if dodo_api_key:
             # Use same environment as checkout creation (test_mode for local, live_mode for production)
-            is_production = os.getenv("K_SERVICE") is not None
+            is_production = IS_PRODUCTION
             dodo_env = "live_mode" if is_production else "test_mode"
             
             client = dodopayments.DodoPayments(
