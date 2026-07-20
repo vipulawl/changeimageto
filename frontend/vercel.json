@@ -1,0 +1,44 @@
+{
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/image-quality-checker.html", "destination": "/", "statusCode": 301 },
+    { "source": "/blog/image-quality-checker.html", "destination": "/blog/how-to-check-image-quality-online.html", "statusCode": 301 },
+    { "source": "/blog/check-image-quality.html", "destination": "/blog/how-to-check-image-quality-online.html", "statusCode": 301 }
+  ],
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "https://bgremover-backend-121350814881.us-central1.run.app/api/$1" },
+    { "source": "/blog/(.*\\.html)", "destination": "https://bgremover-backend-121350814881.us-central1.run.app/blog/$1" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*\\.txt)",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" }
+      ]
+    },
+    {
+      "source": "/",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/index.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/blog",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/blog/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate" }
+      ]
+    }
+  ]
+}
