@@ -699,7 +699,7 @@ def render_article_html(title: str, slug: str, body_sections: list) -> str:
           <!-- Brand Section -->
           <div class="footer-brand">
             <div class="footer-logo">
-              <img src="/logo.png?v=20250921-1" alt="ChangeImageTo" style="height: 32px; margin-bottom: 16px;">
+              <img src="/logo.png?v=20260720-1" alt="ChangeImageTo" style="height: 32px; margin-bottom: 16px;">
             </div>
             <p class="footer-description">
               The leading platform for free online image editing. Remove backgrounds, change colors, resize images, and enhance photos instantly with AI-powered tools.
@@ -820,7 +820,7 @@ def render_article_html(title: str, slug: str, body_sections: list) -> str:
   .top-nav a {{ color: var(--fg); }}
 </style>
 </head><body>
-<header class=\"container header\"><a href=\"https://www.changeimageto.com/\" class=\"logo-link\"><img src=\"https://www.changeimageto.com/logo.png?v=20250921-1\" alt=\"ChangeImageTo\" class=\"logo-img\" loading=\"eager\" width=\"200\" height=\"68\" /></a><div style=\"display:flex;align-items:center;gap:16px;justify-content:space-between;width:100%\"><h1 style=\"margin:0\">{title}</h1><nav class=\"top-nav\"><a href=\"https://www.changeimageto.com/blog\" aria-label=\"Read our blog\">Blog</a></nav></div></header>
+<header class=\"container header\"><a href=\"https://www.changeimageto.com/\" class=\"logo-link\"><img src=\"https://www.changeimageto.com/logo.png?v=20260720-1\" alt=\"ChangeImageTo\" class=\"logo-img\" loading=\"eager\" width=\"200\" height=\"68\" /></a><div style=\"display:flex;align-items:center;gap:16px;justify-content:space-between;width:100%\"><h1 style=\"margin:0\">{title}</h1><nav class=\"top-nav\"><a href=\"https://www.changeimageto.com/blog\" aria-label=\"Read our blog\">Blog</a></nav></div></header>
 <main class=\"container main\">\n  <p class=\"seo\" style=\"margin:0 0 16px\"><strong>By:</strong> ChangeImageTo.com Team · <time datetime=\"{now_iso}\">{now_iso.replace('T',' ')[:19]} UTC</time></p>\n  {sections_html}\n  <p class=\"seo\" style=\"margin-top:24px\"><a href=\"https://www.changeimageto.com/blog\" style=\"color:#fff\">← Back to blog</a></p>\n</main>
 {comprehensive_footer}
 <script src=\"/script.js?v=20250921-1\" defer></script>
@@ -2399,7 +2399,7 @@ async def blog_index():
 </head>
 <body>
   <header class='container header'>
-    <a href='/' class='logo-link'><img src='https://www.changeimageto.com/logo.png?v=20250916-2' class='logo-img' alt='ChangeImageTo'/></a>
+    <a href='/' class='logo-link'><img src='https://www.changeimageto.com/logo.png?v=20260720-1' class='logo-img' alt='ChangeImageTo'/></a>
     <div style='display:flex;align-items:center;gap:16px;justify-content:space-between;width:100%'>
       <h1 style='margin:0'>Image Editing Blog</h1>
       <nav class='top-nav'><a href='/blog' aria-label='Read our blog'>Blog</a></nav>
@@ -3155,7 +3155,7 @@ async def update_blog_index():
 </head>
 <body>
   <header class='container header'>
-    <a href='/' class='logo-link'><img src='https://www.changeimageto.com/logo.png?v=20250916-2' class='logo-img' alt='ChangeImageTo'/></a>                                                           
+    <a href='/' class='logo-link'><img src='https://www.changeimageto.com/logo.png?v=20260720-1' class='logo-img' alt='ChangeImageTo'/></a>                                                           
     <div style='display:flex;align-items:center;gap:16px;justify-content:space-between;width:100%'>
       <h1 style='margin:0'>Image Editing Blog</h1>
       <nav class='top-nav'><a href='/blog' aria-label='Read our blog'>Blog</a></nav>
