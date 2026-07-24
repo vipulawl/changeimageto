@@ -511,6 +511,11 @@
             <priority>0.7</priority>
         </url>
         <url>
+            <loc>https://www.changeimageto.com/blog/requeued-how-to-blur-image-background-20260724.html</loc>
+            <changefreq>monthly</changefreq>
+            <priority>0.7</priority>
+        </url>
+        <url>
             <loc>https://www.changeimageto.com/blog/requeued-how-to-blur-image-background.html</loc>
             <changefreq>monthly</changefreq>
             <priority>0.7</priority>
