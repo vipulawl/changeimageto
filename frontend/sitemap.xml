@@ -311,6 +311,11 @@
             <priority>0.7</priority>
         </url>
         <url>
+            <loc>https://www.changeimageto.com/blog/guide-resizing-photos-social-media.html</loc>
+            <changefreq>monthly</changefreq>
+            <priority>0.7</priority>
+        </url>
+        <url>
             <loc>https://www.changeimageto.com/blog/how-to-blur-image-background.html</loc>
             <changefreq>monthly</changefreq>
             <priority>0.7</priority>
