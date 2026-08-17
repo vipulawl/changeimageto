@@ -19,21 +19,46 @@ jobs:
           cache-dependency-path: scripts/blogging-agent/requirements.txt
 
       - name: Install dependencies
-        run: pip install -r scripts/blogging-agent/requirements.txt
+        run: pip install google-analytics-data google-api-python-client google-auth
 
-      - name: Configure credentials
+      - name: Write GA4/GSC credentials
         env:
           GA4_CREDENTIALS_JSON: ${{ secrets.GA4_CREDENTIALS_JSON }}
           GSC_CREDENTIALS_JSON: ${{ secrets.GSC_CREDENTIALS_JSON }}
           GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID || '505035310' }}
           GSC_SITE_URL: ${{ secrets.GSC_SITE_URL || 'sc-domain:changeimageto.com' }}
-        run: python scripts/blogging-agent/setup_ci.py
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          agent = Path("scripts/blogging-agent")
+          agent.mkdir(parents=True, exist_ok=True)
+          ga4 = (os.environ.get("GA4_CREDENTIALS_JSON") or "").strip()
+          gsc = (os.environ.get("GSC_CREDENTIALS_JSON") or "").strip()
+          if not ga4 and not gsc:
+              raise SystemExit("Missing GA4/GSC credentials secrets")
+          if ga4:
+              json.loads(ga4)
+              (agent / "google-credentials-ga4.json").write_text(ga4)
+          if gsc:
+              json.loads(gsc)
+              (agent / "google-credentials-gsc.json").write_text(gsc)
+          if ga4 and not gsc:
+              (agent / "google-credentials-gsc.json").write_text(ga4)
+          if gsc and not ga4:
+              (agent / "google-credentials-ga4.json").write_text(gsc)
+          print("GA4 creds written:", (agent / "google-credentials-ga4.json").exists())
+          print("GSC creds written:", (agent / "google-credentials-gsc.json").exists())
+          PY
+          echo "GA4_PROPERTY_ID=${GA4_PROPERTY_ID}" >> "$GITHUB_ENV"
+          echo "GSC_SITE_URL=${GSC_SITE_URL}" >> "$GITHUB_ENV"
+          echo "GOOGLE_GA4_CREDENTIALS_FILE=${GITHUB_WORKSPACE}/scripts/blogging-agent/google-credentials-ga4.json" >> "$GITHUB_ENV"
+          echo "GOOGLE_GSC_CREDENTIALS_FILE=${GITHUB_WORKSPACE}/scripts/blogging-agent/google-credentials-gsc.json" >> "$GITHUB_ENV"
 
       - name: Run traffic spike report
-        working-directory: scripts/blogging-agent
         env:
           TRAFFIC_REPORT_PATH: ${{ github.workspace }}/traffic_spike_report.json
-        run: python ../traffic_spike_report.py
+        run: python scripts/traffic_spike_report.py
 
       - name: Upload report
         uses: actions/upload-artifact@v4
